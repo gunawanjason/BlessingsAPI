@@ -1,0 +1,10 @@
+{
+    "version": 1,
+    "name": "BlessingsAPI",
+    "builds": [
+       { "src": "api.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+       { "src": "/(.*)", "dest": "/api.js" }
+    ]
+ }
