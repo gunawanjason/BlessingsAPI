@@ -1,43 +1,30 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
+// api/verse.js
 
-const app = express();
-const port = 3000; // Change this to the desired port number
+const axios = require('axios');
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+module.exports = async (req, res) => {
+  const { translation, book, chapter: chapterStr, verse: verseStr } = req.query;
+  const chapter = parseInt(chapterStr);
+  const verse = parseInt(verseStr);
 
-// Endpoint for fetching the verse
-app.get('/:translation/:book/:chapter/:verse', (req, res) => {
-  const translation = req.params.translation;
-  const bookName = req.params.book;
-  const chapter = parseInt(req.params.chapter);
-  const verse = parseInt(req.params.verse);
+  // Construct the URL for the GitHub JSON file
+  const url = `https://raw.githubusercontent.com/gunawanjason/bible_json/main/repo/${translation}.json`;
 
-  // Assuming the JSON files are named as 'translation.json', 'translation2.json', etc.
-  const fileName = `${translation}.json`;
+  try {
+    const response = await axios.get(url);
+    const jsonData = response.data;
 
-  fs.readFile('storage/'+fileName, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error:', err);
-      return res.status(500).json({ error: 'Error reading the file.' });
+    const verseContent = findVerse(jsonData, book, chapter, verse);
+    if (verseContent) {
+      res.json({ content: verseContent });
+    } else {
+      res.status(404).json({ error: 'Verse not found.' });
     }
-
-    try {
-      const jsonData = JSON.parse(data);
-      const verseContent = findVerse(jsonData, bookName, chapter, verse);
-      if (verseContent) {
-        res.json({ content: verseContent });
-      } else {
-        res.status(404).json({ error: 'Verse not found.' });
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      res.status(500).json({ error: 'Error parsing JSON data.' });
-    }
-  });
-});
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Error fetching or parsing JSON data.' });
+  }
+};
 
 // Function to search for a particular verse in the JSON data
 function findVerse(data, bookName, chapter, verse) {
@@ -54,7 +41,3 @@ function findVerse(data, bookName, chapter, verse) {
   }
   return null;
 }
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
