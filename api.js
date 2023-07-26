@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
   const verse = parseInt(verseStr);
 
   // Construct the URL for the GitHub JSON file
-  const url = `https://raw.githubusercontent.com/gunawanjason/bible_json/main/${translation}.json`;
+  const url = `https://raw.githubusercontent.com/gunawanjason/bible_json/main/repo/${translation}.json`;
 
   try {
     const response = await axios.get(url);
