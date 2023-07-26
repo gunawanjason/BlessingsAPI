@@ -7,4 +7,10 @@
     "routes": [
        { "src": "/(.*)", "dest": "/api.js" }
     ]
+    ,
+    "functions": {
+        "api/**/*": {
+          "runtime": "vercel-node@16"
+        }
+    }
  }
