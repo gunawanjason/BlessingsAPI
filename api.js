@@ -46,19 +46,13 @@ app.get('/:translation/:book/:chapter/:verse', (req, res) => {
 
 // Function to search for a particular verse in the JSON data
 function findVerse(data, bookName, chapter, verse) {
-  for (let i = 0; i < data.length; i++) {
-    let book = data[i];
-    if (book.book === bookName) {
-      if (book.hasOwnProperty('chapters') && book.chapters.length >= chapter) {
-        let targetChapter = book.chapters[chapter - 1];
-        if (targetChapter.length >= verse) {
-          return targetChapter[verse - 1];
-        }
-      }
-    }
+  try {
+    return data[bookName][chapter][verse];
+  } catch (e) {
+    return null;
   }
-  return null;
 }
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
