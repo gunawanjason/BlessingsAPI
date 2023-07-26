@@ -1,6 +1,8 @@
+import path from 'path';
+
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs');
+//const fs = require('fs');
 
 const app = express();
 const port = 3000; // Change this to the desired port number
@@ -17,8 +19,10 @@ app.get('/:translation/:book/:chapter/:verse', (req, res) => {
 
   // Assuming the JSON files are named as 'translation.json', 'translation2.json', etc.
   const fileName = `${translation}.json`;
+  // Get current directory
+  const jsonDirectory = path.join(process.cwd(), 'json');
 
-  fs.readFile('storage/'+fileName, 'utf8', (err, data) => {
+  fs.readFile(jsonDirectory+fileName, 'utf8', (err, data) => {
     if (err) {
       console.error('Error:', err);
       return res.status(500).json({ error: 'Error reading the file.' });
