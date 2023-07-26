@@ -10,7 +10,7 @@
     ,
     "functions": {
         "api.js": {
-          "runtime": "vercel-node@16"
+            "memory": 3008
         }
     }
  }
