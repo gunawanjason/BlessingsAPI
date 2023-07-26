@@ -21,7 +21,7 @@ app.get('/:translation/:book/:chapter/:verse', (req, res) => {
   // Assuming the JSON files are named as 'translation.json', 'translation2.json', etc.
   const fileName = `${translation}.json`;
   // Get current directory
-  const jsonDirectory = path.join(process.cwd());
+  const jsonDirectory = path.join(process.cwd(), json);
 
   fs.readFile(jsonDirectory+"/"+fileName, 'utf8', (err, data) => {
     if (err) {
