@@ -23,7 +23,7 @@ app.get('/:translation/:book/:chapter/:verse', (req, res) => {
   // Get current directory
   const jsonDirectory = path.join(process.cwd(), 'json');
 
-  fs.readFile(jsonDirectory+'/storage/'+fileName, 'utf8', (err, data) => {
+  fs.readFile(jsonDirectory+"/"+fileName, 'utf8', (err, data) => {
     if (err) {
       console.error('Error:', err);
       return res.status(500).json({ error: 'Error reading the file.' });
