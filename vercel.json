@@ -1,16 +1,15 @@
 {
-    "version": 1,
-    "name": "BlessingsAPI",
+    "version": 2,
     "builds": [
-       { "src": "api.js", "use": "@vercel/node" }
+      {
+        "src": "./api.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-       { "src": "/(.*)", "dest": "/api.js" }
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
     ]
-    ,
-    "functions": {
-        "api.js": {
-            "memory": 3008
-        }
-    }
- }
+  }
