@@ -27,7 +27,7 @@ app.get('/:translation/:book/:chapter/:verse', (req, res) => {
   fs.readFile(jsonDirectory+"/"+fileName, 'utf8', (err, data) => {
     if (err) {
       console.error('Error:', err);
-      return res.status(500).json({ error: 'Error reading the file.' });
+      return res.status(500).json({ error: 'Translation not supported' });
     }
 
     try {
