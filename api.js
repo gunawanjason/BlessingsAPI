@@ -14,7 +14,10 @@ app.use(bodyParser.json());
 
 app.get('/:translation/single', async (req, res) => {
   const { translation } = req.params;
-  const { book, chapter, verse } = req.query;
+  let { book, chapter, verse } = req.query;
+  chapter = parseInt(chapter, 10);
+  verse = parseInt(verse, 10);
+
   try {
     const jsonData = await readTranslation(translation);
     if (jsonData[book] && jsonData[book][chapter] && jsonData[book][chapter][verse]) {
