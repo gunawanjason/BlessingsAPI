@@ -12,6 +12,22 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get('/:translation/single', async (req, res) => {
+  const { translation } = req.params;
+  const { book, chapter, verse } = req.query;
+  try {
+    const jsonData = await readTranslation(translation);
+    if (jsonData[book] && jsonData[book][chapter] && jsonData[book][chapter][verse]) {
+      res.json({ book, chapter, verse, content: jsonData[book][chapter][verse] });
+    } else {
+      res.status(404).json({ error: `Verse not found: ${book} ${chapter}:${verse}` });
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Error fetching the verse.' });
+  }
+});
+
 app.get('/:translation/multiple', async (req, res) => {
   const { translation } = req.params;
   const verses = req.query.verses.split(',');
@@ -80,3 +96,6 @@ app.listen(port, () => {
 
 //Example Argument
 //http://localhost:3000/NIV/multiple?verses=Genesis%201:1-3:7,Matthew%201:1-25,Psalms%201:1-6,Proverbs%201:1-6/
+
+//Sample for Single Fetch
+//http://localhost:3000/NIV/single?book=Genesis&chapter=1&verse=1
