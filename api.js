@@ -45,30 +45,38 @@ app.get('/:translation/multiple', async (req, res) => {
 });
 
 async function fetchVerses(translation, verseString, idx) {
-  // Trim whitespace and slashes from the verse string
   verseString = verseString.trim().replace(/\/$/, '');
-  console.log(`[${idx}] Fetching verses for:`, verseString); // Log the input
+  console.log(`[${idx}] Fetching verses for:`, verseString);
 
   const jsonData = await readTranslation(translation);
-  const [book, range] = verseString.split(' ');
 
-  let startChapter, startVerse, endChapter, endVerse;
+  // Extract the book and range using a regular expression
+  const match = verseString.match(/^(.*\S)(?:\s+)(\d+[:\-]\d+.*?)$/);
+  if (!match) {
+    console.error(`Invalid verse format: ${verseString}`);
+    throw new Error(`Invalid verse format: ${verseString}`);
+  }
+  const [_, book, range] = match;
 
   if (range.includes(':')) {
-    const parts = range.split(/[:-]/).map(Number);
-    if (parts.length === 4) {
-      [startChapter, startVerse, endChapter, endVerse] = parts;
-    } else {
-      [startChapter, startVerse, endVerse] = parts;
-      endChapter = startChapter;
-    }
+    const [chapters, verses] = range.split(':');
+    [startChapter, endChapter] = chapters.split('-').map(Number);
+    if (!endChapter) endChapter = startChapter;
+    [startVerse, endVerse] = verses.split('-').map(Number);
+    if (!endVerse) endVerse = startVerse;
   } else {
     [startChapter, endChapter] = range.split('-').map(Number);
     startVerse = 1;
-    endVerse = Object.keys(jsonData[book][endChapter]).length;
+    if (jsonData[book] && jsonData[book][endChapter]) {
+      endVerse = Object.keys(jsonData[book][endChapter]).length;
+    } else {
+      console.error(`Invalid book or chapter: ${book} ${endChapter}`);
+      throw new Error(`Invalid book or chapter: ${book} ${endChapter}`);
+    }
   }
+  
 
-  console.log(`[${idx}] Parsed range for ${book}: startChapter ${startChapter}, startVerse ${startVerse}, endChapter ${endChapter}, endVerse ${endVerse}`); // Log the parsed range
+  console.log(`[${idx}] Parsed range for ${book}: startChapter ${startChapter}, startVerse ${startVerse}, endChapter ${endChapter}, endVerse ${endVerse}`);
 
   const results = [];
   for (let chapter = startChapter; chapter <= endChapter; chapter++) {
@@ -81,7 +89,7 @@ async function fetchVerses(translation, verseString, idx) {
     }
   }
 
-  console.log(`[${idx}] Fetched ${results.length} verses for ${book}`); // Log the number of verses fetched
+  console.log(`[${idx}] Fetched ${results.length} verses for ${book}`);
   return results;
 }
 
