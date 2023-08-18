@@ -53,31 +53,32 @@ async function fetchVerses(translation, verseString, idx) {
   const jsonData = await readTranslation(translation);
 
   // Extract the book and range using a regular expression
-  const match = verseString.match(/^(.*\S)(?:\s+)(\d+[:\-]\d+.*?)$/);
+  const match = verseString.match(/^(.*\S)(?:\s+)(\d+:\d+(?:-\d+)?(?:-\d+:\d+)?)$/);
   if (!match) {
     console.error(`Invalid verse format: ${verseString}`);
     throw new Error(`Invalid verse format: ${verseString}`);
   }
   const [_, book, range] = match;
 
-  if (range.includes(':')) {
-    const [chapters, verses] = range.split(':');
-    [startChapter, endChapter] = chapters.split('-').map(Number);
-    if (!endChapter) endChapter = startChapter;
-    [startVerse, endVerse] = verses.split('-').map(Number);
-    if (!endVerse) endVerse = startVerse;
+  const parts = range.split('-');
+  
+  if (parts[0].includes(':')) {
+    [startChapter, startVerse] = parts[0].split(':').map(Number);
   } else {
-    [startChapter, endChapter] = range.split('-').map(Number);
+    startChapter = Number(parts[0]);
     startVerse = 1;
-    if (jsonData[book] && jsonData[book][endChapter]) {
-      endVerse = Object.keys(jsonData[book][endChapter]).length;
-    } else {
-      console.error(`Invalid book or chapter: ${book} ${endChapter}`);
-      throw new Error(`Invalid book or chapter: ${book} ${endChapter}`);
-    }
+  }
+
+  if (parts[1].includes(':')) {
+    [endChapter, endVerse] = parts[1].split(':').map(Number);
+  } else if (parts[0].includes(':')) {
+    endChapter = startChapter;
+    endVerse = Number(parts[1]);
+  } else {
+    endChapter = Number(parts[1]);
+    endVerse = Object.keys(jsonData[book] && jsonData[book][endChapter] || {}).length;
   }
   
-
   console.log(`[${idx}] Parsed range for ${book}: startChapter ${startChapter}, startVerse ${startVerse}, endChapter ${endChapter}, endVerse ${endVerse}`);
 
   const results = [];
@@ -105,7 +106,6 @@ async function readTranslation(translation) {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-
 
 //Example Argument
 //http://localhost:3000/NIV/multiple?verses=Genesis%201:1-3:7,Matthew%201:1-25,Psalms%201:1-6,Proverbs%201:1-6/
