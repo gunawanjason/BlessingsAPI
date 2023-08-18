@@ -69,11 +69,15 @@ async function fetchVerses(translation, verseString, idx) {
     startVerse = 1;
   }
 
-  if (parts[1].includes(':')) {
+  if (parts[1] && parts[1].includes(':')) {
     [endChapter, endVerse] = parts[1].split(':').map(Number);
   } else if (parts[0].includes(':')) {
     endChapter = startChapter;
-    endVerse = Number(parts[1]);
+    if (parts.length > 1) {
+        endVerse = Number(parts[1]);
+    } else {
+        endVerse = startVerse;
+    }
   } else {
     endChapter = Number(parts[1]);
     endVerse = Object.keys(jsonData[book] && jsonData[book][endChapter] || {}).length;
