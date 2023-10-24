@@ -14,7 +14,7 @@ def scrape_bible(version):
                 try:
                     verse_list = [] # per chapter
                     fetch_argument = bv.book_names[book_index] + " "+ str(chapter)
-                    verses = query(fetch_argument, version = "KJV")
+                    verses = query(fetch_argument, version = version)
                     print("Fetching:", fetch_argument)
 
                     for verse in verses:

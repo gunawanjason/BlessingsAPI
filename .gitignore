@@ -1,2 +1,6 @@
 #ignore node_modules
 node_modules/
+#ignore package-lock
+package-lock.json
+#ignore pycache
+*/__pycache__/*
