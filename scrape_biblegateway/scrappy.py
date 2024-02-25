@@ -43,5 +43,5 @@ def scrape_bible(version):
     return result
 
 # Call the function
-version = "CEB"
+version = "TLB"
 scrape_bible(version)
