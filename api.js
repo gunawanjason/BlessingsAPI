@@ -1,9 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
-const path = require('path');
-const util = require('util');
-const cors = require('cors');
+const express = require("express");
+const bodyParser = require("body-parser");
+const fs = require("fs");
+const path = require("path");
+const util = require("util");
+const cors = require("cors");
 
 const readFile = util.promisify(fs.readFile);
 
@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/:translation/single', async (req, res) => {
+app.get("/:translation/single", async (req, res) => {
   const { translation } = req.params;
   let { book, chapter, verse } = req.query;
   chapter = parseInt(chapter, 10);
@@ -22,76 +22,113 @@ app.get('/:translation/single', async (req, res) => {
 
   try {
     const jsonData = await readTranslation(translation);
-    if (jsonData[book] && jsonData[book][chapter] && jsonData[book][chapter][verse]) {
-      res.json({ book, chapter, verse, content: jsonData[book][chapter][verse] });
+    if (
+      jsonData[book] &&
+      jsonData[book][chapter] &&
+      jsonData[book][chapter][verse]
+    ) {
+      res.json({
+        book,
+        chapter,
+        verse,
+        content: jsonData[book][chapter][verse],
+      });
     } else {
-      res.status(404).json({ error: `Verse not found: ${book} ${chapter}:${verse}` });
+      res
+        .status(404)
+        .json({ error: `Verse not found: ${book} ${chapter}:${verse}` });
     }
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: 'Error fetching the verse.' });
+    console.error("Error:", error);
+    res.status(500).json({ error: "Error fetching the verse." });
   }
 });
 
-app.get('/:translation/multiple', async (req, res) => {
+app.get("/:translation/multiple", async (req, res) => {
   const { translation } = req.params;
-  const verses = req.query.verses.split(',');
+  const verses = req.query.verses.split(",");
   try {
-    const allVerses = await Promise.all(verses.map((verse, idx) => fetchVerses(translation, verse, idx)));
+    const allVerses = await Promise.all(
+      verses.map((verse, idx) => fetchVerses(translation, verse, idx))
+    );
     const flattenedVerses = allVerses.flat();
     res.json(flattenedVerses);
   } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: 'Error fetching the verses.' });
+    console.error("Error:", error);
+    res.status(500).json({ error: "Error fetching the verses." });
   }
 });
 
 async function fetchVerses(translation, verseString, idx) {
-  verseString = verseString.trim().replace(/\/$/, '');
+  verseString = verseString.trim().replace(/\/$/, "");
   console.log(`[${idx}] Fetching verses for:`, verseString);
 
   const jsonData = await readTranslation(translation);
 
-  // Extract the book and range using a regular expression
-  const match = verseString.match(/^(.*\S)(?:\s+)(\d+:\d+(?:-\d+)?(?:-\d+:\d+)?)$/);
-  if (!match) {
-    console.error(`Invalid verse format: ${verseString}`);
-    throw new Error(`Invalid verse format: ${verseString}`);
-  }
-  const [_, book, range] = match;
+  // Support "Book Chapter" (e.g., "Genesis 1") and "Book Chapter:Verse" (e.g., "Genesis 1:1")
+  let match = verseString.match(/^(.*\S)\s+(\d+:\d+(?:-\d+)?(?:-\d+:\d+)?)$/);
+  let book, range, startChapter, startVerse, endChapter, endVerse;
 
-  const parts = range.split('-');
-  
-  if (parts[0].includes(':')) {
-    [startChapter, startVerse] = parts[0].split(':').map(Number);
-  } else {
-    startChapter = Number(parts[0]);
-    startVerse = 1;
-  }
-
-  if (parts[1] && parts[1].includes(':')) {
-    [endChapter, endVerse] = parts[1].split(':').map(Number);
-  } else if (parts[0].includes(':')) {
-    endChapter = startChapter;
-    if (parts.length > 1) {
-        endVerse = Number(parts[1]);
+  if (match) {
+    [_, book, range] = match;
+    const parts = range.split("-");
+    if (parts[0].includes(":")) {
+      [startChapter, startVerse] = parts[0].split(":").map(Number);
     } else {
+      startChapter = Number(parts[0]);
+      startVerse = 1;
+    }
+
+    if (parts[1] && parts[1].includes(":")) {
+      [endChapter, endVerse] = parts[1].split(":").map(Number);
+    } else if (parts[0].includes(":")) {
+      endChapter = startChapter;
+      if (parts.length > 1) {
+        endVerse = Number(parts[1]);
+      } else {
         endVerse = startVerse;
+      }
+    } else {
+      endChapter = Number(parts[1]);
+      endVerse = Object.keys(
+        (jsonData[book] && jsonData[book][endChapter]) || {}
+      ).length;
     }
   } else {
-    endChapter = Number(parts[1]);
-    endVerse = Object.keys(jsonData[book] && jsonData[book][endChapter] || {}).length;
+    // Try matching "Book Chapter" (e.g., "Genesis 1")
+    match = verseString.match(/^(.*\S)\s+(\d+)$/);
+    if (!match) {
+      console.error(`Invalid verse format: ${verseString}`);
+      throw new Error(`Invalid verse format: ${verseString}`);
+    }
+    [_, book, startChapter] = match;
+    startChapter = Number(startChapter);
+    startVerse = 1;
+    endChapter = startChapter;
+    endVerse = Object.keys(
+      (jsonData[book] && jsonData[book][startChapter]) || {}
+    ).length;
   }
-  
-  console.log(`[${idx}] Parsed range for ${book}: startChapter ${startChapter}, startVerse ${startVerse}, endChapter ${endChapter}, endVerse ${endVerse}`);
+
+  console.log(
+    `[${idx}] Parsed range for ${book}: startChapter ${startChapter}, startVerse ${startVerse}, endChapter ${endChapter}, endVerse ${endVerse}`
+  );
 
   const results = [];
   for (let chapter = startChapter; chapter <= endChapter; chapter++) {
-    const startV = (chapter === startChapter) ? startVerse : 1;
-    const endV = (chapter === endChapter) ? endVerse : Object.keys(jsonData[book][chapter]).length;
+    const startV = chapter === startChapter ? startVerse : 1;
+    const endV =
+      chapter === endChapter
+        ? endVerse
+        : Object.keys(jsonData[book][chapter]).length;
     for (let verse = startV; verse <= endV; verse++) {
       if (jsonData[book][chapter][verse]) {
-        results.push({ book, chapter, verse, content: jsonData[book][chapter][verse] });
+        results.push({
+          book,
+          chapter,
+          verse,
+          content: jsonData[book][chapter][verse],
+        });
       }
     }
   }
@@ -102,8 +139,8 @@ async function fetchVerses(translation, verseString, idx) {
 
 async function readTranslation(translation) {
   const fileName = `${translation}.json`;
-  const jsonDirectory = path.join(process.cwd(), 'json');
-  const data = await readFile(path.join(jsonDirectory, fileName), 'utf8');
+  const jsonDirectory = path.join(process.cwd(), "json");
+  const data = await readFile(path.join(jsonDirectory, fileName), "utf8");
   return JSON.parse(data);
 }
 
