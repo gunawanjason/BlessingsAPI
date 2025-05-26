@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blessings API Documentation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .section {
+        background: white;
+        margin: 2rem 0;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #667eea;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        border-bottom: 2px solid #667eea;
+        padding-bottom: 0.5rem;
+      }
+
+      h3 {
+        color: #764ba2;
+        margin: 1.5rem 0 1rem 0;
+        font-size: 1.3rem;
+      }
+
+      .endpoint {
+        background: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .method {
+        display: inline-block;
+        background: #28a745;
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        font-weight: bold;
+        margin-right: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .url {
+        font-family: "Courier New", monospace;
+        background: #e9ecef;
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+
+      .code {
+        background: #2d3748;
+        color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+        margin: 1rem 0;
+      }
+
+      .parameter {
+        margin: 0.5rem 0;
+      }
+
+      .param-name {
+        font-weight: bold;
+        color: #764ba2;
+      }
+
+      .param-type {
+        color: #dc3545;
+        font-style: italic;
+        margin-left: 0.5rem;
+      }
+
+      .param-required {
+        color: #dc3545;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+
+      .translations {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+
+      .translation-card {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .example {
+        background: #e8f5e8;
+        border: 1px solid #c3e6c3;
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      .example-title {
+        font-weight: bold;
+        color: #155724;
+        margin-bottom: 0.5rem;
+      }
+
+      .response {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      .response-title {
+        font-weight: bold;
+        color: #856404;
+        margin-bottom: 0.5rem;
+      }
+
+      .error {
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      .error-title {
+        font-weight: bold;
+        color: #721c24;
+        margin-bottom: 0.5rem;
+      }
+
+      .note {
+        background: #d1ecf1;
+        border: 1px solid #bee5eb;
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 1rem 0;
+      }
+
+      .note-title {
+        font-weight: bold;
+        color: #0c5460;
+        margin-bottom: 0.5rem;
+      }
+
+      .toc {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+      }
+
+      .toc ul {
+        list-style: none;
+        padding-left: 1rem;
+      }
+
+      .toc a {
+        color: #667eea;
+        text-decoration: none;
+        padding: 0.2rem 0;
+        display: block;
+      }
+
+      .toc a:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+
+      .section ul {
+        padding-left: 1.5rem;
+        margin: 1rem 0;
+      }
+
+      .section ol {
+        padding-left: 1.5rem;
+        margin: 1rem 0;
+      }
+
+      .section li {
+        margin: 0.5rem 0;
+      }
+
+      .note ul {
+        padding-left: 1.5rem;
+        margin: 0.5rem 0;
+      }
+
+      .note li {
+        margin: 0.25rem 0;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .section {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🙏 Blessings API</h1>
+        <p class="subtitle">
+          A comprehensive Bible verse API supporting multiple translations
+        </p>
+      </header>
+
+      <div class="toc">
+        <h3>📋 Table of Contents</h3>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#base-url">Base URL</a></li>
+          <li><a href="#translations">Available Translations</a></li>
+          <li>
+            <a href="#endpoints">API Endpoints</a>
+            <ul>
+              <li><a href="#single-verse">Single Verse</a></li>
+              <li><a href="#multiple-verses">Multiple Verses</a></li>
+            </ul>
+          </li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#error-handling">Error Handling</a></li>
+          <li><a href="#getting-started">Getting Started</a></li>
+        </ul>
+      </div>
+
+      <section id="overview" class="section">
+        <h2>📖 Overview</h2>
+        <p>
+          The Blessings API provides access to Bible verses from multiple
+          translations. You can fetch single verses or multiple verse ranges
+          with flexible formatting options. The API supports both individual
+          verse lookups and batch requests for multiple verse ranges.
+        </p>
+
+        <div class="note">
+          <div class="note-title">💡 Key Features</div>
+          <ul>
+            <li>Multiple Bible translations support</li>
+            <li>Single verse retrieval</li>
+            <li>Multiple verse range queries</li>
+            <li>Flexible verse reference formatting</li>
+            <li>JSON response format</li>
+            <li>CORS enabled for web applications</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="base-url" class="section">
+        <h2>🌐 Base URL</h2>
+        <div class="code">http://api.blessings365.top</div>
+        <p>
+          All API requests should be made to this base URL followed by the
+          specific endpoint paths.
+        </p>
+      </section>
+
+      <section id="translations" class="section">
+        <h2>📚 Available Translations</h2>
+        <p>The following Bible translations are currently supported:</p>
+
+        <div class="translations">
+          <div class="translation-card">
+            NIV<br /><small>New International Version</small>
+          </div>
+          <div class="translation-card">
+            ESV<br /><small>English Standard Version</small>
+          </div>
+          <div class="translation-card">
+            KJV<br /><small>King James Version</small>
+          </div>
+          <div class="translation-card">
+            NASB<br /><small>New American Standard Bible</small>
+          </div>
+          <div class="translation-card">
+            NLT<br /><small>New Living Translation</small>
+          </div>
+          <div class="translation-card">
+            TLB<br /><small>The Living Bible</small>
+          </div>
+          <div class="translation-card">
+            CNVS<br /><small>Chinese New Version Simplified</small>
+          </div>
+          <div class="translation-card">
+            CUNPSS-上帝<br /><small>Chinese Union (God)</small>
+          </div>
+          <div class="translation-card">
+            CUNPSS-神<br /><small>Chinese Union (Shen)</small>
+          </div>
+          <div class="translation-card">
+            TB<br /><small>Terjemahan Baru</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="endpoints" class="section">
+        <h2>🔗 API Endpoints</h2>
+
+        <div id="single-verse">
+          <h3>Single Verse Endpoint</h3>
+          <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/{translation}/single</span>
+          </div>
+
+          <p>Retrieves a single verse from the specified translation.</p>
+
+          <h4>Parameters:</h4>
+          <div class="parameter">
+            <span class="param-name">translation</span>
+            <span class="param-type">(path parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The Bible translation code (e.g., NIV, ESV, KJV)
+          </div>
+          <div class="parameter">
+            <span class="param-name">book</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The name of the Bible book (e.g., Genesis, Matthew, Psalms)
+          </div>
+          <div class="parameter">
+            <span class="param-name">chapter</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The chapter number (integer)
+          </div>
+          <div class="parameter">
+            <span class="param-name">verse</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The verse number (integer)
+          </div>
+
+          <div class="example">
+            <div class="example-title">📝 Example Request:</div>
+            <div class="code">
+              GET /NIV/single?book=Genesis&chapter=1&verse=1
+            </div>
+          </div>
+
+          <div class="response">
+            <div class="response-title">✅ Example Response:</div>
+            <div class="code">
+              { "book": "Genesis", "chapter": 1, "verse": 1, "content": "In the
+              beginning God created the heavens and the earth." }
+            </div>
+          </div>
+        </div>
+
+        <div id="multiple-verses">
+          <h3>Multiple Verses Endpoint</h3>
+          <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/{translation}/multiple</span>
+          </div>
+
+          <p>
+            Retrieves multiple verses or verse ranges from the specified
+            translation.
+          </p>
+
+          <h4>Parameters:</h4>
+          <div class="parameter">
+            <span class="param-name">translation</span>
+            <span class="param-type">(path parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The Bible translation code (e.g., NIV, ESV, KJV)
+          </div>
+          <div class="parameter">
+            <span class="param-name">verses</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Required</span>
+            <br />Comma-separated list of verse references
+          </div>
+
+          <h4>Verse Reference Formats:</h4>
+          <ul>
+            <li><strong>Single verse:</strong> "Genesis 1:1"</li>
+            <li><strong>Verse range:</strong> "Genesis 1:1-3"</li>
+            <li><strong>Chapter range:</strong> "Genesis 1:1-2:3"</li>
+            <li><strong>Entire chapter:</strong> "Genesis 1"</li>
+            <li><strong>Multiple chapters:</strong> "Genesis 1-3"</li>
+          </ul>
+
+          <div class="example">
+            <div class="example-title">📝 Example Request:</div>
+            <div class="code">
+              GET /NIV/multiple?verses=Genesis 1:1-3,Matthew 1:1-25,Psalms 1:1-6
+            </div>
+          </div>
+
+          <div class="response">
+            <div class="response-title">✅ Example Response:</div>
+            <div class="code">
+              [ { "book": "Genesis", "chapter": 1, "verse": 1, "content": "In
+              the beginning God created the heavens and the earth." }, { "book":
+              "Genesis", "chapter": 1, "verse": 2, "content": "Now the earth was
+              formless and empty..." }, ... ]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="examples" class="section">
+        <h2>💡 Examples</h2>
+
+        <h3>JavaScript/Fetch Example</h3>
+        <div class="code">
+          // Fetch a single verse
+          fetch('http://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16')
+          .then(response => response.json()) .then(data => console.log(data));
+          // Fetch multiple verses
+          fetch('http://api.blessings365.top/ESV/multiple?verses=Psalms
+          23:1-6,John 14:6') .then(response => response.json()) .then(data =>
+          console.log(data));
+        </div>
+
+        <h3>cURL Example</h3>
+        <div class="code">
+          # Single verse curl
+          "http://api.blessings365.top/KJV/single?book=Romans&chapter=8&verse=28"
+          # Multiple verses curl
+          "http://api.blessings365.top/NASB/multiple?verses=1 Corinthians
+          13:4-8,Ephesians 2:8-9"
+        </div>
+
+        <h3>Python Example</h3>
+        <div class="code">
+          import requests # Single verse response =
+          requests.get('http://api.blessings365.top/NLT/single', params={'book':
+          'Philippians', 'chapter': 4, 'verse': 13}) verse = response.json()
+          print(f"{verse['book']} {verse['chapter']}:{verse['verse']} -
+          {verse['content']}") # Multiple verses response =
+          requests.get('http://api.blessings365.top/ESV/multiple',
+          params={'verses': 'Isaiah 40:31,Jeremiah 29:11'}) verses =
+          response.json() for verse in verses: print(f"{verse['book']}
+          {verse['chapter']}:{verse['verse']} - {verse['content']}")
+        </div>
+      </section>
+
+      <section id="error-handling" class="section">
+        <h2>⚠️ Error Handling</h2>
+
+        <h3>404 - Verse Not Found</h3>
+        <div class="error">
+          <div class="error-title">Error Response:</div>
+          <div class="code">{ "error": "Verse not found: Genesis 1:999" }</div>
+        </div>
+
+        <h3>500 - Server Error</h3>
+        <div class="error">
+          <div class="error-title">Error Response:</div>
+          <div class="code">{ "error": "Error fetching the verse." }</div>
+        </div>
+
+        <h3>Invalid Translation</h3>
+        <p>
+          If you specify a translation that doesn't exist, the server will
+          return a 500 error. Make sure to use one of the supported translations
+          listed above.
+        </p>
+
+        <h3>Invalid Verse Format</h3>
+        <p>
+          For the multiple verses endpoint, ensure your verse references follow
+          the supported formats. Invalid formats will result in a 500 error.
+        </p>
+      </section>
+
+      <section id="getting-started" class="section">
+        <h2>🚀 Getting Started</h2>
+
+        <h3>Local Development</h3>
+        <ol>
+          <li>Clone the repository</li>
+          <li>Install dependencies: <code>npm install</code></li>
+          <li>Start the server: <code>npm start</code></li>
+          <li>
+            The API will be available at
+            <code>http://api.blessings365.top</code>
+          </li>
+        </ol>
+
+        <h3>Testing the API</h3>
+        <p>
+          You can test the API using any HTTP client. Here are some quick test
+          URLs:
+        </p>
+        <ul>
+          <li>
+            <a
+              href="http://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16"
+              target="_blank"
+              >John 3:16 (NIV)</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://api.blessings365.top/ESV/single?book=Psalms&chapter=23&verse=1"
+              target="_blank"
+              >Psalms 23:1 (ESV)</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://api.blessings365.top/KJV/multiple?verses=Genesis 1:1-3"
+              target="_blank"
+              >Genesis 1:1-3 (KJV)</a
+            >
+          </li>
+        </ul>
+
+        <div class="note">
+          <div class="note-title">📋 Note</div>
+          <p>
+            Make sure the server is running on
+            <code>http://api.blessings365.top</code> before testing these URLs.
+          </p>
+        </div>
+      </section>
+
+      <footer class="section" style="text-align: center; color: #666">
+        <p>© 2024-2025 Blessings API</p>
+        <p>Made with ❤️ to spread the Word through technology</p>
+      </footer>
+    </div>
+  </body>
+</html>
