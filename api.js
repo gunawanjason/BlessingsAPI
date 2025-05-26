@@ -14,6 +14,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Serve the documentation page at root
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
 app.get("/:translation/single", async (req, res) => {
   const { translation } = req.params;
   let { book, chapter, verse } = req.query;
