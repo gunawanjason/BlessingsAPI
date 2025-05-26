@@ -278,6 +278,10 @@
             <ul>
               <li><a href="#single-verse">Single Verse</a></li>
               <li><a href="#multiple-verses">Multiple Verses</a></li>
+              <li><a href="#keyword-search">Keyword Search</a></li>
+              <li>
+                <a href="#multi-translation-search">Multi-Translation Search</a>
+              </li>
             </ul>
           </li>
           <li><a href="#examples">Examples</a></li>
@@ -301,6 +305,8 @@
             <li>Multiple Bible translations support</li>
             <li>Single verse retrieval</li>
             <li>Multiple verse range queries</li>
+            <li>Keyword search within translations</li>
+            <li>Multi-translation keyword search</li>
             <li>Flexible verse reference formatting</li>
             <li>JSON response format</li>
             <li>CORS enabled for web applications</li>
@@ -461,6 +467,147 @@
             </div>
           </div>
         </div>
+
+        <div id="keyword-search">
+          <h3>Keyword Search Endpoint</h3>
+          <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/{translation}/search</span>
+          </div>
+
+          <p>
+            Search for verses containing specific keywords within a single
+            translation.
+          </p>
+
+          <h4>Parameters:</h4>
+          <div class="parameter">
+            <span class="param-name">translation</span>
+            <span class="param-type">(path parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The Bible translation code (e.g., NIV, ESV, KJV)
+          </div>
+          <div class="parameter">
+            <span class="param-name">keyword</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The keyword or phrase to search for
+          </div>
+          <div class="parameter">
+            <span class="param-name">limit</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Optional</span>
+            <br />Maximum number of results to return (default: 50)
+          </div>
+          <div class="parameter">
+            <span class="param-name">book</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Optional</span>
+            <br />Filter results by specific book name (e.g., "Genesis",
+            "Matthew")
+          </div>
+          <div class="parameter">
+            <span class="param-name">testament</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Optional</span>
+            <br />Filter by testament: "old"/"ot" for Old Testament, "new"/"nt"
+            for New Testament
+          </div>
+
+          <div class="example">
+            <div class="example-title">📝 Example Requests:</div>
+            <div class="code">
+              # Basic search GET /NIV/search?keyword=love&limit=10 # Search in
+              specific book GET /NIV/search?keyword=faith&book=Hebrews&limit=5 #
+              Search in Old Testament only GET
+              /NIV/search?keyword=covenant&testament=old&limit=20 # Search in
+              New Testament only GET
+              /NIV/search?keyword=grace&testament=new&limit=15
+            </div>
+          </div>
+
+          <div class="response">
+            <div class="response-title">✅ Example Response:</div>
+            <div class="code">
+              { "translation": "NIV", "keyword": "love", "total_results": 10,
+              "results": [ { "book": "John", "chapter": 3, "verse": 16,
+              "content": "For God so loved the world that he gave his one and
+              only Son...", "match_context": "For God so **loved** the world
+              that he gave his one" } ] }
+            </div>
+          </div>
+        </div>
+
+        <div id="multi-translation-search">
+          <h3>Multi-Translation Search Endpoint</h3>
+          <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/search</span>
+          </div>
+
+          <p>
+            Search for verses containing specific keywords across multiple
+            translations simultaneously.
+          </p>
+
+          <h4>Parameters:</h4>
+          <div class="parameter">
+            <span class="param-name">keyword</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The keyword or phrase to search for
+          </div>
+          <div class="parameter">
+            <span class="param-name">translations</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Optional</span>
+            <br />Comma-separated list of translations to search (default: NIV)
+          </div>
+          <div class="parameter">
+            <span class="param-name">limit</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Optional</span>
+            <br />Maximum number of results per translation (default: 50)
+          </div>
+          <div class="parameter">
+            <span class="param-name">book</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Optional</span>
+            <br />Filter results by specific book name (e.g., "Genesis",
+            "Matthew")
+          </div>
+          <div class="parameter">
+            <span class="param-name">testament</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Optional</span>
+            <br />Filter by testament: "old"/"ot" for Old Testament, "new"/"nt"
+            for New Testament
+          </div>
+
+          <div class="example">
+            <div class="example-title">📝 Example Requests:</div>
+            <div class="code">
+              # Basic multi-translation search GET
+              /search?keyword=faith&translations=NIV,ESV,KJV&limit=5 # Search
+              specific book across translations GET
+              /search?keyword=love&translations=NIV,ESV&book=1Corinthians&limit=10
+              # Search Old Testament across multiple translations GET
+              /search?keyword=righteous&translations=NIV,KJV,NASB&testament=old&limit=15
+            </div>
+          </div>
+
+          <div class="response">
+            <div class="response-title">✅ Example Response:</div>
+            <div class="code">
+              { "keyword": "faith", "translations": ["NIV", "ESV", "KJV"],
+              "total_results": 15, "results_by_translation": [ { "translation":
+              "NIV", "results": [ { "book": "Hebrews", "chapter": 11, "verse":
+              1, "content": "Now faith is confidence in what we hope for...",
+              "match_context": "Now **faith** is confidence in what we hope" } ]
+              } ] }
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="examples" class="section">
@@ -474,7 +621,18 @@
           // Fetch multiple verses
           fetch('http://api.blessings365.top/ESV/multiple?verses=Psalms
           23:1-6,John 14:6') .then(response => response.json()) .then(data =>
-          console.log(data));
+          console.log(data)); // Search for keywords in a single translation
+          fetch('http://api.blessings365.top/NIV/search?keyword=love&limit=10')
+          .then(response => response.json()).then(data => console.log(data)); //
+          Search in specific book
+          fetch('http://api.blessings365.top/NIV/search?keyword=faith&book=Hebrews&limit=5')
+          .then(response => response.json()).then(data => console.log(data)); //
+          Search in Old Testament only
+          fetch('http://api.blessings365.top/ESV/search?keyword=covenant&testament=old&limit=20')
+          .then(response => response.json()).then(data => console.log(data)); //
+          Search across multiple translations with filters
+          fetch('http://api.blessings365.top/search?keyword=grace&translations=NIV,ESV,KJV&testament=new&limit=5')
+          .then(response => response.json()).then(data => console.log(data));
         </div>
 
         <h3>cURL Example</h3>
@@ -483,7 +641,14 @@
           "http://api.blessings365.top/KJV/single?book=Romans&chapter=8&verse=28"
           # Multiple verses curl
           "http://api.blessings365.top/NASB/multiple?verses=1 Corinthians
-          13:4-8,Ephesians 2:8-9"
+          13:4-8,Ephesians 2:8-9" # Search in single translation curl
+          "http://api.blessings365.top/NIV/search?keyword=love&limit=10" #
+          Search in specific book curl
+          "http://api.blessings365.top/NIV/search?keyword=faith&book=Hebrews&limit=5"
+          # Search in Old Testament only curl
+          "http://api.blessings365.top/ESV/search?keyword=covenant&testament=old&limit=20"
+          # Search across multiple translations with filters curl
+          "http://api.blessings365.top/search?keyword=grace&translations=NIV,ESV,KJV&testament=new&limit=5"
         </div>
 
         <h3>Python Example</h3>
@@ -496,7 +661,32 @@
           requests.get('http://api.blessings365.top/ESV/multiple',
           params={'verses': 'Isaiah 40:31,Jeremiah 29:11'}) verses =
           response.json() for verse in verses: print(f"{verse['book']}
-          {verse['chapter']}:{verse['verse']} - {verse['content']}")
+          {verse['chapter']}:{verse['verse']} - {verse['content']}") # Search in
+          single translation response =
+          requests.get('http://api.blessings365.top/NIV/search',
+          params={'keyword': 'love', 'limit': 10}) search_results =
+          response.json() print(f"Found {search_results['total_results']} verses
+          containing '{search_results['keyword']}'") for result in
+          search_results['results']: print(f"{result['book']}
+          {result['chapter']}:{result['verse']} - {result['content']}") # Search
+          in specific book response =
+          requests.get('http://api.blessings365.top/NIV/search',
+          params={'keyword': 'faith', 'book': 'Hebrews', 'limit': 5})
+          book_search = response.json() print(f"\nFound
+          {book_search['total_results']} verses in
+          {book_search['book_filter']}") # Search in Old Testament only response
+          = requests.get('http://api.blessings365.top/ESV/search',
+          params={'keyword': 'covenant', 'testament': 'old', 'limit': 20})
+          ot_search = response.json() print(f"\nOld Testament search for
+          '{ot_search['keyword']}': {ot_search['total_results']} results") #
+          Search across multiple translations with filters response =
+          requests.get('http://api.blessings365.top/search', params={'keyword':
+          'grace', 'translations': 'NIV,ESV,KJV', 'testament': 'new', 'limit':
+          5}) multi_search = response.json() for translation_result in
+          multi_search['results_by_translation']:
+          print(f"\n{translation_result['translation']} Translation:") for
+          result in translation_result['results']: print(f"{result['book']}
+          {result['chapter']}:{result['verse']} - {result['content']}")
         </div>
       </section>
 
@@ -513,6 +703,12 @@
         <div class="error">
           <div class="error-title">Error Response:</div>
           <div class="code">{ "error": "Error fetching the verse." }</div>
+        </div>
+
+        <h3>400 - Missing Required Parameters</h3>
+        <div class="error">
+          <div class="error-title">Search Error Response:</div>
+          <div class="code">{ "error": "Keyword parameter is required" }</div>
         </div>
 
         <h3>Invalid Translation</h3>

@@ -26,6 +26,9 @@ You can start using it immediately without any setup required!
 - 📖 **Multiple Bible Translations**: Support for 11+ Bible translations including NIV, ESV, KJV, NASB, and more
 - 🔍 **Single Verse Lookup**: Fetch individual verses by book, chapter, and verse number
 - 📚 **Multiple Verse Ranges**: Retrieve verse ranges, entire chapters, or multiple references in one request
+- 🔎 **Keyword Search**: Search for verses containing specific keywords across translations
+- 📖 **Advanced Filtering**: Filter searches by specific books or Old/New Testament
+- 🌍 **Multi-Translation Search**: Search across multiple Bible translations simultaneously
 - 🌐 **CORS Enabled**: Ready for web application integration
 - 🚀 **Fast & Lightweight**: Minimal dependencies with efficient JSON data structure
 - 📱 **Flexible Formatting**: Support for various verse reference formats
@@ -66,6 +69,16 @@ curl "https://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16"
 
 ```bash
 curl "https://api.blessings365.top/ESV/multiple?verses=Genesis 1:1-3,Psalms 23:1-6"
+```
+
+### Search for Keywords
+
+```bash
+# Search in single translation
+curl "https://api.blessings365.top/NIV/search?keyword=love&limit=10"
+
+# Search across multiple translations
+curl "https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV,KJV&limit=5"
 ```
 
 ### Local Development
@@ -138,6 +151,54 @@ GET /{translation}/multiple
 GET https://api.blessings365.top/NIV/multiple?verses=Genesis 1:1-3,Matthew 1:1-25,Psalms 1:1-6
 ```
 
+#### Keyword Search (Single Translation)
+```
+GET /{translation}/search
+```
+
+**Parameters:**
+- `translation` (path): Bible translation code (e.g., NIV, ESV, KJV)
+- `keyword` (query): The keyword or phrase to search for (required)
+- `limit` (query): Maximum number of results to return (default: 50)
+- `book` (query): Filter results by specific book name (optional)
+- `testament` (query): Filter by testament - "old"/"ot" for Old Testament, "new"/"nt" for New Testament (optional)
+
+**Examples:**
+```
+# Basic search
+GET https://api.blessings365.top/NIV/search?keyword=love&limit=10
+
+# Search in specific book
+GET https://api.blessings365.top/NIV/search?keyword=faith&book=Hebrews&limit=5
+
+# Search in Old Testament only
+GET https://api.blessings365.top/ESV/search?keyword=covenant&testament=old&limit=20
+```
+
+#### Multi-Translation Search
+```
+GET /search
+```
+
+**Parameters:**
+- `keyword` (query): The keyword or phrase to search for (required)
+- `translations` (query): Comma-separated list of translations to search (default: NIV)
+- `limit` (query): Maximum number of results per translation (default: 50)
+- `book` (query): Filter results by specific book name (optional)
+- `testament` (query): Filter by testament - "old"/"ot" for Old Testament, "new"/"nt" for New Testament (optional)
+
+**Examples:**
+```
+# Basic multi-translation search
+GET https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV,KJV&limit=5
+
+# Search specific book across translations
+GET https://api.blessings365.top/search?keyword=love&translations=NIV,ESV&book=1Corinthians&limit=10
+
+# Search New Testament across multiple translations
+GET https://api.blessings365.top/search?keyword=grace&translations=NIV,KJV,NASB&testament=new&limit=15
+```
+
 ## 📚 Available Translations
 
 | Code | Translation | Language |
@@ -173,6 +234,28 @@ async function getVerses() {
     console.log(`${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`);
   });
 }
+
+// Search for keywords
+async function searchVerses() {
+  const response = await fetch('https://api.blessings365.top/NIV/search?keyword=love&limit=10');
+  const searchResults = await response.json();
+  console.log(`Found ${searchResults.total_results} verses containing '${searchResults.keyword}'`);
+  searchResults.results.forEach(result => {
+    console.log(`${result.book} ${result.chapter}:${result.verse} - ${result.content}`);
+  });
+}
+
+// Search with filters
+async function searchWithFilters() {
+  const response = await fetch('https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV,KJV&testament=new&limit=5');
+  const multiSearch = await response.json();
+  multiSearch.results_by_translation.forEach(translationResult => {
+    console.log(`\n${translationResult.translation} Translation:`);
+    translationResult.results.forEach(result => {
+      console.log(`${result.book} ${result.chapter}:${result.verse} - ${result.content}`);
+    });
+  });
+}
 ```
 
 ### Python
@@ -194,6 +277,26 @@ def get_multiple_verses():
     verses = response.json()
     for verse in verses:
         print(f"{verse['book']} {verse['chapter']}:{verse['verse']} - {verse['content']}")
+
+# Search for keywords
+def search_verses():
+    response = requests.get('https://api.blessings365.top/NIV/search',
+                           params={'keyword': 'love', 'limit': 10})
+    search_results = response.json()
+    print(f"Found {search_results['total_results']} verses containing '{search_results['keyword']}'")
+    for result in search_results['results']:
+        print(f"{result['book']} {result['chapter']}:{result['verse']} - {result['content']}")
+
+# Search with filters
+def search_with_filters():
+    response = requests.get('https://api.blessings365.top/search',
+                           params={'keyword': 'faith', 'translations': 'NIV,ESV,KJV',
+                                  'testament': 'new', 'limit': 5})
+    multi_search = response.json()
+    for translation_result in multi_search['results_by_translation']:
+        print(f"\n{translation_result['translation']} Translation:")
+        for result in translation_result['results']:
+            print(f"{result['book']} {result['chapter']}:{result['verse']} - {result['content']}")
 ```
 
 ### cURL
@@ -204,6 +307,18 @@ curl "https://api.blessings365.top/KJV/single?book=Romans&chapter=8&verse=28"
 
 # Multiple verses with URL encoding
 curl "https://api.blessings365.top/NASB/multiple?verses=1%20Corinthians%2013:4-8,Ephesians%202:8-9"
+
+# Search in single translation
+curl "https://api.blessings365.top/NIV/search?keyword=love&limit=10"
+
+# Search in specific book
+curl "https://api.blessings365.top/NIV/search?keyword=faith&book=Hebrews&limit=5"
+
+# Search in Old Testament only
+curl "https://api.blessings365.top/ESV/search?keyword=covenant&testament=old&limit=20"
+
+# Search across multiple translations with filters
+curl "https://api.blessings365.top/search?keyword=grace&translations=NIV,ESV,KJV&testament=new&limit=5"
 ```
 
 ## ⚠️ Error Handling
@@ -221,6 +336,13 @@ curl "https://api.blessings365.top/NASB/multiple?verses=1%20Corinthians%2013:4-8
 ```json
 {
   "error": "Error fetching the verse."
+}
+```
+
+**400 - Missing Required Parameters (Search)**
+```json
+{
+  "error": "Keyword parameter is required"
 }
 ```
 
@@ -276,6 +398,15 @@ curl "https://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16"
 
 # Test multiple verses endpoint
 curl "https://api.blessings365.top/ESV/multiple?verses=Genesis 1:1-3"
+
+# Test keyword search endpoint
+curl "https://api.blessings365.top/NIV/search?keyword=love&limit=5"
+
+# Test multi-translation search endpoint
+curl "https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV&limit=3"
+
+# Test search with filters
+curl "https://api.blessings365.top/ESV/search?keyword=covenant&testament=old&limit=10"
 ```
 
 ## 🚀 Deployment
