@@ -103,11 +103,13 @@ For complete API documentation with interactive examples, open [`index.html`](in
 ### Base URL
 
 **Hosted API (Recommended):**
+
 ```
 https://api.blessings365.top
 ```
 
 **Local Development:**
+
 ```
 http://localhost:3000
 ```
@@ -115,31 +117,37 @@ http://localhost:3000
 ### Endpoints
 
 #### Single Verse
+
 ```
 GET /{translation}/single
 ```
 
 **Parameters:**
+
 - `translation` (path): Bible translation code (e.g., NIV, ESV, KJV)
 - `book` (query): Bible book name (e.g., Genesis, Matthew, Psalms)
 - `chapter` (query): Chapter number (integer)
 - `verse` (query): Verse number (integer)
 
 **Example:**
+
 ```
 GET https://api.blessings365.top/NIV/single?book=Genesis&chapter=1&verse=1
 ```
 
 #### Multiple Verses
+
 ```
 GET /{translation}/multiple
 ```
 
 **Parameters:**
+
 - `translation` (path): Bible translation code
 - `verses` (query): Comma-separated list of verse references
 
 **Supported Formats:**
+
 - Single verse: `"Genesis 1:1"`
 - Verse range: `"Genesis 1:1-3"`
 - Chapter range: `"Genesis 1:1-2:3"`
@@ -147,16 +155,19 @@ GET /{translation}/multiple
 - Multiple chapters: `"Genesis 1-3"`
 
 **Example:**
+
 ```
 GET https://api.blessings365.top/NIV/multiple?verses=Genesis 1:1-3,Matthew 1:1-25,Psalms 1:1-6
 ```
 
 #### Keyword Search (Single Translation)
+
 ```
 GET /{translation}/search
 ```
 
 **Parameters:**
+
 - `translation` (path): Bible translation code (e.g., NIV, ESV, KJV)
 - `keyword` (query): The keyword or phrase to search for (required)
 - `limit` (query): Maximum number of results to return (default: 50)
@@ -164,6 +175,7 @@ GET /{translation}/search
 - `testament` (query): Filter by testament - "old"/"ot" for Old Testament, "new"/"nt" for New Testament (optional)
 
 **Examples:**
+
 ```
 # Basic search
 GET https://api.blessings365.top/NIV/search?keyword=love&limit=10
@@ -176,11 +188,13 @@ GET https://api.blessings365.top/ESV/search?keyword=covenant&testament=old&limit
 ```
 
 #### Multi-Translation Search
+
 ```
 GET /search
 ```
 
 **Parameters:**
+
 - `keyword` (query): The keyword or phrase to search for (required)
 - `translations` (query): Comma-separated list of translations to search (default: NIV)
 - `limit` (query): Maximum number of results per translation (default: 50)
@@ -188,6 +202,7 @@ GET /search
 - `testament` (query): Filter by testament - "old"/"ot" for Old Testament, "new"/"nt" for New Testament (optional)
 
 **Examples:**
+
 ```
 # Basic multi-translation search
 GET https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV,KJV&limit=5
@@ -201,18 +216,19 @@ GET https://api.blessings365.top/search?keyword=grace&translations=NIV,KJV,NASB&
 
 ## 📚 Available Translations
 
-| Code | Translation | Language |
-|------|-------------|----------|
-| `NIV` | New International Version | English |
-| `ESV` | English Standard Version | English |
-| `KJV` | King James Version | English |
-| `NASB` | New American Standard Bible | English |
-| `NLT` | New Living Translation | English |
-| `TLB` | The Living Bible | English |
-| `CNVS` | Chinese New Version Simplified | Chinese |
-| `CUNPSS-上帝` | Chinese Union (上帝) | Chinese |
-| `CUNPSS-神` | Chinese Union (神) | Chinese |
-| `TB` | Terjemahan Baru | Indonesian |
+| Code          | Translation                         | Language   |
+| ------------- | ----------------------------------- | ---------- |
+| `NIV`         | New International Version           | English    |
+| `ESV`         | English Standard Version            | English    |
+| `KJV`         | King James Version                  | English    |
+| `NASB`        | New American Standard Bible         | English    |
+| `NLT`         | New Living Translation              | English    |
+| `TLB`         | The Living Bible                    | English    |
+| `CNVS`        | Chinese New Version Simplified      | Chinese    |
+| `CUNPSS-上帝` | Chinese Union (上帝)                | Chinese    |
+| `CUNPSS-神`   | Chinese Union (神)                  | Chinese    |
+| `CUV`         | Chinese Union Version (Traditional) | Chinese    |
+| `TB`          | Terjemahan Baru                     | Indonesian |
 
 ## 💡 Usage Examples
 
@@ -221,38 +237,56 @@ GET https://api.blessings365.top/search?keyword=grace&translations=NIV,KJV,NASB&
 ```javascript
 // Single verse
 async function getVerse() {
-  const response = await fetch('https://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16');
+  const response = await fetch(
+    "https://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16"
+  );
   const verse = await response.json();
-  console.log(`${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`);
+  console.log(
+    `${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`
+  );
 }
 
 // Multiple verses
 async function getVerses() {
-  const response = await fetch('https://api.blessings365.top/ESV/multiple?verses=Psalms 23:1-6,John 14:6');
+  const response = await fetch(
+    "https://api.blessings365.top/ESV/multiple?verses=Psalms 23:1-6,John 14:6"
+  );
   const verses = await response.json();
-  verses.forEach(verse => {
-    console.log(`${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`);
+  verses.forEach((verse) => {
+    console.log(
+      `${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`
+    );
   });
 }
 
 // Search for keywords
 async function searchVerses() {
-  const response = await fetch('https://api.blessings365.top/NIV/search?keyword=love&limit=10');
+  const response = await fetch(
+    "https://api.blessings365.top/NIV/search?keyword=love&limit=10"
+  );
   const searchResults = await response.json();
-  console.log(`Found ${searchResults.total_results} verses containing '${searchResults.keyword}'`);
-  searchResults.results.forEach(result => {
-    console.log(`${result.book} ${result.chapter}:${result.verse} - ${result.content}`);
+  console.log(
+    `Found ${searchResults.total_results} verses containing '${searchResults.keyword}'`
+  );
+  searchResults.results.forEach((result) => {
+    console.log(
+      `${result.book} ${result.chapter}:${result.verse} - ${result.content}`
+    );
   });
 }
 
 // Search with filters
 async function searchWithFilters() {
-  const response = await fetch('https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV,KJV&testament=new&limit=5');
+  const response = await fetch(
+    "https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV,KJV&testament=new&limit=5"
+  );
   const multiSearch = await response.json();
-  multiSearch.results_by_translation.forEach(translationResult => {
+  multiSearch.results_by_translation.forEach((translationResult) => {
     console.log(`\n${translationResult.translation} Translation:`);
-    translationResult.results.forEach(result => {
-      console.log(`${result.book} ${result.chapter}:${result.verse} - ${result.content}`);
+    translationResult.results.forEach((result) => {
+      console.log(
+        `${result.book} ${result.chapter}:${result.verse} - ${result.content}`
+      );
     });
   });
 }
@@ -326,6 +360,7 @@ curl "https://api.blessings365.top/search?keyword=grace&translations=NIV,ESV,KJV
 ### Common Error Responses
 
 **404 - Verse Not Found**
+
 ```json
 {
   "error": "Verse not found: Genesis 1:999"
@@ -333,6 +368,7 @@ curl "https://api.blessings365.top/search?keyword=grace&translations=NIV,ESV,KJV
 ```
 
 **500 - Server Error**
+
 ```json
 {
   "error": "Error fetching the verse."
@@ -340,6 +376,7 @@ curl "https://api.blessings365.top/search?keyword=grace&translations=NIV,ESV,KJV
 ```
 
 **400 - Missing Required Parameters (Search)**
+
 ```json
 {
   "error": "Keyword parameter is required"
@@ -422,6 +459,7 @@ vercel deploy
 ### Other Platforms
 
 The API can be deployed on any platform that supports Node.js:
+
 - Heroku
 - Railway
 - DigitalOcean App Platform
