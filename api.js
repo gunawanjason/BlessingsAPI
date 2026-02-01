@@ -19,47 +19,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.get("/debug-file-system", (req, res) => {
-  const fs = require('fs');
-  try {
-    const root = __dirname;
-    const directoryStructure = {};
-
-    // List root
-    directoryStructure.root = fs.readdirSync(root);
-
-    // List json dir
-    const jsonPath = path.join(root, 'json');
-    if (fs.existsSync(jsonPath)) {
-      directoryStructure.json = fs.readdirSync(jsonPath);
-
-      // List json/pericope
-      const pericopePath = path.join(jsonPath, 'pericope');
-      if (fs.existsSync(pericopePath)) {
-        directoryStructure.jsonPericope = fs.readdirSync(pericopePath);
-      } else {
-        directoryStructure.jsonPericope = "Not Found";
-      }
-
-      // List json/verses
-      const versesPath = path.join(jsonPath, 'verses');
-      if (fs.existsSync(versesPath)) {
-        directoryStructure.jsonVerses = fs.readdirSync(versesPath);
-      } else {
-        directoryStructure.jsonVerses = "Not Found";
-      }
-    } else {
-      directoryStructure.json = "Not Found";
-    }
-
-    res.json({
-      base_dir: root,
-      structure: directoryStructure
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message, stack: error.stack });
-  }
-});
 
 app.get("/:translation/single", async (req, res) => {
   const { translation } = req.params;
