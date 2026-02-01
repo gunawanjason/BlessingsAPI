@@ -535,11 +535,6 @@
       {
         "heading": "The Burning Bush",
         "start": "1",
-        "end": "14"
-      },
-      {
-        "heading": "am who\nam\nam",
-        "start": "15",
         "end": "22"
       }
     ],
@@ -9184,26 +9179,6 @@
       {
         "heading": "Daniel Interprets the Handwriting",
         "start": "13",
-        "end": "25"
-      },
-      {
-        "heading": "ene\nene\nekel\narsin",
-        "start": "26",
-        "end": "26"
-      },
-      {
-        "heading": "ene",
-        "start": "27",
-        "end": "27"
-      },
-      {
-        "heading": "ekel",
-        "start": "28",
-        "end": "28"
-      },
-      {
-        "heading": "eres",
-        "start": "29",
         "end": "31"
       }
     ],
@@ -10491,11 +10466,6 @@
       {
         "heading": "Jesus Walks on the Water",
         "start": "22",
-        "end": "25"
-      },
-      {
-        "heading": "a.m.\na.m.",
-        "start": "26",
         "end": "33"
       },
       {
@@ -10857,11 +10827,6 @@
       {
         "heading": "The Death of Jesus",
         "start": "45",
-        "end": "45"
-      },
-      {
-        "heading": "p.m.",
-        "start": "46",
         "end": "56"
       },
       {
@@ -11058,11 +11023,6 @@
       {
         "heading": "Jesus Walks on the Water",
         "start": "45",
-        "end": "48"
-      },
-      {
-        "heading": "a.m.\na.m.",
-        "start": "49",
         "end": "52"
       },
       {
@@ -11287,11 +11247,6 @@
       {
         "heading": "No One Knows That Day or Hour",
         "start": "32",
-        "end": "35"
-      },
-      {
-        "heading": "a.m.",
-        "start": "36",
         "end": "37"
       }
     ],
@@ -11371,21 +11326,11 @@
       {
         "heading": "The Crucifixion",
         "start": "21",
-        "end": "25"
-      },
-      {
-        "heading": "a.m.",
-        "start": "26",
         "end": "32"
       },
       {
         "heading": "The Death of Jesus",
         "start": "33",
-        "end": "33"
-      },
-      {
-        "heading": "p.m.",
-        "start": "34",
         "end": "41"
       },
       {
@@ -12191,11 +12136,6 @@
       {
         "heading": "The Death of Jesus",
         "start": "44",
-        "end": "44"
-      },
-      {
-        "heading": "p.m.",
-        "start": "45",
         "end": "49"
       },
       {
@@ -12247,11 +12187,6 @@
       {
         "heading": "Jesus Calls the First Disciples",
         "start": "35",
-        "end": "39"
-      },
-      {
-        "heading": "p.m.",
-        "start": "40",
         "end": "42"
       },
       {
@@ -12303,11 +12238,6 @@
       {
         "heading": "Jesus Heals an Official’s Son",
         "start": "46",
-        "end": "52"
-      },
-      {
-        "heading": "p.m.",
-        "start": "53",
         "end": "54"
       }
     ],
@@ -12708,11 +12638,6 @@
       {
         "heading": "Peter’s Sermon at Pentecost",
         "start": "14",
-        "end": "15"
-      },
-      {
-        "heading": "a.m.",
-        "start": "16",
         "end": "41"
       },
       {
@@ -12725,11 +12650,6 @@
       {
         "heading": "The Lame Beggar Healed",
         "start": "1",
-        "end": "1"
-      },
-      {
-        "heading": "p.m.",
-        "start": "2",
         "end": "10"
       },
       {
@@ -12854,21 +12774,11 @@
       {
         "heading": "Peter and Cornelius",
         "start": "1",
-        "end": "3"
-      },
-      {
-        "heading": "p.m.",
-        "start": "4",
         "end": "8"
       },
       {
         "heading": "Peter’s Vision",
         "start": "9",
-        "end": "30"
-      },
-      {
-        "heading": "p.m.",
-        "start": "31",
         "end": "33"
       },
       {
@@ -13037,11 +12947,6 @@
       {
         "heading": "Paul in Ephesus",
         "start": "1",
-        "end": "9"
-      },
-      {
-        "heading": "a.m.\np.m.",
-        "start": "10",
         "end": "10"
       },
       {
@@ -13125,11 +13030,6 @@
       {
         "heading": "Paul Sent to Felix the Governor",
         "start": "23",
-        "end": "23"
-      },
-      {
-        "heading": "p.m.",
-        "start": "24",
         "end": "35"
       }
     ],
