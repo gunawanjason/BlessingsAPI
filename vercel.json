@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "./api.js",
-      "use": "@now/node",
+      "use": "@vercel/node",
       "config": {
         "includeFiles": ["json/**", "index.html"]
       }

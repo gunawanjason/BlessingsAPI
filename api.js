@@ -429,7 +429,7 @@ async function fetchVerses(translation, verseString, idx) {
 async function readTranslation(translation) {
   const fileName = `${translation.toUpperCase()}.json`;
   // Verses are now in json/verses
-  const jsonDirectory = path.join(process.cwd(), "json", "verses");
+  const jsonDirectory = path.join(__dirname, "json", "verses");
   const data = await readFile(path.join(jsonDirectory, fileName), "utf8");
   return JSON.parse(data);
 }
@@ -437,7 +437,7 @@ async function readTranslation(translation) {
 async function readPericope(translation) {
   const fileName = `${translation.toUpperCase()}.json`;
   // Pericope data is in json/pericope
-  const jsonDirectory = path.join(process.cwd(), "json", "pericope");
+  const jsonDirectory = path.join(__dirname, "json", "pericope");
   const data = await readFile(path.join(jsonDirectory, fileName), "utf8");
   return JSON.parse(data);
 }
