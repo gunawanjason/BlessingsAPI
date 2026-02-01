@@ -280,6 +280,7 @@
           <ul>
             <li><a href="#single-verse">Single Verse</a></li>
             <li><a href="#multiple-verses">Multiple Verses</a></li>
+            <li><a href="#pericope">Pericope (Headings)</a></li>
             <li><a href="#keyword-search">Keyword Search</a></li>
             <li>
               <a href="#multi-translation-search">Multi-Translation Search</a>
@@ -469,6 +470,51 @@
             the beginning God created the heavens and the earth." }, { "book":
             "Genesis", "chapter": 1, "verse": 2, "content": "Now the earth was
             formless and empty..." }, ... ]
+          </div>
+        </div>
+
+        <div id="pericope">
+          <h3>Pericope (Headings) Endpoint</h3>
+          <div class="endpoint">
+            <span class="method">GET</span>
+            <span class="url">/{translation}/headings</span>
+          </div>
+
+          <p>Retrieves pericope headings for a specific book or chapter.</p>
+
+          <h4>Parameters:</h4>
+          <div class="parameter">
+            <span class="param-name">translation</span>
+            <span class="param-type">(path parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The Bible translation code (e.g., CNVS)
+          </div>
+          <div class="parameter">
+            <span class="param-name">book</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Required</span>
+            <br />The name of the Bible book (e.g., Genesis)
+          </div>
+          <div class="parameter">
+            <span class="param-name">chapter</span>
+            <span class="param-type">(query parameter)</span>
+            <span class="param-required">Optional</span>
+            <br />The chapter number (integer)
+          </div>
+
+          <div class="example">
+            <div class="example-title">📝 Example Request:</div>
+            <div class="code">
+              GET /CNVS/headings?book=Genesis&chapter=1
+            </div>
+          </div>
+
+          <div class="response">
+            <div class="response-title">✅ Example Response:</div>
+            <div class="code">
+              { "book": "Genesis", "chapter": 1, "headings": [ { "heading":
+              "The Creation", "range": "1-25", "start": "1", "end": "25" } ] }
+            </div>
           </div>
         </div>
       </div>
