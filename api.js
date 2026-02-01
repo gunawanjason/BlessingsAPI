@@ -69,7 +69,7 @@ app.get("/:translation/headings", async (req, res) => {
           headings: pericopeData[book][chapter]
         });
       } else {
-        res.json({ book, chapter, headings: [] });
+        res.json({ book, chapter: parseInt(chapter, 10), headings: [] });
       }
     } else {
       // Return headings for entire book
@@ -427,7 +427,7 @@ async function fetchVerses(translation, verseString, idx) {
 }
 
 async function readTranslation(translation) {
-  const fileName = `${translation}.json`;
+  const fileName = `${translation.toUpperCase()}.json`;
   // Verses are now in json/verses
   const jsonDirectory = path.join(process.cwd(), "json", "verses");
   const data = await readFile(path.join(jsonDirectory, fileName), "utf8");
@@ -435,7 +435,7 @@ async function readTranslation(translation) {
 }
 
 async function readPericope(translation) {
-  const fileName = `${translation}.json`;
+  const fileName = `${translation.toUpperCase()}.json`;
   // Pericope data is in json/pericope
   const jsonDirectory = path.join(process.cwd(), "json", "pericope");
   const data = await readFile(path.join(jsonDirectory, fileName), "utf8");
