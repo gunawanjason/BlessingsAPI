@@ -160,6 +160,24 @@ GET /{translation}/multiple
 GET https://api.blessings365.top/NIV/multiple?verses=Genesis 1:1-3,Matthew 1:1-25,Psalms 1:1-6
 ```
 
+#### Pericope (Headings)
+
+```
+GET /{translation}/headings
+```
+
+**Parameters:**
+
+- `translation` (path): Bible translation code (e.g., CNVS)
+- `book` (query): Bible book name (e.g., Genesis)
+- `chapter` (query): Chapter number (optional)
+
+**Example:**
+
+```
+GET https://api.blessings365.top/CNVS/headings?book=Genesis&chapter=1
+```
+
 #### Keyword Search (Single Translation)
 
 ```
@@ -238,23 +256,23 @@ GET https://api.blessings365.top/search?keyword=grace&translations=NIV,KJV,NASB&
 // Single verse
 async function getVerse() {
   const response = await fetch(
-    "https://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16"
+    "https://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16",
   );
   const verse = await response.json();
   console.log(
-    `${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`
+    `${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`,
   );
 }
 
 // Multiple verses
 async function getVerses() {
   const response = await fetch(
-    "https://api.blessings365.top/ESV/multiple?verses=Psalms 23:1-6,John 14:6"
+    "https://api.blessings365.top/ESV/multiple?verses=Psalms 23:1-6,John 14:6",
   );
   const verses = await response.json();
   verses.forEach((verse) => {
     console.log(
-      `${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`
+      `${verse.book} ${verse.chapter}:${verse.verse} - ${verse.content}`,
     );
   });
 }
@@ -262,15 +280,15 @@ async function getVerses() {
 // Search for keywords
 async function searchVerses() {
   const response = await fetch(
-    "https://api.blessings365.top/NIV/search?keyword=love&limit=10"
+    "https://api.blessings365.top/NIV/search?keyword=love&limit=10",
   );
   const searchResults = await response.json();
   console.log(
-    `Found ${searchResults.total_results} verses containing '${searchResults.keyword}'`
+    `Found ${searchResults.total_results} verses containing '${searchResults.keyword}'`,
   );
   searchResults.results.forEach((result) => {
     console.log(
-      `${result.book} ${result.chapter}:${result.verse} - ${result.content}`
+      `${result.book} ${result.chapter}:${result.verse} - ${result.content}`,
     );
   });
 }
@@ -278,14 +296,14 @@ async function searchVerses() {
 // Search with filters
 async function searchWithFilters() {
   const response = await fetch(
-    "https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV,KJV&testament=new&limit=5"
+    "https://api.blessings365.top/search?keyword=faith&translations=NIV,ESV,KJV&testament=new&limit=5",
   );
   const multiSearch = await response.json();
   multiSearch.results_by_translation.forEach((translationResult) => {
     console.log(`\n${translationResult.translation} Translation:`);
     translationResult.results.forEach((result) => {
       console.log(
-        `${result.book} ${result.chapter}:${result.verse} - ${result.content}`
+        `${result.book} ${result.chapter}:${result.verse} - ${result.content}`,
       );
     });
   });
@@ -353,6 +371,9 @@ curl "https://api.blessings365.top/ESV/search?keyword=covenant&testament=old&lim
 
 # Search across multiple translations with filters
 curl "https://api.blessings365.top/search?keyword=grace&translations=NIV,ESV,KJV&testament=new&limit=5"
+
+# Get Pericope (Headings)
+curl "https://api.blessings365.top/CNVS/headings?book=Genesis&chapter=1"
 ```
 
 ## ⚠️ Error Handling

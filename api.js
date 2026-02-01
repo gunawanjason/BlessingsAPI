@@ -49,6 +49,47 @@ app.get("/:translation/single", async (req, res) => {
   }
 });
 
+app.get("/:translation/headings", async (req, res) => {
+  const { translation } = req.params; // e.g., "CNVS"
+  const { book, chapter } = req.query;
+
+  if (!book) {
+    return res.status(400).json({ error: "Book parameter is required" });
+  }
+
+  try {
+    const pericopeData = await readPericope(translation);
+
+    if (chapter) {
+      // Return headings for specific chapter
+      if (pericopeData[book] && pericopeData[book][chapter]) {
+        res.json({
+          book,
+          chapter: parseInt(chapter, 10),
+          headings: pericopeData[book][chapter]
+        });
+      } else {
+        res.json({ book, chapter, headings: [] });
+      }
+    } else {
+      // Return headings for entire book
+      if (pericopeData[book]) {
+        res.json({
+          book,
+          headings: pericopeData[book]
+        });
+      } else {
+        res.json({ book, headings: {} });
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching headings:", error);
+    // If pericope file doesn't exist for this translation, return empty or error
+    // behaving gracefully if file not found might be better, or explicit 404
+    res.status(404).json({ error: "Headings not available for this translation." });
+  }
+});
+
 app.get("/:translation/multiple", async (req, res) => {
   const { translation } = req.params;
   const verses = req.query.verses.split(",");
@@ -387,7 +428,16 @@ async function fetchVerses(translation, verseString, idx) {
 
 async function readTranslation(translation) {
   const fileName = `${translation}.json`;
-  const jsonDirectory = path.join(process.cwd(), "json");
+  // Verses are now in json/verses
+  const jsonDirectory = path.join(process.cwd(), "json", "verses");
+  const data = await readFile(path.join(jsonDirectory, fileName), "utf8");
+  return JSON.parse(data);
+}
+
+async function readPericope(translation) {
+  const fileName = `${translation}.json`;
+  // Pericope data is in json/pericope
+  const jsonDirectory = path.join(process.cwd(), "json", "pericope");
   const data = await readFile(path.join(jsonDirectory, fileName), "utf8");
   return JSON.parse(data);
 }
