@@ -1,1522 +1,1261 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blessings API Documentation</title>
+  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="/assets/icon-192x192.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180x180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --primary-light: #818cf8;
-      --secondary: #8b5cf6;
-      --accent: #06b6d4;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --error: #ef4444;
-      --bg-primary: #ffffff;
-      --bg-secondary: #f8fafc;
-      --bg-tertiary: #f1f5f9;
-      --text-primary: #1e293b;
-      --text-secondary: #475569;
-      --text-muted: #94a3b8;
-      --border: #e2e8f0;
-      --code-bg: #1e293b;
-      --code-text: #e2e8f0;
-      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-      --radius: 12px;
-      --radius-sm: 8px;
+      /* Paper Theme */
+      --bg-primary: oklch(98% 0.005 80);
+      --bg-secondary: oklch(96% 0.005 80);
+      --bg-tertiary: oklch(94% 0.005 80);
+      
+      --text-primary: oklch(25% 0.01 260);
+      --text-secondary: oklch(45% 0.01 260);
+      --text-muted: oklch(65% 0.01 260);
+      
+      --border: oklch(88% 0.01 80);
+      --border-strong: oklch(75% 0.01 80);
+      
+      --accent-crimson: oklch(45% 0.15 25);
+      --accent-crimson-bg: oklch(95% 0.03 25);
+      
+      --method-get: oklch(35% 0.05 150);
+      --method-get-bg: oklch(95% 0.02 150);
+
+      --code-bg: oklch(20% 0.01 260);
+      --code-text: oklch(90% 0.01 80);
+      
+      --font-serif: 'Newsreader', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      
+      --radius: 0px;
+      --radius-sm: 0px;
+      
+      --space-xs: clamp(0.5rem, 1vw, 0.75rem);
+      --space-sm: clamp(1rem, 2vw, 1.5rem);
+      --space-md: clamp(2rem, 4vw, 3rem);
+      --space-lg: clamp(4rem, 8vw, 6rem);
+      --space-xl: clamp(6rem, 12vw, 10rem);
     }
 
     [data-theme="dark"] {
-      --bg-primary: #0f172a;
-      --bg-secondary: #1e293b;
-      --bg-tertiary: #334155;
-      --text-primary: #f1f5f9;
-      --text-secondary: #cbd5e1;
-      --text-muted: #64748b;
-      --border: #334155;
-      --code-bg: #0f172a;
-      --code-text: #e2e8f0;
+      --bg-primary: oklch(20% 0.01 260);
+      --bg-secondary: oklch(23% 0.01 260);
+      --bg-tertiary: oklch(26% 0.01 260);
+      
+      --text-primary: oklch(95% 0.01 80);
+      --text-secondary: oklch(80% 0.01 80);
+      --text-muted: oklch(60% 0.01 80);
+      
+      --border: oklch(35% 0.01 260);
+      --border-strong: oklch(45% 0.01 260);
+      
+      --accent-crimson: oklch(75% 0.15 25);
+      --accent-crimson-bg: oklch(30% 0.05 25);
+      
+      --method-get: oklch(80% 0.1 150);
+      --method-get-bg: oklch(30% 0.05 150);
+
+      --code-bg: oklch(15% 0.01 260);
+      --code-text: oklch(85% 0.01 80);
     }
 
-    * {
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
+      scroll-padding-top: calc(120px + var(--space-md));
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-serif);
+      font-size: 100%;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.7;
-      color: var(--text-primary);
-      background-color: var(--bg-secondary);
-      transition: background-color 0.3s, color 0.3s;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* Navigation */
-    .nav {
+    /* Layout */
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .layout {
+        grid-template-columns: 280px minmax(0, 1fr);
+        align-items: start;
+      }
+    }
+
+    /* Top Navigation */
+    .top-nav {
       position: sticky;
       top: 0;
       z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-sm) var(--space-md);
       background: var(--bg-primary);
       border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.9);
     }
 
-    [data-theme="dark"] .nav {
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 700;
-      font-size: 1.25rem;
+    .brand {
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
+      font-weight: 500;
       color: var(--text-primary);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .nav-brand span {
-      font-size: 1.5rem;
+    .brand-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      border-radius: 4px;
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: var(--space-sm);
     }
 
-    .theme-toggle {
-      background: var(--bg-tertiary);
+    .icon-btn {
+      background: transparent;
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 0.5rem 0.75rem;
-      cursor: pointer;
-      font-size: 1.25rem;
-      transition: all 0.2s;
-    }
-
-    .theme-toggle:hover {
-      background: var(--border);
-    }
-
-    .github-link {
+      color: var(--text-primary);
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      background: var(--text-primary);
-      color: var(--bg-primary);
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      font-weight: 500;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-sans);
+    }
+
+    .icon-btn:hover {
+      background: var(--bg-secondary);
+      border-color: var(--border-strong);
+    }
+
+    .btn-link {
+      font-family: var(--font-sans);
       font-size: 0.875rem;
-      transition: all 0.2s;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--bg-primary);
+      background: var(--text-primary);
+      padding: 0.5rem 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
     }
 
-    .github-link:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-
-    /* Layout */
-    .layout {
-      display: flex;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .sidebar {
-      width: 280px;
-      flex-shrink: 0;
-      padding: 2rem 1.5rem;
-      position: sticky;
-      top: 70px;
-      height: calc(100vh - 70px);
-      overflow-y: auto;
-    }
-
-    .main-content {
-      flex: 1;
-      min-width: 0;
-      padding: 2rem 3rem 4rem;
+    .btn-link:hover {
+      background: var(--accent-crimson);
+      color: #fff;
     }
 
     /* Sidebar */
-    .sidebar-title {
+    .sidebar {
+      position: sticky;
+      top: 65px;
+      z-index: 90;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-xs) var(--space-md);
+      display: flex;
+      gap: var(--space-md);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    
+    .sidebar::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .sidebar {
+        display: block;
+        top: 80px;
+        height: calc(100vh - 80px);
+        padding: var(--space-md);
+        border-right: 1px solid var(--border);
+        border-bottom: none;
+        overflow-y: auto;
+        white-space: normal;
+      }
+    }
+
+    .nav-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-group {
+        display: block;
+        margin-bottom: var(--space-md);
+      }
+    }
+
+    .nav-label {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-label {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        margin-bottom: var(--space-xs);
+      }
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-list {
+        display: block;
+      }
+    }
+
+    .nav-item a {
+      display: block;
+      padding: 0.25rem 0;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-item a {
+        padding: 0.35rem 0;
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
+    }
+
+    .nav-item a:hover {
+      color: var(--accent-crimson);
+    }
+
+    .nav-item.nested {
+      padding-left: 0;
+      border-left: none;
+      margin-left: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-item.nested {
+        padding-left: 1rem;
+        border-left: 1px solid var(--border);
+        margin-left: 0.25rem;
+      }
+    }
+
+    /* Main Content */
+    .main {
+      padding: var(--space-md);
+      padding-bottom: var(--space-xl);
+      max-width: 900px;
+      min-width: 0;
+      width: 100%;
+    }
+
+    /* Typography Elements */
+    h1, h2, h3, h4, h5 {
+      font-weight: 500;
+      color: var(--text-primary);
+      word-wrap: break-word;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-sm);
+      font-weight: 400;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: var(--space-lg);
+      max-width: 35ch;
+      line-height: 1.4;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-sm);
+      padding-bottom: var(--space-xs);
+      border-bottom: 1px solid var(--border);
+      letter-spacing: -0.01em;
+    }
+
+    .sub-title {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      margin-top: var(--space-md);
+      margin-bottom: var(--space-xs);
+    }
+
+    p {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+      color: var(--text-secondary);
+      max-width: 65ch;
+    }
+
+    a {
+      color: var(--accent-crimson);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1px;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    strong {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Base URL Display */
+    .base-url-container {
+      display: flex;
+      align-items: stretch;
+      margin-bottom: var(--space-md);
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    .base-url-label {
+      font-family: var(--font-sans);
       font-size: 0.75rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      padding: 0.75rem 1rem;
+      background: var(--bg-tertiary);
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
     }
 
-    .sidebar-nav {
-      list-style: none;
-    }
-
-    .sidebar-nav li {
-      margin-bottom: 0.25rem;
-    }
-
-    .sidebar-nav a {
-      display: block;
-      padding: 0.5rem 0.75rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      border-radius: var(--radius-sm);
+    .base-url-value {
+      font-family: var(--font-mono);
       font-size: 0.9rem;
-      transition: all 0.2s;
-    }
-
-    .sidebar-nav a:hover {
-      background: var(--bg-tertiary);
-      color: var(--primary);
-    }
-
-    .sidebar-nav a.active {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-    }
-
-    .sidebar-nav .nested {
-      padding-left: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .sidebar-nav .nested a {
-      font-size: 0.85rem;
-      padding: 0.35rem 0.75rem;
-    }
-
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      border-radius: var(--radius);
-      margin-bottom: 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 0.3;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: white;
-      color: var(--primary);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.15);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    /* Sections */
-    .section {
-      background: var(--bg-primary);
-      border-radius: var(--radius);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .section h2 {
-      font-size: 1.75rem;
-      font-weight: 700;
+      padding: 0.75rem 1rem;
       color: var(--text-primary);
-      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      white-space: nowrap;
     }
 
-    .section h2 .icon {
-      font-size: 1.5rem;
-    }
-
-    .section h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin: 2rem 0 1rem;
-    }
-
-    .section h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      margin: 1.5rem 0 0.75rem;
-    }
-
-    .section p {
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
-
-    /* Base URL */
-    .base-url {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: var(--bg-tertiary);
-      padding: 1rem 1.5rem;
-      border-radius: var(--radius-sm);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      color: var(--primary);
-      margin: 1rem 0;
-    }
-
-    .base-url button {
-      margin-left: auto;
-      background: var(--primary);
-      color: white;
+    .base-url-copy {
+      background: transparent;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius-sm);
+      border-left: 1px solid var(--border);
+      padding: 0 1rem;
       cursor: pointer;
-      font-size: 0.8rem;
-      font-weight: 500;
+      color: var(--text-muted);
       transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
     }
 
-    .base-url button:hover {
-      background: var(--primary-dark);
+    .base-url-copy:hover {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
     }
 
-    /* Translation Cards */
+    /* Translation Grid */
     .translations-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin: var(--space-md) 0;
     }
 
-    .translation-card {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 1.25rem;
-      border-radius: var(--radius-sm);
-      text-align: center;
-      transition: all 0.3s;
+    .translation-item {
+      background: var(--bg-primary);
+      padding: var(--space-sm);
     }
 
-    .translation-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .translation-card .code {
-      font-size: 1.25rem;
-      font-weight: 700;
+    .translation-code {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
       margin-bottom: 0.25rem;
     }
 
-    .translation-card small {
-      font-size: 0.75rem;
-      opacity: 0.9;
+    .translation-desc {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
     }
 
-    /* Endpoint */
+    /* Endpoint Blocks */
     .endpoint {
-      background: var(--bg-tertiary);
-      border-left: 4px solid var(--primary);
-      padding: 1rem 1.5rem;
-      margin: 1.5rem 0;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-top: var(--space-md);
+      margin-bottom: var(--space-lg);
     }
 
     .endpoint-header {
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: var(--space-sm);
       flex-wrap: wrap;
     }
 
-    .method {
-      display: inline-block;
-      background: var(--success);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
+    .method-badge {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
       font-weight: 600;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      padding: 0.25rem 0.75rem;
+      background: var(--method-get-bg);
+      color: var(--method-get);
+      border: 1px solid var(--method-get);
     }
 
-    .method.post {
-      background: var(--warning);
-    }
-
-    .url {
-      font-family: 'JetBrains Mono', monospace;
-      background: var(--bg-primary);
-      padding: 0.35rem 0.75rem;
-      border-radius: 4px;
-      font-weight: 500;
-      font-size: 0.9rem;
+    .endpoint-path {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
       color: var(--text-primary);
+      word-break: break-all;
     }
 
-    /* Parameters */
-    .params-table {
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin: var(--space-sm) 0;
+      border: 1px solid var(--border);
+      max-width: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1rem 0;
+      text-align: left;
+      font-family: var(--font-sans);
       font-size: 0.9rem;
     }
 
-    .params-table th,
-    .params-table td {
+    th, td {
       padding: 0.75rem 1rem;
-      text-align: left;
       border-bottom: 1px solid var(--border);
     }
 
-    .params-table th {
+    th {
       background: var(--bg-tertiary);
+      color: var(--text-muted);
       font-weight: 600;
-      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.75rem;
     }
 
-    .params-table td {
-      color: var(--text-secondary);
+    tr:last-child td {
+      border-bottom: none;
     }
 
     .param-name {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--primary);
+      font-family: var(--font-mono);
+      color: var(--text-primary);
       font-weight: 500;
     }
 
     .param-type {
+      color: var(--accent-crimson);
       font-size: 0.8rem;
-      color: var(--secondary);
-      background: var(--bg-tertiary);
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
     }
 
-    .param-required {
-      font-size: 0.75rem;
-      color: var(--error);
-      font-weight: 600;
-    }
-
-    .param-optional {
-      font-size: 0.75rem;
+    .param-req {
       color: var(--text-muted);
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+
+    .param-req.required {
+      color: var(--text-primary);
+      font-weight: 500;
+      font-style: normal;
     }
 
     /* Code Blocks */
     .code-block {
-      position: relative;
-      margin: 1rem 0;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
+      margin: var(--space-sm) 0;
+      border: 1px solid var(--border);
+      background: var(--code-bg);
+      max-width: 100%;
+      overflow-x: auto;
     }
 
     .code-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #2d3748;
       padding: 0.5rem 1rem;
-      border-bottom: 1px solid #4a5568;
+      background: rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .code-lang {
+      font-family: var(--font-sans);
       font-size: 0.75rem;
-      color: #a0aec0;
       text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
     }
 
-    .copy-btn {
+    .code-copy {
       background: transparent;
-      border: 1px solid #4a5568;
-      color: #a0aec0;
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.7);
+      font-family: var(--font-sans);
       font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
       cursor: pointer;
       transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
     }
 
-    .copy-btn:hover {
-      background: #4a5568;
-      color: white;
+    .code-copy:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
     }
 
-    .copy-btn.copied {
-      background: var(--success);
-      border-color: var(--success);
-      color: white;
+    .code-copy.copied {
+      background: var(--method-get);
+      border-color: var(--method-get);
+      color: #fff;
     }
 
-    .code-content {
-      background: var(--code-bg);
-      color: var(--code-text);
-      padding: 1rem 1.25rem;
-      overflow-x: auto;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.875rem;
-      line-height: 1.6;
-    }
-
-    .code-content pre {
+    pre {
       margin: 0;
-      white-space: pre-wrap;
-      word-break: break-word;
+      padding: 1.5rem;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--code-text);
     }
 
     /* Callouts */
     .callout {
-      padding: 1rem 1.25rem;
-      border-radius: var(--radius-sm);
-      margin: 1rem 0;
-      display: flex;
-      gap: 0.75rem;
-    }
-
-    .callout-icon {
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    .callout-content {
-      flex: 1;
+      margin: var(--space-sm) 0;
+      padding: 1.5rem;
+      border-left: 2px solid var(--accent-crimson);
+      background: var(--accent-crimson-bg);
     }
 
     .callout-title {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-crimson);
+      margin-bottom: 0.5rem;
     }
 
     .callout p {
       margin: 0;
-      font-size: 0.9rem;
-    }
-
-    .callout ul {
-      margin: 0.5rem 0 0 1rem;
-      font-size: 0.9rem;
-    }
-
-    .callout.info {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      color: #1e40af;
-    }
-
-    .callout.success {
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      color: #065f46;
-    }
-
-    .callout.warning {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      color: #92400e;
-    }
-
-    .callout.error {
-      background: #fef2f2;
-      border: 1px solid #fecaca;
-      color: #991b1b;
-    }
-
-    [data-theme="dark"] .callout.info {
-      background: rgba(59, 130, 246, 0.1);
-      border-color: rgba(59, 130, 246, 0.3);
-      color: #93c5fd;
-    }
-
-    [data-theme="dark"] .callout.success {
-      background: rgba(16, 185, 129, 0.1);
-      border-color: rgba(16, 185, 129, 0.3);
-      color: #6ee7b7;
-    }
-
-    [data-theme="dark"] .callout.warning {
-      background: rgba(245, 158, 11, 0.1);
-      border-color: rgba(245, 158, 11, 0.3);
-      color: #fcd34d;
-    }
-
-    [data-theme="dark"] .callout.error {
-      background: rgba(239, 68, 68, 0.1);
-      border-color: rgba(239, 68, 68, 0.3);
-      color: #fca5a5;
-    }
-
-    /* Lists */
-    .section ul,
-    .section ol {
-      padding-left: 1.5rem;
-      margin: 1rem 0;
-      color: var(--text-secondary);
-    }
-
-    .section li {
-      margin: 0.5rem 0;
-    }
-
-    .section li strong {
+      font-size: 1rem;
       color: var(--text-primary);
+    }
+    
+    .callout ul {
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .callout li {
+      margin-bottom: 0.25rem;
     }
 
     /* Footer */
     .footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      padding: var(--space-md);
+      margin-top: auto;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .footer-content {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
     }
 
-    .footer a {
-      color: var(--primary);
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text-primary);
       text-decoration: none;
+      margin-bottom: 0.5rem;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    .footer-brand img {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
     }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .sidebar {
-        display: none;
-      }
-
-      .main-content {
-        padding: 1.5rem;
-      }
-
-      .hero h1 {
-        font-size: 2.25rem;
-      }
+    .footer-text {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      max-width: 45ch;
+      line-height: 1.5;
     }
 
-    @media (max-width: 768px) {
-      .nav {
-        padding: 1rem;
-      }
-
-      .github-link span {
-        display: none;
-      }
-
-      .hero {
-        padding: 2.5rem 1.5rem;
-      }
-
-      .hero h1 {
-        font-size: 1.85rem;
-        flex-direction: column;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .section {
-        padding: 1.5rem;
-      }
-
-      .section h2 {
-        font-size: 1.4rem;
-      }
-
-      .translations-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      }
-
-      .params-table {
-        font-size: 0.8rem;
-      }
-
-      .params-table th,
-      .params-table td {
-        padding: 0.5rem;
-      }
+    .footer-links {
+      display: flex;
+      gap: var(--space-md);
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .footer-link-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .footer-link-title {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
     }
 
-    .section {
-      animation: fadeIn 0.4s ease-out;
+    .footer-link {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
+
+    .footer-link:hover {
+      color: var(--accent-crimson);
+    }
+
   </style>
 </head>
-
 <body>
-  <nav class="nav">
-    <a href="#" class="nav-brand">
-      <span>🙏</span>
+
+  <nav class="top-nav">
+    <a href="#" class="brand">
+      <img src="/assets/icon-192x192.webp" alt="Blessings API" class="brand-icon" />
       Blessings API
     </a>
     <div class="nav-actions">
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        🌙
-      </button>
-      <a href="https://github.com/gunawanjason/BlessingsAPI" class="github-link" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Theme">
+        <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <span>GitHub</span>
+      </button>
+      <a href="https://github.com/gunawanjason/BlessingsAPI" target="_blank" rel="noopener" class="btn-link">
+        GitHub
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
       </a>
     </div>
   </nav>
 
   <div class="layout">
     <aside class="sidebar">
-      <div class="sidebar-title">Documentation</div>
-      <ul class="sidebar-nav">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#base-url">Base URL</a></li>
-        <li><a href="#translations">Translations</a></li>
-        <li>
-          <a href="#endpoints">API Endpoints</a>
-          <ul class="sidebar-nav nested">
-            <li><a href="#single-verse">Single Verse</a></li>
-            <li><a href="#multiple-verses">Multiple Verses</a></li>
-            <li><a href="#pericope">Pericope</a></li>
-            <li><a href="#keyword-search">Keyword Search</a></li>
-            <li><a href="#multi-search">Multi-Search</a></li>
-          </ul>
-        </li>
-        <li><a href="#examples">Examples</a></li>
-        <li><a href="#errors">Error Handling</a></li>
-        <li><a href="#getting-started">Getting Started</a></li>
-      </ul>
+      <div class="nav-group">
+        <div class="nav-label">Introduction</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#overview">Overview</a></li>
+          <li class="nav-item"><a href="#translations">Translations</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <div class="nav-label">Reference</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#single-verse">Single Verse</a></li>
+          <li class="nav-item"><a href="#multiple-verses">Multiple Verses</a></li>
+          <li class="nav-item"><a href="#pericope">Pericope (Headings)</a></li>
+          <li class="nav-item"><a href="#keyword-search">Keyword Search</a></li>
+          <li class="nav-item"><a href="#multi-search">Multi-Search</a></li>
+        </ul>
+      </div>
+      <div class="nav-group">
+        <div class="nav-label">Resources</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#examples">Code Examples</a></li>
+          <li class="nav-item"><a href="#errors">Error Handling</a></li>
+        </ul>
+      </div>
     </aside>
 
-    <main class="main-content">
-      <header class="hero">
-        <div class="hero-content">
-          <h1><span>🙏</span> Blessings API</h1>
-          <p>A comprehensive Bible verse API supporting multiple translations with powerful search capabilities</p>
-          <div class="hero-actions">
-            <a href="#getting-started" class="btn btn-primary">Get Started</a>
-            <a href="#endpoints" class="btn btn-secondary">View Endpoints</a>
-          </div>
+    <main class="main">
+      
+      <header>
+        <h1 class="hero-title">Blessings API.</h1>
+        <p class="hero-subtitle">A meticulously crafted interface for accessing Biblical texts, supporting eleven translations with robust search and pericope retrieval.</p>
+        
+        <div class="base-url-container">
+          <div class="base-url-label">Base URL</div>
+          <div class="base-url-value">http://api.blessings365.top</div>
+          <button class="base-url-copy" onclick="copyToClipboard('http://api.blessings365.top', this)">Copy</button>
         </div>
       </header>
 
-      <section id="overview" class="section">
-        <h2><span class="icon">📖</span> Overview</h2>
-        <p>The Blessings API provides access to Bible verses from multiple translations. You can fetch single verses, multiple verse ranges, search by keywords, and retrieve pericope headings with flexible formatting options.</p>
-
-        <div class="callout info">
-          <span class="callout-icon">💡</span>
-          <div class="callout-content">
-            <div class="callout-title">Key Features</div>
-            <ul>
-              <li>11 Bible translations (English, Chinese, Indonesian)</li>
-              <li>Single verse and multiple verse retrieval</li>
-              <li>Keyword search with filtering options</li>
-              <li>Multi-translation search capability</li>
-              <li>Pericope (section headings) support</li>
-              <li>JSON response format with CORS enabled</li>
-            </ul>
-          </div>
+      <section id="overview">
+        <h2 class="section-title">Overview</h2>
+        <p>The Blessings API is designed to provide immediate, programmatic access to Scripture. It is structured around REST principles, delivering lightweight, predictable JSON responses. CORS is fully enabled, allowing direct consumption from frontend applications.</p>
+        
+        <div class="callout">
+          <div class="callout-title">Core Capabilities</div>
+          <ul>
+            <li>Retrieve precise single verses or expansive verse ranges.</li>
+            <li>Search across a single translation or multiple translations concurrently.</li>
+            <li>Filter results programmatically by specific book or testament.</li>
+            <li>Access structural headings (pericopes) for contextual reading.</li>
+          </ul>
         </div>
       </section>
 
-      <section id="base-url" class="section">
-        <h2><span class="icon">🌐</span> Base URL</h2>
-        <div class="base-url">
-          <span>http://api.blessings365.top</span>
-          <button onclick="copyToClipboard('http://api.blessings365.top', this)">Copy</button>
-        </div>
-        <p>All API requests should be made to this base URL followed by the specific endpoint paths.</p>
-      </section>
-
-      <section id="translations" class="section">
-        <h2><span class="icon">📚</span> Available Translations</h2>
-        <p>The following Bible translations are currently supported:</p>
-
+      <section id="translations">
+        <h2 class="section-title">Translations</h2>
+        <p>Eleven distinct translations are currently indexed, spanning English, Chinese, and Indonesian lexicons.</p>
+        
         <div class="translations-grid">
-          <div class="translation-card">
-            <div class="code">NIV</div>
-            <small>New International Version</small>
+          <div class="translation-item">
+            <div class="translation-code">NIV</div>
+            <div class="translation-desc">New International Version</div>
           </div>
-          <div class="translation-card">
-            <div class="code">ESV</div>
-            <small>English Standard Version</small>
+          <div class="translation-item">
+            <div class="translation-code">ESV</div>
+            <div class="translation-desc">English Standard Version</div>
           </div>
-          <div class="translation-card">
-            <div class="code">KJV</div>
-            <small>King James Version</small>
+          <div class="translation-item">
+            <div class="translation-code">KJV</div>
+            <div class="translation-desc">King James Version</div>
           </div>
-          <div class="translation-card">
-            <div class="code">NASB</div>
-            <small>New American Standard Bible</small>
+          <div class="translation-item">
+            <div class="translation-code">NASB</div>
+            <div class="translation-desc">New American Standard Bible</div>
           </div>
-          <div class="translation-card">
-            <div class="code">NLT</div>
-            <small>New Living Translation</small>
+          <div class="translation-item">
+            <div class="translation-code">NLT</div>
+            <div class="translation-desc">New Living Translation</div>
           </div>
-          <div class="translation-card">
-            <div class="code">TLB</div>
-            <small>The Living Bible</small>
+          <div class="translation-item">
+            <div class="translation-code">TLB</div>
+            <div class="translation-desc">The Living Bible</div>
           </div>
-          <div class="translation-card">
-            <div class="code">CNVS</div>
-            <small>Chinese New Version (Simplified)</small>
+          <div class="translation-item">
+            <div class="translation-code">CNVS</div>
+            <div class="translation-desc">Chinese New Version (Simplified)</div>
           </div>
-          <div class="translation-card">
-            <div class="code">CUNPSS-上帝</div>
-            <small>Chinese Union (God)</small>
+          <div class="translation-item">
+            <div class="translation-code">CUNPSS-上帝</div>
+            <div class="translation-desc">Chinese Union (God)</div>
           </div>
-          <div class="translation-card">
-            <div class="code">CUNPSS-神</div>
-            <small>Chinese Union (Shen)</small>
+          <div class="translation-item">
+            <div class="translation-code">CUNPSS-神</div>
+            <div class="translation-desc">Chinese Union (Shen)</div>
           </div>
-          <div class="translation-card">
-            <div class="code">CUV</div>
-            <small>Chinese Union (Traditional)</small>
+          <div class="translation-item">
+            <div class="translation-code">CUV</div>
+            <div class="translation-desc">Chinese Union (Traditional)</div>
           </div>
-          <div class="translation-card">
-            <div class="code">TB</div>
-            <small>Terjemahan Baru (Indonesian)</small>
+          <div class="translation-item">
+            <div class="translation-code">TB</div>
+            <div class="translation-desc">Terjemahan Baru</div>
           </div>
         </div>
       </section>
 
-      <section id="endpoints" class="section">
-        <h2><span class="icon">🔗</span> API Endpoints</h2>
-
-        <div id="single-verse">
-          <h3>Single Verse Endpoint</h3>
-          <div class="endpoint">
-            <div class="endpoint-header">
-              <span class="method">GET</span>
-              <span class="url">/{translation}/single</span>
-            </div>
+      <section id="single-verse">
+        <h2 class="section-title">Single Verse</h2>
+        <p>Retrieve a discrete verse by specifying the book, chapter, and verse integers.</p>
+        
+        <div class="endpoint">
+          <div class="endpoint-header">
+            <span class="method-badge">GET</span>
+            <span class="endpoint-path">/{translation}/single</span>
           </div>
-          <p>Retrieves a single verse from the specified translation.</p>
-
-          <h4>Parameters</h4>
-          <table class="params-table">
-            <thead>
-              <tr>
-                <th>Parameter</th>
-                <th>Type</th>
-                <th>Required</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="param-name">translation</span></td>
-                <td><span class="param-type">path</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Bible translation code (e.g., NIV, ESV, KJV)</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">book</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Bible book name (e.g., Genesis, Matthew, Psalms)</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">chapter</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Chapter number (integer)</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">verse</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Verse number (integer)</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-lang">Request</span>
-              <button class="copy-btn" onclick="copyToClipboard('GET /NIV/single?book=Genesis&chapter=1&verse=1', this)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                Copy
-              </button>
-            </div>
-            <div class="code-content">
-              <pre>GET /NIV/single?book=Genesis&chapter=1&verse=1</pre>
-            </div>
+          
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Type</th>
+                  <th>Requirement</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="param-name">translation</span></td>
+                  <td><span class="param-type">path</span></td>
+                  <td><span class="param-req required">Required</span></td>
+                  <td>Translation code (e.g., NIV).</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">book</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req required">Required</span></td>
+                  <td>The title of the book (e.g., Genesis).</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">chapter</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req required">Required</span></td>
+                  <td>Integer representing the chapter.</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">verse</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req required">Required</span></td>
+                  <td>Integer representing the verse.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div class="code-block">
             <div class="code-header">
               <span class="code-lang">Response</span>
-              <button class="copy-btn" onclick="copyCodeBlock(this)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                Copy
-              </button>
+              <button class="code-copy" onclick="copyCodeBlock(this)">Copy</button>
             </div>
-            <div class="code-content">
-              <pre>{
+            <pre>{
   "book": "Genesis",
   "chapter": 1,
   "verse": 1,
   "content": "In the beginning God created the heavens and the earth."
 }</pre>
-            </div>
-          </div>
-        </div>
-
-        <div id="multiple-verses">
-          <h3>Multiple Verses Endpoint</h3>
-          <div class="endpoint">
-            <div class="endpoint-header">
-              <span class="method">GET</span>
-              <span class="url">/{translation}/multiple</span>
-            </div>
-          </div>
-          <p>Retrieves multiple verses or verse ranges from the specified translation.</p>
-
-          <h4>Parameters</h4>
-          <table class="params-table">
-            <thead>
-              <tr>
-                <th>Parameter</th>
-                <th>Type</th>
-                <th>Required</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="param-name">translation</span></td>
-                <td><span class="param-type">path</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Bible translation code</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">verses</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Comma-separated list of verse references</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h4>Verse Reference Formats</h4>
-          <ul>
-            <li><strong>Single verse:</strong> <code>Genesis 1:1</code></li>
-            <li><strong>Verse range:</strong> <code>Genesis 1:1-3</code></li>
-            <li><strong>Chapter range:</strong> <code>Genesis 1:1-2:3</code></li>
-            <li><strong>Entire chapter:</strong> <code>Genesis 1</code></li>
-            <li><strong>Multiple chapters:</strong> <code>Genesis 1-3</code></li>
-          </ul>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-lang">Request</span>
-              <button class="copy-btn" onclick="copyToClipboard('GET /NIV/multiple?verses=Genesis 1:1-3,Matthew 1:1-25', this)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                Copy
-              </button>
-            </div>
-            <div class="code-content">
-              <pre>GET /NIV/multiple?verses=Genesis 1:1-3,Matthew 1:1-25</pre>
-            </div>
-          </div>
-        </div>
-
-        <div id="pericope">
-          <h3>Pericope (Headings) Endpoint</h3>
-          <div class="endpoint">
-            <div class="endpoint-header">
-              <span class="method">GET</span>
-              <span class="url">/{translation}/headings</span>
-            </div>
-          </div>
-          <p>Retrieves pericope headings (section titles) for a specific book or chapter.</p>
-
-          <h4>Parameters</h4>
-          <table class="params-table">
-            <thead>
-              <tr>
-                <th>Parameter</th>
-                <th>Type</th>
-                <th>Required</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="param-name">translation</span></td>
-                <td><span class="param-type">path</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Bible translation code (e.g., CNVS)</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">book</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Bible book name</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">chapter</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-optional">Optional</span></td>
-                <td>Chapter number to filter headings</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-lang">Request</span>
-              <button class="copy-btn" onclick="copyToClipboard('GET /CNVS/headings?book=Genesis&chapter=1', this)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                Copy
-              </button>
-            </div>
-            <div class="code-content">
-              <pre>GET /CNVS/headings?book=Genesis&chapter=1</pre>
-            </div>
-          </div>
-        </div>
-
-        <div id="keyword-search">
-          <h3>Keyword Search Endpoint</h3>
-          <div class="endpoint">
-            <div class="endpoint-header">
-              <span class="method">GET</span>
-              <span class="url">/{translation}/search</span>
-            </div>
-          </div>
-          <p>Search for verses containing specific keywords within a single translation.</p>
-
-          <h4>Parameters</h4>
-          <table class="params-table">
-            <thead>
-              <tr>
-                <th>Parameter</th>
-                <th>Type</th>
-                <th>Required</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="param-name">translation</span></td>
-                <td><span class="param-type">path</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Bible translation code</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">keyword</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Keyword or phrase to search for</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">limit</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-optional">Optional</span></td>
-                <td>Max results (default: 50)</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">book</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-optional">Optional</span></td>
-                <td>Filter by book name</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">testament</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-optional">Optional</span></td>
-                <td>Filter: "old"/"ot" or "new"/"nt"</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-lang">Examples</span>
-              <button class="copy-btn" onclick="copyCodeBlock(this)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                Copy
-              </button>
-            </div>
-            <div class="code-content">
-              <pre># Basic search
-GET /NIV/search?keyword=love&limit=10
-
-# Search in specific book
-GET /NIV/search?keyword=faith&book=Hebrews&limit=5
-
-# Search in Old Testament only
-GET /NIV/search?keyword=covenant&testament=old&limit=20
-
-# Search in New Testament only
-GET /NIV/search?keyword=grace&testament=new&limit=15</pre>
-            </div>
-          </div>
-        </div>
-
-        <div id="multi-search">
-          <h3>Multi-Translation Search Endpoint</h3>
-          <div class="endpoint">
-            <div class="endpoint-header">
-              <span class="method">GET</span>
-              <span class="url">/search</span>
-            </div>
-          </div>
-          <p>Search for verses containing specific keywords across multiple translations simultaneously.</p>
-
-          <h4>Parameters</h4>
-          <table class="params-table">
-            <thead>
-              <tr>
-                <th>Parameter</th>
-                <th>Type</th>
-                <th>Required</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="param-name">keyword</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-required">Required</span></td>
-                <td>Keyword or phrase to search for</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">translations</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-optional">Optional</span></td>
-                <td>Comma-separated translations (default: NIV)</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">limit</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-optional">Optional</span></td>
-                <td>Max results per translation (default: 50)</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">book</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-optional">Optional</span></td>
-                <td>Filter by book name</td>
-              </tr>
-              <tr>
-                <td><span class="param-name">testament</span></td>
-                <td><span class="param-type">query</span></td>
-                <td><span class="param-optional">Optional</span></td>
-                <td>Filter: "old"/"ot" or "new"/"nt"</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-lang">Examples</span>
-              <button class="copy-btn" onclick="copyCodeBlock(this)">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                Copy
-              </button>
-            </div>
-            <div class="code-content">
-              <pre># Basic multi-translation search
-GET /search?keyword=faith&translations=NIV,ESV,KJV&limit=5
-
-# Search specific book across translations
-GET /search?keyword=love&translations=NIV,ESV&book=1Corinthians&limit=10
-
-# Search Old Testament across multiple translations
-GET /search?keyword=righteous&translations=NIV,KJV,NASB&testament=old&limit=15</pre>
-            </div>
           </div>
         </div>
       </section>
 
-      <section id="examples" class="section">
-        <h2><span class="icon">💡</span> Code Examples</h2>
+      <section id="multiple-verses">
+        <h2 class="section-title">Multiple Verses</h2>
+        <p>Retrieve sequences or non-contiguous selections using a comma-separated list of textual references.</p>
 
-        <h3>JavaScript / Fetch</h3>
-        <div class="code-block">
-          <div class="code-header">
-            <span class="code-lang">JavaScript</span>
-            <button class="copy-btn" onclick="copyCodeBlock(this)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              Copy
-            </button>
+        <div class="endpoint">
+          <div class="endpoint-header">
+            <span class="method-badge">GET</span>
+            <span class="endpoint-path">/{translation}/multiple</span>
           </div>
-          <div class="code-content">
-            <pre>// Fetch a single verse
-const response = await fetch(
-  'http://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16'
-);
-const verse = await response.json();
-console.log(verse);
 
-// Fetch multiple verses
-const multiResponse = await fetch(
-  'http://api.blessings365.top/ESV/multiple?verses=Psalms 23:1-6,John 14:6'
-);
-const verses = await multiResponse.json();
-console.log(verses);
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Type</th>
+                  <th>Requirement</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="param-name">verses</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req required">Required</span></td>
+                  <td>Comma-separated query string. E.g., <code>Genesis 1:1-3,Matthew 1:1-25</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <p><strong>Supported Notation Formats:</strong><br/>
+          Single: <code>Genesis 1:1</code><br/>
+          Range: <code>Genesis 1:1-3</code><br/>
+          Cross-Chapter: <code>Genesis 1:1-2:3</code><br/>
+          Full Chapter: <code>Genesis 1</code>
+          </p>
+        </div>
+      </section>
+      
+      <section id="pericope">
+        <h2 class="section-title">Pericope (Headings)</h2>
+        <p>Extract the structural headings embedded within specific translations to contextualize readings.</p>
 
-// Search for keywords
-const searchResponse = await fetch(
-  'http://api.blessings365.top/NIV/search?keyword=love&limit=10'
-);
-const results = await searchResponse.json();
-console.log(results);</pre>
+        <div class="endpoint">
+          <div class="endpoint-header">
+            <span class="method-badge">GET</span>
+            <span class="endpoint-path">/{translation}/headings</span>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Type</th>
+                  <th>Requirement</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="param-name">book</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req required">Required</span></td>
+                  <td>The target book name.</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">chapter</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req">Optional</span></td>
+                  <td>Target chapter. If omitted, returns headings for the entire book.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
+      </section>
 
-        <h3>Python</h3>
+      <section id="keyword-search">
+        <h2 class="section-title">Keyword Search</h2>
+        <p>Perform a text search within a specific translation. Results include context highlighting.</p>
+
+        <div class="endpoint">
+          <div class="endpoint-header">
+            <span class="method-badge">GET</span>
+            <span class="endpoint-path">/{translation}/search</span>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Type</th>
+                  <th>Requirement</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="param-name">keyword</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req required">Required</span></td>
+                  <td>The term or phrase to locate.</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">limit</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req">Optional</span></td>
+                  <td>Maximum yield count. Defaults to 50.</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">book</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req">Optional</span></td>
+                  <td>Restrict search bounds to a single book.</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">testament</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req">Optional</span></td>
+                  <td>Filter bounds by <code>old</code> (or <code>ot</code>) or <code>new</code> (or <code>nt</code>).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="multi-search">
+        <h2 class="section-title">Multi-Translation Search</h2>
+        <p>A powerful endpoint that parallelizes text queries across an array of requested translations.</p>
+
+        <div class="endpoint">
+          <div class="endpoint-header">
+            <span class="method-badge">GET</span>
+            <span class="endpoint-path">/search</span>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Type</th>
+                  <th>Requirement</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="param-name">keyword</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req required">Required</span></td>
+                  <td>The term to search.</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">translations</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req">Optional</span></td>
+                  <td>Comma-separated list (e.g., <code>NIV,ESV,KJV</code>). Defaults to NIV.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="examples">
+        <h2 class="section-title">Implementation Examples</h2>
+        
+        <h3 class="sub-title">JavaScript</h3>
+        <div class="code-block">
+          <div class="code-header">
+            <span class="code-lang">JS</span>
+            <button class="code-copy" onclick="copyCodeBlock(this)">Copy</button>
+          </div>
+          <pre>const fetchVerse = async () => {
+  const res = await fetch('http://api.blessings365.top/ESV/single?book=Psalms&chapter=23&verse=1');
+  const data = await res.json();
+  console.log(`${data.book} ${data.chapter}:${data.verse} — ${data.content}`);
+};
+
+fetchVerse();</pre>
+        </div>
+
+        <h3 class="sub-title">Python</h3>
         <div class="code-block">
           <div class="code-header">
             <span class="code-lang">Python</span>
-            <button class="copy-btn" onclick="copyCodeBlock(this)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              Copy
-            </button>
+            <button class="code-copy" onclick="copyCodeBlock(this)">Copy</button>
           </div>
-          <div class="code-content">
-            <pre>import requests
+          <pre>import requests
 
-# Single verse
 response = requests.get(
-    'http://api.blessings365.top/NLT/single',
-    params={'book': 'Philippians', 'chapter': 4, 'verse': 13}
+    'http://api.blessings365.top/search',
+    params={'keyword': 'grace', 'translations': 'NIV,ESV', 'limit': 5}
 )
-verse = response.json()
-print(f"{verse['book']} {verse['chapter']}:{verse['verse']} - {verse['content']}")
-
-# Multiple verses
-response = requests.get(
-    'http://api.blessings365.top/ESV/multiple',
-    params={'verses': 'Isaiah 40:31,Jeremiah 29:11'}
-)
-for verse in response.json():
-    print(f"{verse['book']} {verse['chapter']}:{verse['verse']}")
-
-# Search
-response = requests.get(
-    'http://api.blessings365.top/NIV/search',
-    params={'keyword': 'love', 'limit': 10}
-)
-results = response.json()
-print(f"Found {results['total_results']} verses")</pre>
-          </div>
-        </div>
-
-        <h3>cURL</h3>
-        <div class="code-block">
-          <div class="code-header">
-            <span class="code-lang">Bash</span>
-            <button class="copy-btn" onclick="copyCodeBlock(this)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              Copy
-            </button>
-          </div>
-          <div class="code-content">
-            <pre># Single verse
-curl "http://api.blessings365.top/KJV/single?book=Romans&chapter=8&verse=28"
-
-# Multiple verses
-curl "http://api.blessings365.top/NASB/multiple?verses=1%20Corinthians%2013:4-8"
-
-# Search
-curl "http://api.blessings365.top/NIV/search?keyword=love&limit=10"</pre>
-          </div>
+print(response.json())</pre>
         </div>
       </section>
 
-      <section id="errors" class="section">
-        <h2><span class="icon">⚠️</span> Error Handling</h2>
+      <section id="errors">
+        <h2 class="section-title">Error Handling</h2>
+        <p>The API returns standard HTTP status codes indicating success or failure of a request.</p>
 
-        <h3>404 - Verse Not Found</h3>
-        <div class="callout error">
-          <span class="callout-icon">❌</span>
-          <div class="callout-content">
-            <div class="callout-title">Error Response</div>
-            <pre style="margin: 0.5rem 0 0; font-size: 0.85rem;">{ "error": "Verse not found: Genesis 1:999" }</pre>
-          </div>
-        </div>
-
-        <h3>400 - Missing Parameters</h3>
-        <div class="callout warning">
-          <span class="callout-icon">⚠️</span>
-          <div class="callout-content">
-            <div class="callout-title">Error Response</div>
-            <pre style="margin: 0.5rem 0 0; font-size: 0.85rem;">{ "error": "Keyword parameter is required" }</pre>
-          </div>
-        </div>
-
-        <h3>500 - Server Error</h3>
-        <div class="callout error">
-          <span class="callout-icon">💥</span>
-          <div class="callout-content">
-            <div class="callout-title">Error Response</div>
-            <pre style="margin: 0.5rem 0 0; font-size: 0.85rem;">{ "error": "Error fetching the verse." }</pre>
-          </div>
-        </div>
-
-        <div class="callout info">
-          <span class="callout-icon">ℹ️</span>
-          <div class="callout-content">
-            <div class="callout-title">Note</div>
-            <p style="margin: 0;">Invalid translation codes or verse formats will result in a 500 error. Always use supported translations and valid reference formats.</p>
-          </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Meaning</th>
+                <th>Resolution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>400</strong></td>
+                <td>Bad Request</td>
+                <td>Required parameters (like `keyword` or `book`) are missing.</td>
+              </tr>
+              <tr>
+                <td><strong>404</strong></td>
+                <td>Not Found</td>
+                <td>The specific verse, book, or translation does not exist in the index.</td>
+              </tr>
+              <tr>
+                <td><strong>500</strong></td>
+                <td>Server Error</td>
+                <td>Internal exception, often due to an unhandled parse error.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <section id="getting-started" class="section">
-        <h2><span class="icon">🚀</span> Getting Started</h2>
-
-        <h3>Quick Test URLs</h3>
-        <p>Click the links below to test the API directly in your browser:</p>
-        <ul>
-          <li><a href="http://api.blessings365.top/NIV/single?book=John&chapter=3&verse=16" target="_blank" rel="noopener">John 3:16 (NIV)</a></li>
-          <li><a href="http://api.blessings365.top/ESV/single?book=Psalms&chapter=23&verse=1" target="_blank" rel="noopener">Psalms 23:1 (ESV)</a></li>
-          <li><a href="http://api.blessings365.top/KJV/multiple?verses=Genesis%201:1-3" target="_blank" rel="noopener">Genesis 1:1-3 (KJV)</a></li>
-        </ul>
-
-        <h3>Local Development</h3>
-        <div class="code-block">
-          <div class="code-header">
-            <span class="code-lang">Terminal</span>
-            <button class="copy-btn" onclick="copyCodeBlock(this)">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              Copy
-            </button>
-          </div>
-          <div class="code-content">
-            <pre># Clone the repository
-git clone <repository-url>
-cd BlessingsAPI
-
-# Install dependencies
-npm install
-
-# Start the server
-npm start
-
-# API will be available at http://localhost:3000</pre>
-          </div>
-        </div>
-
-        <div class="callout success">
-          <span class="callout-icon">✅</span>
-          <div class="callout-content">
-            <div class="callout-title">Ready to Go!</div>
-            <p style="margin: 0;">The API is CORS-enabled, so you can make requests directly from browser-based applications without any additional configuration.</p>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <p id="footer-text"></p>
-      </footer>
     </main>
   </div>
 
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <a href="#" class="footer-brand">
+          <img src="/assets/icon-192x192.webp" alt="Blessings API" />
+          Blessings API
+        </a>
+        <p class="footer-text">© 2024-<span id="year"></span> Blessings API.<br>Typeset for the digital realm.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-link-col">
+          <div class="footer-link-title">Navigation</div>
+          <a href="#overview" class="footer-link">Overview</a>
+          <a href="#translations" class="footer-link">Translations</a>
+        </div>
+        <div class="footer-link-col">
+          <div class="footer-link-title">Connect</div>
+          <a href="https://github.com/gunawanjason/BlessingsAPI" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    // Theme toggle
-    function toggleTheme() {
+    // Set Current Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme Toggle Logic
+    const toggleTheme = () => {
       const html = document.documentElement;
       const currentTheme = html.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    };
+
+    const updateThemeIcon = (theme) => {
+      const svg = document.getElementById('theme-icon');
+      if (theme === 'dark') {
+        // Moon to Sun icon path morph
+        svg.innerHTML = `
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        `;
+      } else {
+        svg.innerHTML = `
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        `;
+      }
+    };
+
+    // Initialize Theme
+    const initTheme = () => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
       
-      const toggle = document.querySelector('.theme-toggle');
-      toggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-    }
+      document.documentElement.setAttribute('data-theme', theme);
+      updateThemeIcon(theme);
+    };
+    initTheme();
 
-    // Load saved theme
-    (function() {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      document.querySelector('.theme-toggle').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-    })();
-
-    // Copy to clipboard
-    function copyToClipboard(text, button) {
+    // Copy Utility
+    const copyToClipboard = (text, button) => {
       navigator.clipboard.writeText(text).then(() => {
         const originalText = button.textContent;
-        button.textContent = 'Copied!';
+        button.textContent = 'Copied';
         button.classList.add('copied');
+        
         setTimeout(() => {
           button.textContent = originalText;
           button.classList.remove('copied');
         }, 2000);
       });
-    }
+    };
 
-    // Copy code block content
-    function copyCodeBlock(button) {
-      const codeBlock = button.closest('.code-block');
-      const code = codeBlock.querySelector('pre').textContent;
+    const copyCodeBlock = (button) => {
+      const block = button.closest('.code-block');
+      const code = block.querySelector('pre').textContent;
       copyToClipboard(code, button);
-    }
-
-    // Dynamic year in footer
-    document.getElementById('footer-text').innerHTML = `© 2024-${new Date().getFullYear()} Blessings API — Made with ❤️ to spread the Word through technology`;
-
-    // Active sidebar link
-    const sections = document.querySelectorAll('.section[id]');
-    const navLinks = document.querySelectorAll('.sidebar-nav a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 100) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
+    };
   </script>
 </body>
-
 </html>
