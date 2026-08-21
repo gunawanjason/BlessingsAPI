@@ -563,12 +563,11 @@ if (require.main === module) {
   });
 }
 
-module.exports = {
-  app,
-  fetchVerses,
-  getLastVerseNumber,
-  getVerseRecord,
-};
+module.exports = app;
+module.exports.app = app;
+module.exports.fetchVerses = fetchVerses;
+module.exports.getLastVerseNumber = getLastVerseNumber;
+module.exports.getVerseRecord = getVerseRecord;
 
 //Example Arguments:
 
