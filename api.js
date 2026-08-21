@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
@@ -8,11 +7,11 @@ const cors = require("cors");
 const readFile = util.promisify(fs.readFile);
 
 const app = express();
-const port = 3000;
+const port = Number(process.env.PORT) || 3000;
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 // Serve the documentation page at root
@@ -381,9 +380,7 @@ async function fetchVerses(translation, verseString, idx) {
       }
     } else {
       endChapter = Number(parts[1]);
-      endVerse = Object.keys(
-        (jsonData[book] && jsonData[book][endChapter]) || {}
-      ).length;
+      endVerse = getLastVerseNumber(jsonData, book, endChapter);
     }
   } else {
     // Try matching "Book Chapter" (e.g., "Genesis 1")
@@ -396,9 +393,7 @@ async function fetchVerses(translation, verseString, idx) {
     startChapter = Number(startChapter);
     startVerse = 1;
     endChapter = startChapter;
-    endVerse = Object.keys(
-      (jsonData[book] && jsonData[book][startChapter]) || {}
-    ).length;
+    endVerse = getLastVerseNumber(jsonData, book, startChapter);
   }
 
   console.log(
@@ -411,7 +406,7 @@ async function fetchVerses(translation, verseString, idx) {
     const endV =
       chapter === endChapter
         ? endVerse
-        : Object.keys(jsonData[book][chapter]).length;
+        : getLastVerseNumber(jsonData, book, chapter);
     for (let verse = startV; verse <= endV; verse++) {
       if (jsonData[book][chapter][verse]) {
         results.push({
@@ -426,6 +421,16 @@ async function fetchVerses(translation, verseString, idx) {
 
   console.log(`[${idx}] Fetched ${results.length} verses for ${book}`);
   return results;
+}
+
+function getLastVerseNumber(jsonData, book, chapter) {
+  const verseNumbers = Object.keys(
+    (jsonData[book] && jsonData[book][chapter]) || {}
+  )
+    .map(Number)
+    .filter(Number.isFinite);
+
+  return verseNumbers.length ? Math.max(...verseNumbers) : 0;
 }
 
 async function readTranslation(translation) {
