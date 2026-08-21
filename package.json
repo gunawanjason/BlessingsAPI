@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Blessings API",
   "main": "api.js",
+  "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": "24.x"
   },
