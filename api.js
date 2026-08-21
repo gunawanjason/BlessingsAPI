@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const util = require("util");
 const cors = require("cors");
+const SOURCE_COVERAGE = require("./scripts/source_coverage.json");
 
 const readFile = util.promisify(fs.readFile);
 
@@ -28,17 +29,15 @@ app.get("/:translation/single", async (req, res) => {
 
   try {
     const jsonData = await readTranslation(translation);
-    if (
-      jsonData[book] &&
-      jsonData[book][chapter] &&
-      jsonData[book][chapter][verse]
-    ) {
-      res.json({
-        book,
-        chapter,
-        verse,
-        content: jsonData[book][chapter][verse],
-      });
+    const record = getVerseRecord(
+      jsonData,
+      book,
+      chapter,
+      verse,
+      translation
+    );
+    if (record) {
+      res.json(record);
     } else {
       res
         .status(404)
@@ -93,6 +92,9 @@ app.get("/:translation/headings", async (req, res) => {
 
 app.get("/:translation/multiple", async (req, res) => {
   const { translation } = req.params;
+  if (typeof req.query.verses !== "string" || !req.query.verses.trim()) {
+    return res.status(400).json({ error: "Verses parameter is required" });
+  }
   const verses = req.query.verses.split(",");
   try {
     const allVerses = await Promise.all(
@@ -380,7 +382,7 @@ async function fetchVerses(translation, verseString, idx) {
       }
     } else {
       endChapter = Number(parts[1]);
-      endVerse = getLastVerseNumber(jsonData, book, endChapter);
+      endVerse = getLastVerseNumber(jsonData, book, endChapter, translation);
     }
   } else {
     // Try matching "Book Chapter" (e.g., "Genesis 1")
@@ -393,7 +395,7 @@ async function fetchVerses(translation, verseString, idx) {
     startChapter = Number(startChapter);
     startVerse = 1;
     endChapter = startChapter;
-    endVerse = getLastVerseNumber(jsonData, book, startChapter);
+    endVerse = getLastVerseNumber(jsonData, book, startChapter, translation);
   }
 
   console.log(
@@ -401,21 +403,27 @@ async function fetchVerses(translation, verseString, idx) {
   );
 
   const results = [];
+  const emitted = new Set();
   for (let chapter = startChapter; chapter <= endChapter; chapter++) {
     const startV = chapter === startChapter ? startVerse : 1;
     const endV =
       chapter === endChapter
         ? endVerse
-        : getLastVerseNumber(jsonData, book, chapter);
+        : getLastVerseNumber(jsonData, book, chapter, translation);
     for (let verse = startV; verse <= endV; verse++) {
-      if (jsonData[book][chapter][verse]) {
-        results.push({
-          book,
-          chapter,
-          verse,
-          content: jsonData[book][chapter][verse],
-        });
-      }
+      const record = getVerseRecord(
+        jsonData,
+        book,
+        chapter,
+        verse,
+        translation
+      );
+      if (!record) continue;
+
+      const id = `${chapter}:${record.verse}`;
+      if (emitted.has(id)) continue;
+      emitted.add(id);
+      results.push(record);
     }
   }
 
@@ -423,7 +431,11 @@ async function fetchVerses(translation, verseString, idx) {
   return results;
 }
 
-function getLastVerseNumber(jsonData, book, chapter) {
+function getLastVerseNumber(jsonData, book, chapter, source = null) {
+  const sourceVersion = getSourceVersion(source);
+  const sourceMaximum = Number(sourceVersion?.chapterMax?.[book]?.[chapter]);
+  if (sourceMaximum) return sourceMaximum;
+
   const verseNumbers = Object.keys(
     (jsonData[book] && jsonData[book][chapter]) || {}
   )
@@ -431,6 +443,102 @@ function getLastVerseNumber(jsonData, book, chapter) {
     .filter(Number.isFinite);
 
   return verseNumbers.length ? Math.max(...verseNumbers) : 0;
+}
+
+function getSourceVersion(source) {
+  if (!source) return null;
+  if (typeof source === "string") {
+    return SOURCE_COVERAGE.versions?.[source.toUpperCase()] || null;
+  }
+  return source;
+}
+
+function getChapterCoverage(sourceVersion, book, chapter) {
+  return sourceVersion?.chapterCoverage?.[book]?.[chapter] || null;
+}
+
+function isCoveredVerse(sourceVersion, book, chapter, verse) {
+  const ranges = getChapterCoverage(sourceVersion, book, chapter);
+  if (!ranges) return false;
+  return ranges.some(
+    ([start, end]) => Number(start) <= verse && verse <= Number(end)
+  );
+}
+
+function getExplicitBridge(sourceVersion, book, chapter, verse) {
+  const bridges = sourceVersion?.chapterBridges?.[book]?.[chapter] || [];
+  const bridge = bridges.find(
+    ([, start, end]) => Number(start) <= verse && verse <= Number(end)
+  );
+  if (!bridge) return null;
+  return {
+    sourceKey: Number(bridge[0]),
+    start: Number(bridge[1]),
+    end: Number(bridge[2]),
+  };
+}
+
+function getBridgeForAnchor(jsonData, sourceVersion, book, chapter, anchor) {
+  const explicit = getExplicitBridge(sourceVersion, book, chapter, anchor);
+  if (explicit?.sourceKey === anchor) return explicit;
+
+  const chapterData = jsonData[book]?.[chapter];
+  if (!chapterData || !sourceVersion) return null;
+  const maximum = Number(sourceVersion.chapterMax?.[book]?.[chapter]) || anchor;
+  let end = anchor;
+  while (
+    end < maximum &&
+    !chapterData[end + 1] &&
+    isCoveredVerse(sourceVersion, book, chapter, end + 1)
+  ) {
+    end += 1;
+  }
+  return end > anchor ? { sourceKey: anchor, start: anchor, end } : null;
+}
+
+function getVerseRecord(jsonData, book, chapter, verse, source = null) {
+  const chapterData = jsonData[book]?.[chapter];
+  if (!chapterData) return null;
+
+  const sourceVersion = getSourceVersion(source);
+  let anchor = verse;
+  let bridge = getExplicitBridge(sourceVersion, book, chapter, verse);
+
+  if (bridge) {
+    anchor = bridge.sourceKey;
+  } else if (!chapterData[verse]) {
+    if (!isCoveredVerse(sourceVersion, book, chapter, verse)) return null;
+    anchor = verse - 1;
+    while (
+      anchor > 0 &&
+      !chapterData[anchor] &&
+      isCoveredVerse(sourceVersion, book, chapter, anchor)
+    ) {
+      anchor -= 1;
+    }
+    if (!chapterData[anchor]) return null;
+    bridge = getBridgeForAnchor(
+      jsonData,
+      sourceVersion,
+      book,
+      chapter,
+      anchor
+    );
+    if (!bridge || verse > bridge.end) return null;
+  }
+
+  if (!chapterData[anchor]) return null;
+  bridge ||= getBridgeForAnchor(
+    jsonData,
+    sourceVersion,
+    book,
+    chapter,
+    anchor
+  );
+
+  const record = { book, chapter, verse: anchor, content: chapterData[anchor] };
+  if (bridge && bridge.end > anchor) record.verse_end = bridge.end;
+  return record;
 }
 
 async function readTranslation(translation) {
@@ -449,9 +557,18 @@ async function readPericope(translation) {
   return JSON.parse(data);
 }
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
+}
+
+module.exports = {
+  app,
+  fetchVerses,
+  getLastVerseNumber,
+  getVerseRecord,
+};
 
 //Example Arguments:
 

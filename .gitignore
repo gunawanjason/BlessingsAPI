@@ -5,3 +5,4 @@ package-lock.json
 #ignore pycache
 */__pycache__/*
 */venv/*
+scripts/audit_reports/

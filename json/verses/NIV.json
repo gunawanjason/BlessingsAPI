@@ -192,7 +192,7 @@
             "17": "For forty days the flood kept coming on the earth, and as the waters increased they lifted the ark high above the earth.",
             "18": "The waters rose and increased greatly on the earth, and the ark floated on the surface of the water.",
             "19": "They rose greatly on the earth, and all the high mountains under the entire heavens were covered.",
-            "20": "The waters rose and covered the mountains to a depth of more than fifteen cubits. ",
+            "20": "The waters rose and covered the mountains to a depth of more than fifteen cubits.",
             "21": "Every living thing that moved on land perished\u2014birds, livestock, wild animals, all the creatures that swarm over the earth, and all mankind.",
             "22": "Everything on dry land that had the breath of life in its nostrils died.",
             "23": "Every living thing on the face of the earth was wiped out; people and animals and the creatures that move along the ground and the birds were wiped from the earth. Only Noah was left, and those with him in the ark.",
@@ -6545,7 +6545,23 @@
             "5": "He ruled over Mount Hermon, Salekah, all of Bashan to the border of the people of Geshur and Maakah, and half of Gilead to the border of Sihon king of Heshbon.",
             "6": "Moses, the servant of the LORD, and the Israelites conquered them. And Moses the servant of the LORD gave their land to the Reubenites, the Gadites and the half-tribe of Manasseh to be their possession.",
             "7": "Here is a list of the kings of the land that Joshua and the Israelites conquered on the west side of the Jordan, from Baal Gad in the Valley of Lebanon to Mount Halak, which rises toward Seir. Joshua gave their lands as an inheritance to the tribes of Israel according to their tribal divisions.",
-            "8": "The lands included the hill country, the western foothills, the Arabah, the mountain slopes, the wilderness and the Negev. These were the lands of the Hittites, Amorites, Canaanites, Perizzites, Hivites and Jebusites. These were the kings:"
+            "8": "The lands included the hill country, the western foothills, the Arabah, the mountain slopes, the wilderness and the Negev. These were the lands of the Hittites, Amorites, Canaanites, Perizzites, Hivites and Jebusites. These were the kings:",
+            "9": "the king of Jericho one the king of Ai (near Bethel) one",
+            "10": "the king of Jerusalem one the king of Hebron one",
+            "11": "the king of Jarmuth one the king of Lachish one",
+            "12": "the king of Eglon one the king of Gezer one",
+            "13": "the king of Debir one the king of Geder one",
+            "14": "the king of Hormah one the king of Arad one",
+            "15": "the king of Libnah one the king of Adullam one",
+            "16": "the king of Makkedah one the king of Bethel one",
+            "17": "the king of Tappuah one the king of Hepher one",
+            "18": "the king of Aphek one the king of Lasharon one",
+            "19": "the king of Madon one the king of Hazor one",
+            "20": "the king of Shimron Meron one the king of Akshaph one",
+            "21": "the king of Taanach one the king of Megiddo one",
+            "22": "the king of Kedesh one the king of Jokneam in Carmel one",
+            "23": "the king of Dor (in Naphoth Dor) one the king of Goyim in Gilgal one",
+            "24": "the king of Tirzah one thirty-one kings in all."
         },
         "13": {
             "1": "When Joshua had grown old, the LORD said to him, \u201cYou are now very old, and there are still very large areas of land to be taken over.",
@@ -11524,8 +11540,8 @@
             "17": "So the Levites appointed Heman son of Joel; from his relatives, Asaph son of Berekiah; and from their relatives the Merarites, Ethan son of Kushaiah;",
             "18": "and with them their relatives next in rank: Zechariah, Jaaziel, Shemiramoth, Jehiel, Unni, Eliab, Benaiah, Maaseiah, Mattithiah, Eliphelehu, Mikneiah, Obed-Edom and Jeiel, the gatekeepers.",
             "19": "The musicians Heman, Asaph and Ethan were to sound the bronze cymbals;",
-            "20": "Zechariah, Jaaziel, Shemiramoth, Jehiel, Unni, Eliab, Maaseiah and Benaiah were to play the lyres according to ",
-            "21": "and Mattithiah, Eliphelehu, Mikneiah, Obed-Edom, Jeiel and Azaziah were to play the harps, directing according to ",
+            "20": "Zechariah, Jaaziel, Shemiramoth, Jehiel, Unni, Eliab, Maaseiah and Benaiah were to play the lyres according to alamoth,",
+            "21": "and Mattithiah, Eliphelehu, Mikneiah, Obed-Edom, Jeiel and Azaziah were to play the harps, directing according to sheminith.",
             "22": "Kenaniah the head Levite was in charge of the singing; that was his responsibility because he was skillful at it.",
             "23": "Berekiah and Elkanah were to be doorkeepers for the ark.",
             "24": "Shebaniah, Joshaphat, Nethanel, Amasai, Zechariah, Benaiah and Eliezer the priests were to blow trumpets before the ark of God. Obed-Edom and Jehiah were also to be doorkeepers for the ark.",
@@ -11787,7 +11803,30 @@
             "5": "(All these were sons of Heman the king\u2019s seer. They were given him through the promises of God to exalt him. God gave Heman fourteen sons and three daughters.)",
             "6": "All these men were under the supervision of their father for the music of the temple of the LORD, with cymbals, lyres and harps, for the ministry at the house of God. Asaph, Jeduthun and Heman were under the supervision of the king.",
             "7": "Along with their relatives\u2014all of them trained and skilled in music for the LORD\u2014they numbered 288.",
-            "8": "Young and old alike, teacher as well as student, cast lots for their duties."
+            "8": "Young and old alike, teacher as well as student, cast lots for their duties.",
+            "9": "The first lot, which was for Asaph, fell to Joseph, his sons and relatives 12 the second to Gedaliah, him and his relatives and sons 12",
+            "10": "the third to Zakkur, his sons and relatives 12",
+            "11": "the fourth to Izri, his sons and relatives 12",
+            "12": "the fifth to Nethaniah, his sons and relatives 12",
+            "13": "the sixth to Bukkiah, his sons and relatives 12",
+            "14": "the seventh to Jesarelah, his sons and relatives 12",
+            "15": "the eighth to Jeshaiah, his sons and relatives 12",
+            "16": "the ninth to Mattaniah, his sons and relatives 12",
+            "17": "the tenth to Shimei, his sons and relatives 12",
+            "18": "the eleventh to Azarel, his sons and relatives 12",
+            "19": "the twelfth to Hashabiah, his sons and relatives 12",
+            "20": "the thirteenth to Shubael, his sons and relatives 12",
+            "21": "the fourteenth to Mattithiah, his sons and relatives 12",
+            "22": "the fifteenth to Jerimoth, his sons and relatives 12",
+            "23": "the sixteenth to Hananiah, his sons and relatives 12",
+            "24": "the seventeenth to Joshbekashah, his sons and relatives 12",
+            "25": "the eighteenth to Hanani, his sons and relatives 12",
+            "26": "the nineteenth to Mallothi, his sons and relatives 12",
+            "27": "the twentieth to Eliathah, his sons and relatives 12",
+            "28": "the twenty-first to Hothir, his sons and relatives 12",
+            "29": "the twenty-second to Giddalti, his sons and relatives 12",
+            "30": "the twenty-third to Mahazioth, his sons and relatives 12",
+            "31": "the twenty-fourth to Romamti-Ezer, his sons and relatives 12."
         },
         "26": {
             "1": "The divisions of the gatekeepers: From the Korahites: Meshelemiah son of Kore, one of the sons of Asaph.",
@@ -12821,29 +12860,81 @@
             "6": "All their neighbors assisted them with articles of silver and gold, with goods and livestock, and with valuable gifts, in addition to all the freewill offerings.",
             "7": "Moreover, King Cyrus brought out the articles belonging to the temple of the LORD, which Nebuchadnezzar had carried away from Jerusalem and had placed in the temple of his god.",
             "8": "Cyrus king of Persia had them brought by Mithredath the treasurer, who counted them out to Sheshbazzar the prince of Judah.",
-            "9": "This was the inventory:",
-            "10": "In all, there were 5,400 articles of gold and of silver. Sheshbazzar brought all these along with the exiles when they came up from Babylon to Jerusalem."
+            "9": "This was the inventory: gold dishes 30 silver dishes 1,000 silver pans 29",
+            "10": "gold bowls 30 matching silver bowls 410 other articles 1,000",
+            "11": "In all, there were 5,400 articles of gold and of silver. Sheshbazzar brought all these along with the exiles when they came up from Babylon to Jerusalem."
         },
         "2": {
             "1": "Now these are the people of the province who came up from the captivity of the exiles, whom Nebuchadnezzar king of Babylon had taken captive to Babylon (they returned to Jerusalem and Judah, each to their own town,",
             "2": "in company with Zerubbabel, Joshua, Nehemiah, Seraiah, Reelaiah, Mordecai, Bilshan, Mispar, Bigvai, Rehum and Baanah): The list of the men of the people of Israel:",
-            "3": "The priests:",
-            "4": "The Levites:",
-            "5": "The musicians:",
-            "6": "The gatekeepers of the temple:",
-            "7": "The temple servants:",
-            "8": "The descendants of the servants of Solomon:",
-            "9": "The following came up from the towns of Tel Melah, Tel Harsha, Kerub, Addon and Immer, but they could not show that their families were descended from Israel:",
-            "10": "And from among the priests:",
-            "11": "These searched for their family records, but they could not find them and so were excluded from the priesthood as unclean.",
-            "12": "The governor ordered them not to eat any of the most sacred food until there was a priest ministering with the Urim and Thummim.",
-            "13": "The whole company numbered 42,360,",
-            "14": "besides their 7,337 male and female slaves; and they also had 200 male and female singers.",
-            "15": "They had 736 horses, 245 mules,",
-            "16": "435 camels and 6,720 donkeys.",
-            "17": "When they arrived at the house of the LORD in Jerusalem, some of the heads of the families gave freewill offerings toward the rebuilding of the house of God on its site.",
-            "18": "According to their ability they gave to the treasury for this work 61,000 darics of gold, 5,000 minas of silver and 100 priestly garments.",
-            "19": "The priests, the Levites, the musicians, the gatekeepers and the temple servants settled in their own towns, along with some of the other people, and the rest of the Israelites settled in their towns."
+            "3": "the descendants of Parosh 2,172",
+            "4": "of Shephatiah 372",
+            "5": "of Arah 775",
+            "6": "of Pahath-Moab (through the line of Jeshua and Joab) 2,812",
+            "7": "of Elam 1,254",
+            "8": "of Zattu 945",
+            "9": "of Zakkai 760",
+            "10": "of Bani 642",
+            "11": "of Bebai 623",
+            "12": "of Azgad 1,222",
+            "13": "of Adonikam 666",
+            "14": "of Bigvai 2,056",
+            "15": "of Adin 454",
+            "16": "of Ater (through Hezekiah) 98",
+            "17": "of Bezai 323",
+            "18": "of Jorah 112",
+            "19": "of Hashum 223",
+            "20": "of Gibbar 95",
+            "21": "the men of Bethlehem 123",
+            "22": "of Netophah 56",
+            "23": "of Anathoth 128",
+            "24": "of Azmaveth 42",
+            "25": "of Kiriath Jearim, Kephirah and Beeroth 743",
+            "26": "of Ramah and Geba 621",
+            "27": "of Mikmash 122",
+            "28": "of Bethel and Ai 223",
+            "29": "of Nebo 52",
+            "30": "of Magbish 156",
+            "31": "of the other Elam 1,254",
+            "32": "of Harim 320",
+            "33": "of Lod, Hadid and Ono 725",
+            "34": "of Jericho 345",
+            "35": "of Senaah 3,630",
+            "36": "The priests: the descendants of Jedaiah (through the family of Jeshua) 973",
+            "37": "of Immer 1,052",
+            "38": "of Pashhur 1,247",
+            "39": "of Harim 1,017",
+            "40": "The Levites: the descendants of Jeshua and Kadmiel (of the line of Hodaviah) 74",
+            "41": "The musicians: the descendants of Asaph 128",
+            "42": "The gatekeepers of the temple: the descendants of Shallum, Ater, Talmon, Akkub, Hatita and Shobai 139",
+            "43": "The temple servants: the descendants of Ziha, Hasupha, Tabbaoth,",
+            "44": "Keros, Siaha, Padon,",
+            "45": "Lebanah, Hagabah, Akkub,",
+            "46": "Hagab, Shalmai, Hanan,",
+            "47": "Giddel, Gahar, Reaiah,",
+            "48": "Rezin, Nekoda, Gazzam,",
+            "49": "Uzza, Paseah, Besai,",
+            "50": "Asnah, Meunim, Nephusim,",
+            "51": "Bakbuk, Hakupha, Harhur,",
+            "52": "Bazluth, Mehida, Harsha,",
+            "53": "Barkos, Sisera, Temah,",
+            "54": "Neziah and Hatipha",
+            "55": "The descendants of the servants of Solomon: the descendants of Sotai, Hassophereth, Peruda,",
+            "56": "Jaala, Darkon, Giddel,",
+            "57": "Shephatiah, Hattil, Pokereth-Hazzebaim and Ami",
+            "58": "The temple servants and the descendants of the servants of Solomon 392",
+            "59": "The following came up from the towns of Tel Melah, Tel Harsha, Kerub, Addon and Immer, but they could not show that their families were descended from Israel:",
+            "60": "The descendants of Delaiah, Tobiah and Nekoda 652",
+            "61": "And from among the priests: The descendants of Hobaiah, Hakkoz and Barzillai (a man who had married a daughter of Barzillai the Gileadite and was called by that name).",
+            "62": "These searched for their family records, but they could not find them and so were excluded from the priesthood as unclean.",
+            "63": "The governor ordered them not to eat any of the most sacred food until there was a priest ministering with the Urim and Thummim.",
+            "64": "The whole company numbered 42,360,",
+            "65": "besides their 7,337 male and female slaves; and they also had 200 male and female singers.",
+            "66": "They had 736 horses, 245 mules,",
+            "67": "435 camels and 6,720 donkeys.",
+            "68": "When they arrived at the house of the LORD in Jerusalem, some of the heads of the families gave freewill offerings toward the rebuilding of the house of God on its site.",
+            "69": "According to their ability they gave to the treasury for this work 61,000 darics of gold, 5,000 minas of silver and 100 priestly garments.",
+            "70": "The priests, the Levites, the musicians, the gatekeepers and the temple servants settled in their own towns, along with some of the other people, and the rest of the Israelites settled in their towns."
         },
         "3": {
             "1": "When the seventh month came and the Israelites had settled in their towns, the people assembled together as one in Jerusalem.",
@@ -13552,7 +13643,7 @@
             "4": "Day after day they spoke to him but he refused to comply. Therefore they told Haman about it to see whether Mordecai\u2019s behavior would be tolerated, for he had told them he was a Jew.",
             "5": "When Haman saw that Mordecai would not kneel down or pay him honor, he was enraged.",
             "6": "Yet having learned who Mordecai\u2019s people were, he scorned the idea of killing only Mordecai. Instead Haman looked for a way to destroy all Mordecai\u2019s people, the Jews, throughout the whole kingdom of Xerxes.",
-            "7": "In the twelfth year of King Xerxes, in the first month, the month of Nisan, the  (that is, the lot) was cast in the presence of Haman to select a day and month. And the lot fell on the twelfth month, the month of Adar.",
+            "7": "In the twelfth year of King Xerxes, in the first month, the month of Nisan, the pur (that is, the lot) was cast in the presence of Haman to select a day and month. And the lot fell on the twelfth month, the month of Adar.",
             "8": "Then Haman said to King Xerxes, \u201cThere is a certain people dispersed among the peoples in all the provinces of your kingdom who keep themselves separate. Their customs are different from those of all other people, and they do not obey the king\u2019s laws; it is not in the king\u2019s best interest to tolerate them.",
             "9": "If it pleases the king, let a decree be issued to destroy them, and I will give ten thousand talents of silver to the king\u2019s administrators for the royal treasury.\u201d",
             "10": "So the king took his signet ring from his finger and gave it to Haman son of Hammedatha, the Agagite, the enemy of the Jews.",
@@ -13668,9 +13759,9 @@
             "21": "to have them celebrate annually the fourteenth and fifteenth days of the month of Adar",
             "22": "as the time when the Jews got relief from their enemies, and as the month when their sorrow was turned into joy and their mourning into a day of celebration. He wrote them to observe the days as days of feasting and joy and giving presents of food to one another and gifts to the poor.",
             "23": "So the Jews agreed to continue the celebration they had begun, doing what Mordecai had written to them.",
-            "24": "For Haman son of Hammedatha, the Agagite, the enemy of all the Jews, had plotted against the Jews to destroy them and had cast the  (that is, the lot) for their ruin and destruction.",
+            "24": "For Haman son of Hammedatha, the Agagite, the enemy of all the Jews, had plotted against the Jews to destroy them and had cast the pur (that is, the lot) for their ruin and destruction.",
             "25": "But when the plot came to the king\u2019s attention, he issued written orders that the evil scheme Haman had devised against the Jews should come back onto his own head, and that he and his sons should be impaled on poles.",
-            "26": "(Therefore these days were called Purim, from the word .) Because of everything written in this letter and because of what they had seen and what had happened to them,",
+            "26": "(Therefore these days were called Purim, from the word pur.) Because of everything written in this letter and because of what they had seen and what had happened to them,",
             "27": "the Jews took it on themselves to establish the custom that they and their descendants and all who join them should without fail observe these two days every year, in the way prescribed and at the time appointed.",
             "28": "These days should be remembered and observed in every generation by every family, and in every province and in every city. And these days of Purim should never fail to be celebrated by the Jews\u2014nor should the memory of these days die out among their descendants.",
             "29": "So Queen Esther, daughter of Abihail, along with Mordecai the Jew, wrote with full authority to confirm this second letter concerning Purim.",
@@ -17369,32 +17460,32 @@
             "21": "Praise be to the LORD from Zion, to him who dwells in Jerusalem. Praise the LORD."
         },
         "136": {
-            "1": "Give thanks to the LORD, for he is good. ",
-            "2": "Give thanks to the God of gods. ",
-            "3": "Give thanks to the Lord of lords: ",
-            "4": "to him who alone does great wonders, ",
-            "5": "who by his understanding made the heavens, ",
-            "6": "who spread out the earth upon the waters, ",
-            "7": "who made the great lights\u2014 ",
-            "8": "the sun to govern the day, ",
-            "9": "the moon and stars to govern the night; ",
-            "10": "to him who struck down the firstborn of Egypt ",
-            "11": "and brought Israel out from among them ",
-            "12": "with a mighty hand and outstretched arm; ",
-            "13": "to him who divided the Red Sea asunder ",
-            "14": "and brought Israel through the midst of it, ",
-            "15": "but swept Pharaoh and his army into the Red Sea; ",
-            "16": "to him who led his people through the wilderness; ",
-            "17": "to him who struck down great kings, ",
-            "18": "and killed mighty kings\u2014 ",
-            "19": "Sihon king of the Amorites ",
-            "20": "and Og king of Bashan\u2014 ",
-            "21": "and gave their land as an inheritance, ",
-            "22": "an inheritance to his servant Israel. ",
-            "23": "He remembered us in our low estate ",
-            "24": "and freed us from our enemies. ",
-            "25": "He gives food to every creature. ",
-            "26": "Give thanks to the God of heaven. "
+            "1": "Give thanks to the LORD, for he is good. His love endures forever.",
+            "2": "Give thanks to the God of gods. His love endures forever.",
+            "3": "Give thanks to the Lord of lords: His love endures forever.",
+            "4": "to him who alone does great wonders, His love endures forever.",
+            "5": "who by his understanding made the heavens, His love endures forever.",
+            "6": "who spread out the earth upon the waters, His love endures forever.",
+            "7": "who made the great lights\u2014 His love endures forever.",
+            "8": "the sun to govern the day, His love endures forever.",
+            "9": "the moon and stars to govern the night; His love endures forever.",
+            "10": "to him who struck down the firstborn of Egypt His love endures forever.",
+            "11": "and brought Israel out from among them His love endures forever.",
+            "12": "with a mighty hand and outstretched arm; His love endures forever.",
+            "13": "to him who divided the Red Sea asunder His love endures forever.",
+            "14": "and brought Israel through the midst of it, His love endures forever.",
+            "15": "but swept Pharaoh and his army into the Red Sea; His love endures forever.",
+            "16": "to him who led his people through the wilderness; His love endures forever.",
+            "17": "to him who struck down great kings, His love endures forever.",
+            "18": "and killed mighty kings\u2014 His love endures forever.",
+            "19": "Sihon king of the Amorites His love endures forever.",
+            "20": "and Og king of Bashan\u2014 His love endures forever.",
+            "21": "and gave their land as an inheritance, His love endures forever.",
+            "22": "an inheritance to his servant Israel. His love endures forever.",
+            "23": "He remembered us in our low estate His love endures forever.",
+            "24": "and freed us from our enemies. His love endures forever.",
+            "25": "He gives food to every creature. His love endures forever.",
+            "26": "Give thanks to the God of heaven. His love endures forever."
         },
         "137": {
             "1": "By the rivers of Babylon we sat and wept when we remembered Zion.",
@@ -23570,9 +23661,9 @@
             "23": "Instead, you have set yourself up against the Lord of heaven. You had the goblets from his temple brought to you, and you and your nobles, your wives and your concubines drank wine from them. You praised the gods of silver and gold, of bronze, iron, wood and stone, which cannot see or hear or understand. But you did not honor the God who holds in his hand your life and all your ways.",
             "24": "Therefore he sent the hand that wrote the inscription.",
             "25": "\u201cThis is the inscription that was written: MENE, MENE, TEKEL, PARSIN",
-            "26": "\u201cHere is what these words mean: : God has numbered the days of your reign and brought it to an end.",
-            "27": ": You have been weighed on the scales and found wanting.",
-            "28": ": Your kingdom is divided and given to the Medes and Persians.\u201d",
+            "26": "\u201cHere is what these words mean: Mene: God has numbered the days of your reign and brought it to an end.",
+            "27": "Tekel: You have been weighed on the scales and found wanting.",
+            "28": "Peres: Your kingdom is divided and given to the Medes and Persians.\u201d",
             "29": "Then at Belshazzar\u2019s command, Daniel was clothed in purple, a gold chain was placed around his neck, and he was proclaimed the third highest ruler in the kingdom.",
             "30": "That very night Belshazzar, king of the Babylonians, was slain,",
             "31": "and Darius the Mede took over the kingdom, at the age of sixty-two."
@@ -24278,66 +24369,6 @@
             "19": "People from the Negev will occupy the mountains of Esau, and people from the foothills will possess the land of the Philistines. They will occupy the fields of Ephraim and Samaria, and Benjamin will possess Gilead.",
             "20": "This company of Israelite exiles who are in Canaan will possess the land as far as Zarephath; the exiles from Jerusalem who are in Sepharad will possess the towns of the Negev.",
             "21": "Deliverers will go up on Mount Zion to govern the mountains of Esau. And the kingdom will be the LORD\u2019s."
-        },
-        "2": {
-            "1": "\u201cSee, I will make you small among the nations; you will be utterly despised."
-        },
-        "3": {
-            "1": "The pride of your heart has deceived you, you who live in the clefts of the rocks and make your home on the heights, you who say to yourself, \u2018Who can bring me down to the ground?\u2019"
-        },
-        "4": {
-            "1": "Though you soar like the eagle and make your nest among the stars, from there I will bring you down,\u201d declares the LORD."
-        },
-        "5": {
-            "1": "\u201cIf thieves came to you, if robbers in the night\u2014 oh, what a disaster awaits you!\u2014 would they not steal only as much as they wanted? If grape pickers came to you, would they not leave a few grapes?"
-        },
-        "6": {
-            "1": "But how Esau will be ransacked, his hidden treasures pillaged!"
-        },
-        "7": {
-            "1": "All your allies will force you to the border; your friends will deceive and overpower you; those who eat your bread will set a trap for you, but you will not detect it."
-        },
-        "8": {
-            "1": "\u201cIn that day,\u201d declares the LORD, \u201cwill I not destroy the wise men of Edom, those of understanding in the mountains of Esau?"
-        },
-        "9": {
-            "1": "Your warriors, Teman, will be terrified, and everyone in Esau\u2019s mountains will be cut down in the slaughter."
-        },
-        "10": {
-            "1": "Because of the violence against your brother Jacob, you will be covered with shame; you will be destroyed forever."
-        },
-        "11": {
-            "1": "On the day you stood aloof while strangers carried off his wealth and foreigners entered his gates and cast lots for Jerusalem, you were like one of them."
-        },
-        "12": {
-            "1": "You should not gloat over your brother in the day of his misfortune, nor rejoice over the people of Judah in the day of their destruction, nor boast so much in the day of their trouble."
-        },
-        "13": {
-            "1": "You should not march through the gates of my people in the day of their disaster, nor gloat over them in their calamity in the day of their disaster, nor seize their wealth in the day of their disaster."
-        },
-        "14": {
-            "1": "You should not wait at the crossroads to cut down their fugitives, nor hand over their survivors in the day of their trouble."
-        },
-        "15": {
-            "1": "\u201cThe day of the LORD is near for all nations. As you have done, it will be done to you; your deeds will return upon your own head."
-        },
-        "16": {
-            "1": "Just as you drank on my holy hill, so all the nations will drink continually; they will drink and drink and be as if they had never been."
-        },
-        "17": {
-            "1": "But on Mount Zion will be deliverance; it will be holy, and Jacob will possess his inheritance."
-        },
-        "18": {
-            "1": "Jacob will be a fire and Joseph a flame; Esau will be stubble, and they will set him on fire and destroy him. There will be no survivors from Esau.\u201d The LORD has spoken."
-        },
-        "19": {
-            "1": "People from the Negev will occupy the mountains of Esau, and people from the foothills will possess the land of the Philistines. They will occupy the fields of Ephraim and Samaria, and Benjamin will possess Gilead."
-        },
-        "20": {
-            "1": "This company of Israelite exiles who are in Canaan will possess the land as far as Zarephath; the exiles from Jerusalem who are in Sepharad will possess the towns of the Negev."
-        },
-        "21": {
-            "1": "Deliverers will go up on Mount Zion to govern the mountains of Esau. And the kingdom will be the LORD\u2019s."
         }
     },
     "Jonah": {
@@ -24617,7 +24648,7 @@
             "20": "The LORD is in his holy temple; let all the earth be silent before him."
         },
         "3": {
-            "1": "A prayer of Habakkuk the prophet. On .",
+            "1": "A prayer of Habakkuk the prophet. On shigionoth.",
             "2": "LORD, I have heard of your fame; I stand in awe of your deeds, LORD. Repeat them in our day, in our time make them known; in wrath remember mercy.",
             "3": "God came from Teman, the Holy One from Mount Paran. His glory covered the heavens and his praise filled the earth.",
             "4": "His splendor was like the sunrise; rays flashed from his hand, where his power was hidden.",
@@ -25659,12 +25690,12 @@
             "18": "Jesus rebuked the demon, and it came out of the boy, and he was healed at that moment.",
             "19": "Then the disciples came to Jesus in private and asked, \u201cWhy couldn\u2019t we drive it out?\u201d",
             "20": "He replied, \u201cBecause you have so little faith. Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, \u2018Move from here to there,\u2019 and it will move. Nothing will be impossible for you.\u201d",
-            "21": "When they came together in Galilee, he said to them, \u201cThe Son of Man is going to be delivered into the hands of men.",
-            "22": "They will kill him, and on the third day he will be raised to life.\u201d And the disciples were filled with grief.",
-            "23": "After Jesus and his disciples arrived in Capernaum, the collectors of the two-drachma temple tax came to Peter and asked, \u201cDoesn\u2019t your teacher pay the temple tax?\u201d",
-            "24": "\u201cYes, he does,\u201d he replied. When Peter came into the house, Jesus was the first to speak. \u201cWhat do you think, Simon?\u201d he asked. \u201cFrom whom do the kings of the earth collect duty and taxes\u2014from their own children or from others?\u201d",
-            "25": "\u201cFrom others,\u201d Peter answered. \u201cThen the children are exempt,\u201d Jesus said to him.",
-            "26": "\u201cBut so that we may not cause offense, go to the lake and throw out your line. Take the first fish you catch; open its mouth and you will find a four-drachma coin. Take it and give it to them for my tax and yours.\u201d"
+            "22": "When they came together in Galilee, he said to them, \u201cThe Son of Man is going to be delivered into the hands of men.",
+            "23": "They will kill him, and on the third day he will be raised to life.\u201d And the disciples were filled with grief.",
+            "24": "After Jesus and his disciples arrived in Capernaum, the collectors of the two-drachma temple tax came to Peter and asked, \u201cDoesn\u2019t your teacher pay the temple tax?\u201d",
+            "25": "\u201cYes, he does,\u201d he replied. When Peter came into the house, Jesus was the first to speak. \u201cWhat do you think, Simon?\u201d he asked. \u201cFrom whom do the kings of the earth collect duty and taxes\u2014from their own children or from others?\u201d",
+            "26": "\u201cFrom others,\u201d Peter answered. \u201cThen the children are exempt,\u201d Jesus said to him.",
+            "27": "\u201cBut so that we may not cause offense, go to the lake and throw out your line. Take the first fish you catch; open its mouth and you will find a four-drachma coin. Take it and give it to them for my tax and yours.\u201d"
         },
         "18": {
             "1": "At that time the disciples came to Jesus and asked, \u201cWho, then, is the greatest in the kingdom of heaven?\u201d",
@@ -25677,30 +25708,30 @@
             "8": "If your hand or your foot causes you to stumble, cut it off and throw it away. It is better for you to enter life maimed or crippled than to have two hands or two feet and be thrown into eternal fire.",
             "9": "And if your eye causes you to stumble, gouge it out and throw it away. It is better for you to enter life with one eye than to have two eyes and be thrown into the fire of hell.",
             "10": "\u201cSee that you do not despise one of these little ones. For I tell you that their angels in heaven always see the face of my Father in heaven.",
-            "11": "\u201cWhat do you think? If a man owns a hundred sheep, and one of them wanders away, will he not leave the ninety-nine on the hills and go to look for the one that wandered off?",
-            "12": "And if he finds it, truly I tell you, he is happier about that one sheep than about the ninety-nine that did not wander off.",
-            "13": "In the same way your Father in heaven is not willing that any of these little ones should perish.",
-            "14": "\u201cIf your brother or sister sins, go and point out their fault, just between the two of you. If they listen to you, you have won them over.",
-            "15": "But if they will not listen, take one or two others along, so that \u2018every matter may be established by the testimony of two or three witnesses.\u2019",
-            "16": "If they still refuse to listen, tell it to the church; and if they refuse to listen even to the church, treat them as you would a pagan or a tax collector.",
-            "17": "\u201cTruly I tell you, whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven.",
-            "18": "\u201cAgain, truly I tell you that if two of you on earth agree about anything they ask for, it will be done for them by my Father in heaven.",
-            "19": "For where two or three gather in my name, there am I with them.\u201d",
-            "20": "Then Peter came to Jesus and asked, \u201cLord, how many times shall I forgive my brother or sister who sins against me? Up to seven times?\u201d",
-            "21": "Jesus answered, \u201cI tell you, not seven times, but seventy-seven times.",
-            "22": "\u201cTherefore, the kingdom of heaven is like a king who wanted to settle accounts with his servants.",
-            "23": "As he began the settlement, a man who owed him ten thousand bags of gold was brought to him.",
-            "24": "Since he was not able to pay, the master ordered that he and his wife and his children and all that he had be sold to repay the debt.",
-            "25": "\u201cAt this the servant fell on his knees before him. \u2018Be patient with me,\u2019 he begged, \u2018and I will pay back everything.\u2019",
-            "26": "The servant\u2019s master took pity on him, canceled the debt and let him go.",
-            "27": "\u201cBut when that servant went out, he found one of his fellow servants who owed him a hundred silver coins. He grabbed him and began to choke him. \u2018Pay back what you owe me!\u2019 he demanded.",
-            "28": "\u201cHis fellow servant fell to his knees and begged him, \u2018Be patient with me, and I will pay it back.\u2019",
-            "29": "\u201cBut he refused. Instead, he went off and had the man thrown into prison until he could pay the debt.",
-            "30": "When the other servants saw what had happened, they were outraged and went and told their master everything that had happened.",
-            "31": "\u201cThen the master called the servant in. \u2018You wicked servant,\u2019 he said, \u2018I canceled all that debt of yours because you begged me to.",
-            "32": "Shouldn\u2019t you have had mercy on your fellow servant just as I had on you?\u2019",
-            "33": "In anger his master handed him over to the jailers to be tortured, until he should pay back all he owed.",
-            "34": "\u201cThis is how my heavenly Father will treat each of you unless you forgive your brother or sister from your heart.\u201d"
+            "12": "\u201cWhat do you think? If a man owns a hundred sheep, and one of them wanders away, will he not leave the ninety-nine on the hills and go to look for the one that wandered off?",
+            "13": "And if he finds it, truly I tell you, he is happier about that one sheep than about the ninety-nine that did not wander off.",
+            "14": "In the same way your Father in heaven is not willing that any of these little ones should perish.",
+            "15": "\u201cIf your brother or sister sins, go and point out their fault, just between the two of you. If they listen to you, you have won them over.",
+            "16": "But if they will not listen, take one or two others along, so that \u2018every matter may be established by the testimony of two or three witnesses.\u2019",
+            "17": "If they still refuse to listen, tell it to the church; and if they refuse to listen even to the church, treat them as you would a pagan or a tax collector.",
+            "18": "\u201cTruly I tell you, whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven.",
+            "19": "\u201cAgain, truly I tell you that if two of you on earth agree about anything they ask for, it will be done for them by my Father in heaven.",
+            "20": "For where two or three gather in my name, there am I with them.\u201d",
+            "21": "Then Peter came to Jesus and asked, \u201cLord, how many times shall I forgive my brother or sister who sins against me? Up to seven times?\u201d",
+            "22": "Jesus answered, \u201cI tell you, not seven times, but seventy-seven times.",
+            "23": "\u201cTherefore, the kingdom of heaven is like a king who wanted to settle accounts with his servants.",
+            "24": "As he began the settlement, a man who owed him ten thousand bags of gold was brought to him.",
+            "25": "Since he was not able to pay, the master ordered that he and his wife and his children and all that he had be sold to repay the debt.",
+            "26": "\u201cAt this the servant fell on his knees before him. \u2018Be patient with me,\u2019 he begged, \u2018and I will pay back everything.\u2019",
+            "27": "The servant\u2019s master took pity on him, canceled the debt and let him go.",
+            "28": "\u201cBut when that servant went out, he found one of his fellow servants who owed him a hundred silver coins. He grabbed him and began to choke him. \u2018Pay back what you owe me!\u2019 he demanded.",
+            "29": "\u201cHis fellow servant fell to his knees and begged him, \u2018Be patient with me, and I will pay it back.\u2019",
+            "30": "\u201cBut he refused. Instead, he went off and had the man thrown into prison until he could pay the debt.",
+            "31": "When the other servants saw what had happened, they were outraged and went and told their master everything that had happened.",
+            "32": "\u201cThen the master called the servant in. \u2018You wicked servant,\u2019 he said, \u2018I canceled all that debt of yours because you begged me to.",
+            "33": "Shouldn\u2019t you have had mercy on your fellow servant just as I had on you?\u2019",
+            "34": "In anger his master handed him over to the jailers to be tortured, until he should pay back all he owed.",
+            "35": "\u201cThis is how my heavenly Father will treat each of you unless you forgive your brother or sister from your heart.\u201d"
         },
         "19": {
             "1": "When Jesus had finished saying these things, he left Galilee and went into the region of Judea to the other side of the Jordan.",
@@ -25880,31 +25911,31 @@
             "11": "The greatest among you will be your servant.",
             "12": "For those who exalt themselves will be humbled, and those who humble themselves will be exalted.",
             "13": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You shut the door of the kingdom of heaven in people\u2019s faces. You yourselves do not enter, nor will you let those enter who are trying to.",
-            "14": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You travel over land and sea to win a single convert, and when you have succeeded, you make them twice as much a child of hell as you are.",
-            "15": "\u201cWoe to you, blind guides! You say, \u2018If anyone swears by the temple, it means nothing; but anyone who swears by the gold of the temple is bound by that oath.\u2019",
-            "16": "You blind fools! Which is greater: the gold, or the temple that makes the gold sacred?",
-            "17": "You also say, \u2018If anyone swears by the altar, it means nothing; but anyone who swears by the gift on the altar is bound by that oath.\u2019",
-            "18": "You blind men! Which is greater: the gift, or the altar that makes the gift sacred?",
-            "19": "Therefore, anyone who swears by the altar swears by it and by everything on it.",
-            "20": "And anyone who swears by the temple swears by it and by the one who dwells in it.",
-            "21": "And anyone who swears by heaven swears by God\u2019s throne and by the one who sits on it.",
-            "22": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You give a tenth of your spices\u2014mint, dill and cumin. But you have neglected the more important matters of the law\u2014justice, mercy and faithfulness. You should have practiced the latter, without neglecting the former.",
-            "23": "You blind guides! You strain out a gnat but swallow a camel.",
-            "24": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You clean the outside of the cup and dish, but inside they are full of greed and self-indulgence.",
-            "25": "Blind Pharisee! First clean the inside of the cup and dish, and then the outside also will be clean.",
-            "26": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You are like whitewashed tombs, which look beautiful on the outside but on the inside are full of the bones of the dead and everything unclean.",
-            "27": "In the same way, on the outside you appear to people as righteous but on the inside you are full of hypocrisy and wickedness.",
-            "28": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You build tombs for the prophets and decorate the graves of the righteous.",
-            "29": "And you say, \u2018If we had lived in the days of our ancestors, we would not have taken part with them in shedding the blood of the prophets.\u2019",
-            "30": "So you testify against yourselves that you are the descendants of those who murdered the prophets.",
-            "31": "Go ahead, then, and complete what your ancestors started!",
-            "32": "\u201cYou snakes! You brood of vipers! How will you escape being condemned to hell?",
-            "33": "Therefore I am sending you prophets and sages and teachers. Some of them you will kill and crucify; others you will flog in your synagogues and pursue from town to town.",
-            "34": "And so upon you will come all the righteous blood that has been shed on earth, from the blood of righteous Abel to the blood of Zechariah son of Berekiah, whom you murdered between the temple and the altar.",
-            "35": "Truly I tell you, all this will come on this generation.",
-            "36": "\u201cJerusalem, Jerusalem, you who kill the prophets and stone those sent to you, how often I have longed to gather your children together, as a hen gathers her chicks under her wings, and you were not willing.",
-            "37": "Look, your house is left to you desolate.",
-            "38": "For I tell you, you will not see me again until you say, \u2018Blessed is he who comes in the name of the Lord.\u2019\u201d"
+            "15": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You travel over land and sea to win a single convert, and when you have succeeded, you make them twice as much a child of hell as you are.",
+            "16": "\u201cWoe to you, blind guides! You say, \u2018If anyone swears by the temple, it means nothing; but anyone who swears by the gold of the temple is bound by that oath.\u2019",
+            "17": "You blind fools! Which is greater: the gold, or the temple that makes the gold sacred?",
+            "18": "You also say, \u2018If anyone swears by the altar, it means nothing; but anyone who swears by the gift on the altar is bound by that oath.\u2019",
+            "19": "You blind men! Which is greater: the gift, or the altar that makes the gift sacred?",
+            "20": "Therefore, anyone who swears by the altar swears by it and by everything on it.",
+            "21": "And anyone who swears by the temple swears by it and by the one who dwells in it.",
+            "22": "And anyone who swears by heaven swears by God\u2019s throne and by the one who sits on it.",
+            "23": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You give a tenth of your spices\u2014mint, dill and cumin. But you have neglected the more important matters of the law\u2014justice, mercy and faithfulness. You should have practiced the latter, without neglecting the former.",
+            "24": "You blind guides! You strain out a gnat but swallow a camel.",
+            "25": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You clean the outside of the cup and dish, but inside they are full of greed and self-indulgence.",
+            "26": "Blind Pharisee! First clean the inside of the cup and dish, and then the outside also will be clean.",
+            "27": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You are like whitewashed tombs, which look beautiful on the outside but on the inside are full of the bones of the dead and everything unclean.",
+            "28": "In the same way, on the outside you appear to people as righteous but on the inside you are full of hypocrisy and wickedness.",
+            "29": "\u201cWoe to you, teachers of the law and Pharisees, you hypocrites! You build tombs for the prophets and decorate the graves of the righteous.",
+            "30": "And you say, \u2018If we had lived in the days of our ancestors, we would not have taken part with them in shedding the blood of the prophets.\u2019",
+            "31": "So you testify against yourselves that you are the descendants of those who murdered the prophets.",
+            "32": "Go ahead, then, and complete what your ancestors started!",
+            "33": "\u201cYou snakes! You brood of vipers! How will you escape being condemned to hell?",
+            "34": "Therefore I am sending you prophets and sages and teachers. Some of them you will kill and crucify; others you will flog in your synagogues and pursue from town to town.",
+            "35": "And so upon you will come all the righteous blood that has been shed on earth, from the blood of righteous Abel to the blood of Zechariah son of Berekiah, whom you murdered between the temple and the altar.",
+            "36": "Truly I tell you, all this will come on this generation.",
+            "37": "\u201cJerusalem, Jerusalem, you who kill the prophets and stone those sent to you, how often I have longed to gather your children together, as a hen gathers her chicks under her wings, and you were not willing.",
+            "38": "Look, your house is left to you desolate.",
+            "39": "For I tell you, you will not see me again until you say, \u2018Blessed is he who comes in the name of the Lord.\u2019\u201d"
         },
         "24": {
             "1": "Jesus left the temple and was walking away when his disciples came up to him to call his attention to its buildings.",
@@ -26130,7 +26161,7 @@
             "43": "He trusts in God. Let God rescue him now if he wants him, for he said, \u2018I am the Son of God.\u2019\u201d",
             "44": "In the same way the rebels who were crucified with him also heaped insults on him.",
             "45": "From noon until three in the afternoon darkness came over all the land.",
-            "46": "About three in the afternoon Jesus cried out in a loud voice,    (which means \u201cMy God, my God, why have you forsaken me?\u201d).",
+            "46": "About three in the afternoon Jesus cried out in a loud voice, \u201cEli, Eli, lema sabachthani?\u201d (which means \u201cMy God, my God, why have you forsaken me?\u201d).",
             "47": "When some of those standing there heard this, they said, \u201cHe\u2019s calling Elijah.\u201d",
             "48": "Immediately one of them ran and got a sponge. He filled it with wine vinegar, put it on a staff, and offered it to Jesus to drink.",
             "49": "The rest said, \u201cNow leave him alone. Let\u2019s see if Elijah comes to save him.\u201d",
@@ -26374,7 +26405,7 @@
             "38": "When they came to the home of the synagogue leader, Jesus saw a commotion, with people crying and wailing loudly.",
             "39": "He went in and said to them, \u201cWhy all this commotion and wailing? The child is not dead but asleep.\u201d",
             "40": "But they laughed at him. After he put them all out, he took the child\u2019s father and mother and the disciples who were with him, and went in where the child was.",
-            "41": "He took her by the hand and said to her,  (which means \u201cLittle girl, I say to you, get up!\u201d).",
+            "41": "He took her by the hand and said to her, \u201cTalitha koum!\u201d (which means \u201cLittle girl, I say to you, get up!\u201d).",
             "42": "Immediately the girl stood up and began to walk around (she was twelve years old). At this they were completely astonished.",
             "43": "He gave strict orders not to let anyone know about this, and told them to give her something to eat."
         },
@@ -26452,27 +26483,27 @@
             "13": "Thus you nullify the word of God by your tradition that you have handed down. And you do many things like that.\u201d",
             "14": "Again Jesus called the crowd to him and said, \u201cListen to me, everyone, and understand this.",
             "15": "Nothing outside a person can defile them by going into them. Rather, it is what comes out of a person that defiles them.\u201d",
-            "16": "After he had left the crowd and entered the house, his disciples asked him about this parable.",
-            "17": "\u201cAre you so dull?\u201d he asked. \u201cDon\u2019t you see that nothing that enters a person from the outside can defile them?",
-            "18": "For it doesn\u2019t go into their heart but into their stomach, and then out of the body.\u201d (In saying this, Jesus declared all foods clean.)",
-            "19": "He went on: \u201cWhat comes out of a person is what defiles them.",
-            "20": "For it is from within, out of a person\u2019s heart, that evil thoughts come\u2014sexual immorality, theft, murder,",
-            "21": "adultery, greed, malice, deceit, lewdness, envy, slander, arrogance and folly.",
-            "22": "All these evils come from inside and defile a person.\u201d",
-            "23": "Jesus left that place and went to the vicinity of Tyre. He entered a house and did not want anyone to know it; yet he could not keep his presence secret.",
-            "24": "In fact, as soon as she heard about him, a woman whose little daughter was possessed by an impure spirit came and fell at his feet.",
-            "25": "The woman was a Greek, born in Syrian Phoenicia. She begged Jesus to drive the demon out of her daughter.",
-            "26": "\u201cFirst let the children eat all they want,\u201d he told her, \u201cfor it is not right to take the children\u2019s bread and toss it to the dogs.\u201d",
-            "27": "\u201cLord,\u201d she replied, \u201ceven the dogs under the table eat the children\u2019s crumbs.\u201d",
-            "28": "Then he told her, \u201cFor such a reply, you may go; the demon has left your daughter.\u201d",
-            "29": "She went home and found her child lying on the bed, and the demon gone.",
-            "30": "Then Jesus left the vicinity of Tyre and went through Sidon, down to the Sea of Galilee and into the region of the Decapolis.",
-            "31": "There some people brought to him a man who was deaf and could hardly talk, and they begged Jesus to place his hand on him.",
-            "32": "After he took him aside, away from the crowd, Jesus put his fingers into the man\u2019s ears. Then he spit and touched the man\u2019s tongue.",
-            "33": "He looked up to heaven and with a deep sigh said to him,  (which means \u201cBe opened!\u201d).",
-            "34": "At this, the man\u2019s ears were opened, his tongue was loosened and he began to speak plainly.",
-            "35": "Jesus commanded them not to tell anyone. But the more he did so, the more they kept talking about it.",
-            "36": "People were overwhelmed with amazement. \u201cHe has done everything well,\u201d they said. \u201cHe even makes the deaf hear and the mute speak.\u201d"
+            "17": "After he had left the crowd and entered the house, his disciples asked him about this parable.",
+            "18": "\u201cAre you so dull?\u201d he asked. \u201cDon\u2019t you see that nothing that enters a person from the outside can defile them?",
+            "19": "For it doesn\u2019t go into their heart but into their stomach, and then out of the body.\u201d (In saying this, Jesus declared all foods clean.)",
+            "20": "He went on: \u201cWhat comes out of a person is what defiles them.",
+            "21": "For it is from within, out of a person\u2019s heart, that evil thoughts come\u2014sexual immorality, theft, murder,",
+            "22": "adultery, greed, malice, deceit, lewdness, envy, slander, arrogance and folly.",
+            "23": "All these evils come from inside and defile a person.\u201d",
+            "24": "Jesus left that place and went to the vicinity of Tyre. He entered a house and did not want anyone to know it; yet he could not keep his presence secret.",
+            "25": "In fact, as soon as she heard about him, a woman whose little daughter was possessed by an impure spirit came and fell at his feet.",
+            "26": "The woman was a Greek, born in Syrian Phoenicia. She begged Jesus to drive the demon out of her daughter.",
+            "27": "\u201cFirst let the children eat all they want,\u201d he told her, \u201cfor it is not right to take the children\u2019s bread and toss it to the dogs.\u201d",
+            "28": "\u201cLord,\u201d she replied, \u201ceven the dogs under the table eat the children\u2019s crumbs.\u201d",
+            "29": "Then he told her, \u201cFor such a reply, you may go; the demon has left your daughter.\u201d",
+            "30": "She went home and found her child lying on the bed, and the demon gone.",
+            "31": "Then Jesus left the vicinity of Tyre and went through Sidon, down to the Sea of Galilee and into the region of the Decapolis.",
+            "32": "There some people brought to him a man who was deaf and could hardly talk, and they begged Jesus to place his hand on him.",
+            "33": "After he took him aside, away from the crowd, Jesus put his fingers into the man\u2019s ears. Then he spit and touched the man\u2019s tongue.",
+            "34": "He looked up to heaven and with a deep sigh said to him, \u201cEphphatha!\u201d (which means \u201cBe opened!\u201d).",
+            "35": "At this, the man\u2019s ears were opened, his tongue was loosened and he began to speak plainly.",
+            "36": "Jesus commanded them not to tell anyone. But the more he did so, the more they kept talking about it.",
+            "37": "People were overwhelmed with amazement. \u201cHe has done everything well,\u201d they said. \u201cHe even makes the deaf hear and the mute speak.\u201d"
         },
         "8": {
             "1": "During those days another large crowd gathered. Since they had nothing to eat, Jesus called his disciples to him and said,",
@@ -26558,11 +26589,11 @@
             "41": "Truly I tell you, anyone who gives you a cup of water in my name because you belong to the Messiah will certainly not lose their reward.",
             "42": "\u201cIf anyone causes one of these little ones\u2014those who believe in me\u2014to stumble, it would be better for them if a large millstone were hung around their neck and they were thrown into the sea.",
             "43": "If your hand causes you to stumble, cut it off. It is better for you to enter life maimed than with two hands to go into hell, where the fire never goes out.",
-            "44": "And if your foot causes you to stumble, cut it off. It is better for you to enter life crippled than to have two feet and be thrown into hell.",
-            "45": "And if your eye causes you to stumble, pluck it out. It is better for you to enter the kingdom of God with one eye than to have two eyes and be thrown into hell,",
-            "46": "where \u201c\u2018the worms that eat them do not die, and the fire is not quenched.\u2019",
-            "47": "Everyone will be salted with fire.",
-            "48": "\u201cSalt is good, but if it loses its saltiness, how can you make it salty again? Have salt among yourselves, and be at peace with each other.\u201d"
+            "45": "And if your foot causes you to stumble, cut it off. It is better for you to enter life crippled than to have two feet and be thrown into hell.",
+            "47": "And if your eye causes you to stumble, pluck it out. It is better for you to enter the kingdom of God with one eye than to have two eyes and be thrown into hell,",
+            "48": "where \u201c\u2018the worms that eat them do not die, and the fire is not quenched.\u2019",
+            "49": "Everyone will be salted with fire.",
+            "50": "\u201cSalt is good, but if it loses its saltiness, how can you make it salty again? Have salt among yourselves, and be at peace with each other.\u201d"
         },
         "10": {
             "1": "Jesus then left that place and went into the region of Judea and across the Jordan. Again crowds of people came to him, and as was his custom, he taught them.",
@@ -26644,13 +26675,13 @@
             "23": "\u201cTruly I tell you, if anyone says to this mountain, \u2018Go, throw yourself into the sea,\u2019 and does not doubt in their heart but believes that what they say will happen, it will be done for them.",
             "24": "Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours.",
             "25": "And when you stand praying, if you hold anything against anyone, forgive them, so that your Father in heaven may forgive you your sins.\u201d",
-            "26": "They arrived again in Jerusalem, and while Jesus was walking in the temple courts, the chief priests, the teachers of the law and the elders came to him.",
-            "27": "\u201cBy what authority are you doing these things?\u201d they asked. \u201cAnd who gave you authority to do this?\u201d",
-            "28": "Jesus replied, \u201cI will ask you one question. Answer me, and I will tell you by what authority I am doing these things.",
-            "29": "John\u2019s baptism\u2014was it from heaven, or of human origin? Tell me!\u201d",
-            "30": "They discussed it among themselves and said, \u201cIf we say, \u2018From heaven,\u2019 he will ask, \u2018Then why didn\u2019t you believe him?\u2019",
-            "31": "But if we say, \u2018Of human origin\u2019 \u2026\u201d (They feared the people, for everyone held that John really was a prophet.)",
-            "32": "So they answered Jesus, \u201cWe don\u2019t know.\u201d Jesus said, \u201cNeither will I tell you by what authority I am doing these things.\u201d"
+            "27": "They arrived again in Jerusalem, and while Jesus was walking in the temple courts, the chief priests, the teachers of the law and the elders came to him.",
+            "28": "\u201cBy what authority are you doing these things?\u201d they asked. \u201cAnd who gave you authority to do this?\u201d",
+            "29": "Jesus replied, \u201cI will ask you one question. Answer me, and I will tell you by what authority I am doing these things.",
+            "30": "John\u2019s baptism\u2014was it from heaven, or of human origin? Tell me!\u201d",
+            "31": "They discussed it among themselves and said, \u201cIf we say, \u2018From heaven,\u2019 he will ask, \u2018Then why didn\u2019t you believe him?\u2019",
+            "32": "But if we say, \u2018Of human origin\u2019 \u2026\u201d (They feared the people, for everyone held that John really was a prophet.)",
+            "33": "So they answered Jesus, \u201cWe don\u2019t know.\u201d Jesus said, \u201cNeither will I tell you by what authority I am doing these things.\u201d"
         },
         "12": {
             "1": "Jesus then began to speak to them in parables: \u201cA man planted a vineyard. He put a wall around it, dug a pit for the winepress and built a watchtower. Then he rented the vineyard to some farmers and moved to another place.",
@@ -26773,7 +26804,7 @@
             "33": "He took Peter, James and John along with him, and he began to be deeply distressed and troubled.",
             "34": "\u201cMy soul is overwhelmed with sorrow to the point of death,\u201d he said to them. \u201cStay here and keep watch.\u201d",
             "35": "Going a little farther, he fell to the ground and prayed that if possible the hour might pass from him.",
-            "36": ", Father,\u201d he said, \u201ceverything is possible for you. Take this cup from me. Yet not what I will, but what you will.\u201d",
+            "36": "\u201cAbba, Father,\u201d he said, \u201ceverything is possible for you. Take this cup from me. Yet not what I will, but what you will.\u201d",
             "37": "Then he returned to his disciples and found them sleeping. \u201cSimon,\u201d he said to Peter, \u201care you asleep? Couldn\u2019t you keep watch for one hour?",
             "38": "Watch and pray so that you will not fall into temptation. The spirit is willing, but the flesh is weak.\u201d",
             "39": "Once more he went away and prayed the same thing.",
@@ -26839,25 +26870,25 @@
             "25": "It was nine in the morning when they crucified him.",
             "26": "The written notice of the charge against him read: THE KING OF THE JEWS.",
             "27": "They crucified two rebels with him, one on his right and one on his left.",
-            "28": "Those who passed by hurled insults at him, shaking their heads and saying, \u201cSo! You who are going to destroy the temple and build it in three days,",
-            "29": "come down from the cross and save yourself!\u201d",
-            "30": "In the same way the chief priests and the teachers of the law mocked him among themselves. \u201cHe saved others,\u201d they said, \u201cbut he can\u2019t save himself!",
-            "31": "Let this Messiah, this king of Israel, come down now from the cross, that we may see and believe.\u201d Those crucified with him also heaped insults on him.",
-            "32": "At noon, darkness came over the whole land until three in the afternoon.",
-            "33": "And at three in the afternoon Jesus cried out in a loud voice,  (which means \u201cMy God, my God, why have you forsaken me?\u201d).",
-            "34": "When some of those standing near heard this, they said, \u201cListen, he\u2019s calling Elijah.\u201d",
-            "35": "Someone ran, filled a sponge with wine vinegar, put it on a staff, and offered it to Jesus to drink. \u201cNow leave him alone. Let\u2019s see if Elijah comes to take him down,\u201d he said.",
-            "36": "With a loud cry, Jesus breathed his last.",
-            "37": "The curtain of the temple was torn in two from top to bottom.",
-            "38": "And when the centurion, who stood there in front of Jesus, saw how he died, he said, \u201cSurely this man was the Son of God!\u201d",
-            "39": "Some women were watching from a distance. Among them were Mary Magdalene, Mary the mother of James the younger and of Joseph, and Salome.",
-            "40": "In Galilee these women had followed him and cared for his needs. Many other women who had come up with him to Jerusalem were also there.",
-            "41": "It was Preparation Day (that is, the day before the Sabbath). So as evening approached,",
-            "42": "Joseph of Arimathea, a prominent member of the Council, who was himself waiting for the kingdom of God, went boldly to Pilate and asked for Jesus\u2019 body.",
-            "43": "Pilate was surprised to hear that he was already dead. Summoning the centurion, he asked him if Jesus had already died.",
-            "44": "When he learned from the centurion that it was so, he gave the body to Joseph.",
-            "45": "So Joseph bought some linen cloth, took down the body, wrapped it in the linen, and placed it in a tomb cut out of rock. Then he rolled a stone against the entrance of the tomb.",
-            "46": "Mary Magdalene and Mary the mother of Joseph saw where he was laid."
+            "29": "Those who passed by hurled insults at him, shaking their heads and saying, \u201cSo! You who are going to destroy the temple and build it in three days,",
+            "30": "come down from the cross and save yourself!\u201d",
+            "31": "In the same way the chief priests and the teachers of the law mocked him among themselves. \u201cHe saved others,\u201d they said, \u201cbut he can\u2019t save himself!",
+            "32": "Let this Messiah, this king of Israel, come down now from the cross, that we may see and believe.\u201d Those crucified with him also heaped insults on him.",
+            "33": "At noon, darkness came over the whole land until three in the afternoon.",
+            "34": "And at three in the afternoon Jesus cried out in a loud voice, \u201cEloi, Eloi, lema sabachthani?\u201d (which means \u201cMy God, my God, why have you forsaken me?\u201d).",
+            "35": "When some of those standing near heard this, they said, \u201cListen, he\u2019s calling Elijah.\u201d",
+            "36": "Someone ran, filled a sponge with wine vinegar, put it on a staff, and offered it to Jesus to drink. \u201cNow leave him alone. Let\u2019s see if Elijah comes to take him down,\u201d he said.",
+            "37": "With a loud cry, Jesus breathed his last.",
+            "38": "The curtain of the temple was torn in two from top to bottom.",
+            "39": "And when the centurion, who stood there in front of Jesus, saw how he died, he said, \u201cSurely this man was the Son of God!\u201d",
+            "40": "Some women were watching from a distance. Among them were Mary Magdalene, Mary the mother of James the younger and of Joseph, and Salome.",
+            "41": "In Galilee these women had followed him and cared for his needs. Many other women who had come up with him to Jerusalem were also there.",
+            "42": "It was Preparation Day (that is, the day before the Sabbath). So as evening approached,",
+            "43": "Joseph of Arimathea, a prominent member of the Council, who was himself waiting for the kingdom of God, went boldly to Pilate and asked for Jesus\u2019 body.",
+            "44": "Pilate was surprised to hear that he was already dead. Summoning the centurion, he asked him if Jesus had already died.",
+            "45": "When he learned from the centurion that it was so, he gave the body to Joseph.",
+            "46": "So Joseph bought some linen cloth, took down the body, wrapped it in the linen, and placed it in a tomb cut out of rock. Then he rolled a stone against the entrance of the tomb.",
+            "47": "Mary Magdalene and Mary the mother of Joseph saw where he was laid."
         },
         "16": {
             "1": "When the Sabbath was over, Mary Magdalene, Mary the mother of James, and Salome bought spices so that they might go to anoint Jesus\u2019 body.",
@@ -26868,11 +26899,18 @@
             "6": "\u201cDon\u2019t be alarmed,\u201d he said. \u201cYou are looking for Jesus the Nazarene, who was crucified. He has risen! He is not here. See the place where they laid him.",
             "7": "But go, tell his disciples and Peter, \u2018He is going ahead of you into Galilee. There you will see him, just as he told you.\u2019\u201d",
             "8": "Trembling and bewildered, the women went out and fled from the tomb. They said nothing to anyone, because they were afraid.",
-            "9": "[The earliest manuscripts and some other ancient witnesses do not have verses 9\u201320.]  ",
-            "10": "  ",
-            "11": "  ",
-            "12": " ",
-            "13": " "
+            "9": "[The earliest manuscripts and some other ancient witnesses do not have verses 9\u201320.] When Jesus rose early on the first day of the week, he appeared first to Mary Magdalene, out of whom he had driven seven demons.",
+            "10": "She went and told those who had been with him and who were mourning and weeping.",
+            "11": "When they heard that Jesus was alive and that she had seen him, they did not believe it.",
+            "12": "Afterward Jesus appeared in a different form to two of them while they were walking in the country.",
+            "13": "These returned and reported it to the rest; but they did not believe them either.",
+            "14": "Later Jesus appeared to the Eleven as they were eating; he rebuked them for their lack of faith and their stubborn refusal to believe those who had seen him after he had risen.",
+            "15": "He said to them, \u201cGo into all the world and preach the gospel to all creation.",
+            "16": "Whoever believes and is baptized will be saved, but whoever does not believe will be condemned.",
+            "17": "And these signs will accompany those who believe: In my name they will drive out demons; they will speak in new tongues;",
+            "18": "they will pick up snakes with their hands; and when they drink deadly poison, it will not hurt them at all; they will place their hands on sick people, and they will get well.\u201d",
+            "19": "After the Lord Jesus had spoken to them, he was taken up into heaven and he sat at the right hand of God.",
+            "20": "Then the disciples went out and preached everywhere, and the Lord worked with them and confirmed his word by the signs that accompanied it."
         }
     },
     "Luke": {
@@ -27702,7 +27740,7 @@
             "33": "Whoever tries to keep their life will lose it, and whoever loses their life will preserve it.",
             "34": "I tell you, on that night two people will be in one bed; one will be taken and the other left.",
             "35": "Two women will be grinding grain together; one will be taken and the other left.\u201d",
-            "36": "\u201cWhere, Lord?\u201d they asked. He replied, \u201cWhere there is a dead body, there the vultures will gather.\u201d"
+            "37": "\u201cWhere, Lord?\u201d they asked. He replied, \u201cWhere there is a dead body, there the vultures will gather.\u201d"
         },
         "18": {
             "1": "Then Jesus told his disciples a parable to show them that they should always pray and not give up.",
@@ -27978,45 +28016,45 @@
             "14": "and said to them, \u201cYou brought me this man as one who was inciting the people to rebellion. I have examined him in your presence and have found no basis for your charges against him.",
             "15": "Neither has Herod, for he sent him back to us; as you can see, he has done nothing to deserve death.",
             "16": "Therefore, I will punish him and then release him.\u201d",
-            "17": "But the whole crowd shouted, \u201cAway with this man! Release Barabbas to us!\u201d",
-            "18": "(Barabbas had been thrown into prison for an insurrection in the city, and for murder.)",
-            "19": "Wanting to release Jesus, Pilate appealed to them again.",
-            "20": "But they kept shouting, \u201cCrucify him! Crucify him!\u201d",
-            "21": "For the third time he spoke to them: \u201cWhy? What crime has this man committed? I have found in him no grounds for the death penalty. Therefore I will have him punished and then release him.\u201d",
-            "22": "But with loud shouts they insistently demanded that he be crucified, and their shouts prevailed.",
-            "23": "So Pilate decided to grant their demand.",
-            "24": "He released the man who had been thrown into prison for insurrection and murder, the one they asked for, and surrendered Jesus to their will.",
-            "25": "As the soldiers led him away, they seized Simon from Cyrene, who was on his way in from the country, and put the cross on him and made him carry it behind Jesus.",
-            "26": "A large number of people followed him, including women who mourned and wailed for him.",
-            "27": "Jesus turned and said to them, \u201cDaughters of Jerusalem, do not weep for me; weep for yourselves and for your children.",
-            "28": "For the time will come when you will say, \u2018Blessed are the childless women, the wombs that never bore and the breasts that never nursed!\u2019",
-            "29": "Then \u201c\u2018they will say to the mountains, \u201cFall on us!\u201d and to the hills, \u201cCover us!\u201d\u2019",
-            "30": "For if people do these things when the tree is green, what will happen when it is dry?\u201d",
-            "31": "Two other men, both criminals, were also led out with him to be executed.",
-            "32": "When they came to the place called the Skull, they crucified him there, along with the criminals\u2014one on his right, the other on his left.",
-            "33": "Jesus said, \u201cFather, forgive them, for they do not know what they are doing.\u201d And they divided up his clothes by casting lots.",
-            "34": "The people stood watching, and the rulers even sneered at him. They said, \u201cHe saved others; let him save himself if he is God\u2019s Messiah, the Chosen One.\u201d",
-            "35": "The soldiers also came up and mocked him. They offered him wine vinegar",
-            "36": "and said, \u201cIf you are the king of the Jews, save yourself.\u201d",
-            "37": "There was a written notice above him, which read: THIS IS THE KING OF THE JEWS.",
-            "38": "One of the criminals who hung there hurled insults at him: \u201cAren\u2019t you the Messiah? Save yourself and us!\u201d",
-            "39": "But the other criminal rebuked him. \u201cDon\u2019t you fear God,\u201d he said, \u201csince you are under the same sentence?",
-            "40": "We are punished justly, for we are getting what our deeds deserve. But this man has done nothing wrong.\u201d",
-            "41": "Then he said, \u201cJesus, remember me when you come into your kingdom.\u201d",
-            "42": "Jesus answered him, \u201cTruly I tell you, today you will be with me in paradise.\u201d",
-            "43": "It was now about noon, and darkness came over the whole land until three in the afternoon,",
-            "44": "for the sun stopped shining. And the curtain of the temple was torn in two.",
-            "45": "Jesus called out with a loud voice, \u201cFather, into your hands I commit my spirit.\u201d When he had said this, he breathed his last.",
-            "46": "The centurion, seeing what had happened, praised God and said, \u201cSurely this was a righteous man.\u201d",
-            "47": "When all the people who had gathered to witness this sight saw what took place, they beat their breasts and went away.",
-            "48": "But all those who knew him, including the women who had followed him from Galilee, stood at a distance, watching these things.",
-            "49": "Now there was a man named Joseph, a member of the Council, a good and upright man,",
-            "50": "who had not consented to their decision and action. He came from the Judean town of Arimathea, and he himself was waiting for the kingdom of God.",
-            "51": "Going to Pilate, he asked for Jesus\u2019 body.",
-            "52": "Then he took it down, wrapped it in linen cloth and placed it in a tomb cut in the rock, one in which no one had yet been laid.",
-            "53": "It was Preparation Day, and the Sabbath was about to begin.",
-            "54": "The women who had come with Jesus from Galilee followed Joseph and saw the tomb and how his body was laid in it.",
-            "55": "Then they went home and prepared spices and perfumes. But they rested on the Sabbath in obedience to the commandment."
+            "18": "But the whole crowd shouted, \u201cAway with this man! Release Barabbas to us!\u201d",
+            "19": "(Barabbas had been thrown into prison for an insurrection in the city, and for murder.)",
+            "20": "Wanting to release Jesus, Pilate appealed to them again.",
+            "21": "But they kept shouting, \u201cCrucify him! Crucify him!\u201d",
+            "22": "For the third time he spoke to them: \u201cWhy? What crime has this man committed? I have found in him no grounds for the death penalty. Therefore I will have him punished and then release him.\u201d",
+            "23": "But with loud shouts they insistently demanded that he be crucified, and their shouts prevailed.",
+            "24": "So Pilate decided to grant their demand.",
+            "25": "He released the man who had been thrown into prison for insurrection and murder, the one they asked for, and surrendered Jesus to their will.",
+            "26": "As the soldiers led him away, they seized Simon from Cyrene, who was on his way in from the country, and put the cross on him and made him carry it behind Jesus.",
+            "27": "A large number of people followed him, including women who mourned and wailed for him.",
+            "28": "Jesus turned and said to them, \u201cDaughters of Jerusalem, do not weep for me; weep for yourselves and for your children.",
+            "29": "For the time will come when you will say, \u2018Blessed are the childless women, the wombs that never bore and the breasts that never nursed!\u2019",
+            "30": "Then \u201c\u2018they will say to the mountains, \u201cFall on us!\u201d and to the hills, \u201cCover us!\u201d\u2019",
+            "31": "For if people do these things when the tree is green, what will happen when it is dry?\u201d",
+            "32": "Two other men, both criminals, were also led out with him to be executed.",
+            "33": "When they came to the place called the Skull, they crucified him there, along with the criminals\u2014one on his right, the other on his left.",
+            "34": "Jesus said, \u201cFather, forgive them, for they do not know what they are doing.\u201d And they divided up his clothes by casting lots.",
+            "35": "The people stood watching, and the rulers even sneered at him. They said, \u201cHe saved others; let him save himself if he is God\u2019s Messiah, the Chosen One.\u201d",
+            "36": "The soldiers also came up and mocked him. They offered him wine vinegar",
+            "37": "and said, \u201cIf you are the king of the Jews, save yourself.\u201d",
+            "38": "There was a written notice above him, which read: THIS IS THE KING OF THE JEWS.",
+            "39": "One of the criminals who hung there hurled insults at him: \u201cAren\u2019t you the Messiah? Save yourself and us!\u201d",
+            "40": "But the other criminal rebuked him. \u201cDon\u2019t you fear God,\u201d he said, \u201csince you are under the same sentence?",
+            "41": "We are punished justly, for we are getting what our deeds deserve. But this man has done nothing wrong.\u201d",
+            "42": "Then he said, \u201cJesus, remember me when you come into your kingdom.\u201d",
+            "43": "Jesus answered him, \u201cTruly I tell you, today you will be with me in paradise.\u201d",
+            "44": "It was now about noon, and darkness came over the whole land until three in the afternoon,",
+            "45": "for the sun stopped shining. And the curtain of the temple was torn in two.",
+            "46": "Jesus called out with a loud voice, \u201cFather, into your hands I commit my spirit.\u201d When he had said this, he breathed his last.",
+            "47": "The centurion, seeing what had happened, praised God and said, \u201cSurely this was a righteous man.\u201d",
+            "48": "When all the people who had gathered to witness this sight saw what took place, they beat their breasts and went away.",
+            "49": "But all those who knew him, including the women who had followed him from Galilee, stood at a distance, watching these things.",
+            "50": "Now there was a man named Joseph, a member of the Council, a good and upright man,",
+            "51": "who had not consented to their decision and action. He came from the Judean town of Arimathea, and he himself was waiting for the kingdom of God.",
+            "52": "Going to Pilate, he asked for Jesus\u2019 body.",
+            "53": "Then he took it down, wrapped it in linen cloth and placed it in a tomb cut in the rock, one in which no one had yet been laid.",
+            "54": "It was Preparation Day, and the Sabbath was about to begin.",
+            "55": "The women who had come with Jesus from Galilee followed Joseph and saw the tomb and how his body was laid in it.",
+            "56": "Then they went home and prepared spices and perfumes. But they rested on the Sabbath in obedience to the commandment."
         },
         "24": {
             "1": "On the first day of the week, very early in the morning, the women took the spices they had prepared and went to the tomb.",
@@ -28253,49 +28291,49 @@
             "1": "Some time later, Jesus went up to Jerusalem for one of the Jewish festivals.",
             "2": "Now there is in Jerusalem near the Sheep Gate a pool, which in Aramaic is called Bethesda and which is surrounded by five covered colonnades.",
             "3": "Here a great number of disabled people used to lie\u2014the blind, the lame, the paralyzed.",
-            "4": "One who was there had been an invalid for thirty-eight years.",
-            "5": "When Jesus saw him lying there and learned that he had been in this condition for a long time, he asked him, \u201cDo you want to get well?\u201d",
-            "6": "\u201cSir,\u201d the invalid replied, \u201cI have no one to help me into the pool when the water is stirred. While I am trying to get in, someone else goes down ahead of me.\u201d",
-            "7": "Then Jesus said to him, \u201cGet up! Pick up your mat and walk.\u201d",
-            "8": "At once the man was cured; he picked up his mat and walked. The day on which this took place was a Sabbath,",
-            "9": "and so the Jewish leaders said to the man who had been healed, \u201cIt is the Sabbath; the law forbids you to carry your mat.\u201d",
-            "10": "But he replied, \u201cThe man who made me well said to me, \u2018Pick up your mat and walk.\u2019 \u201d",
-            "11": "So they asked him, \u201cWho is this fellow who told you to pick it up and walk?\u201d",
-            "12": "The man who was healed had no idea who it was, for Jesus had slipped away into the crowd that was there.",
-            "13": "Later Jesus found him at the temple and said to him, \u201cSee, you are well again. Stop sinning or something worse may happen to you.\u201d",
-            "14": "The man went away and told the Jewish leaders that it was Jesus who had made him well.",
-            "15": "So, because Jesus was doing these things on the Sabbath, the Jewish leaders began to persecute him.",
-            "16": "In his defense Jesus said to them, \u201cMy Father is always at his work to this very day, and I too am working.\u201d",
-            "17": "For this reason they tried all the more to kill him; not only was he breaking the Sabbath, but he was even calling God his own Father, making himself equal with God.",
-            "18": "Jesus gave them this answer: \u201cVery truly I tell you, the Son can do nothing by himself; he can do only what he sees his Father doing, because whatever the Father does the Son also does.",
-            "19": "For the Father loves the Son and shows him all he does. Yes, and he will show him even greater works than these, so that you will be amazed.",
-            "20": "For just as the Father raises the dead and gives them life, even so the Son gives life to whom he is pleased to give it.",
-            "21": "Moreover, the Father judges no one, but has entrusted all judgment to the Son,",
-            "22": "that all may honor the Son just as they honor the Father. Whoever does not honor the Son does not honor the Father, who sent him.",
-            "23": "\u201cVery truly I tell you, whoever hears my word and believes him who sent me has eternal life and will not be judged but has crossed over from death to life.",
-            "24": "Very truly I tell you, a time is coming and has now come when the dead will hear the voice of the Son of God and those who hear will live.",
-            "25": "For as the Father has life in himself, so he has granted the Son also to have life in himself.",
-            "26": "And he has given him authority to judge because he is the Son of Man.",
-            "27": "\u201cDo not be amazed at this, for a time is coming when all who are in their graves will hear his voice",
-            "28": "and come out\u2014those who have done what is good will rise to live, and those who have done what is evil will rise to be condemned.",
-            "29": "By myself I can do nothing; I judge only as I hear, and my judgment is just, for I seek not to please myself but him who sent me.",
-            "30": "\u201cIf I testify about myself, my testimony is not true.",
-            "31": "There is another who testifies in my favor, and I know that his testimony about me is true.",
-            "32": "\u201cYou have sent to John and he has testified to the truth.",
-            "33": "Not that I accept human testimony; but I mention it that you may be saved.",
-            "34": "John was a lamp that burned and gave light, and you chose for a time to enjoy his light.",
-            "35": "\u201cI have testimony weightier than that of John. For the works that the Father has given me to finish\u2014the very works that I am doing\u2014testify that the Father has sent me.",
-            "36": "And the Father who sent me has himself testified concerning me. You have never heard his voice nor seen his form,",
-            "37": "nor does his word dwell in you, for you do not believe the one he sent.",
-            "38": "You study the Scriptures diligently because you think that in them you have eternal life. These are the very Scriptures that testify about me,",
-            "39": "yet you refuse to come to me to have life.",
-            "40": "\u201cI do not accept glory from human beings,",
-            "41": "but I know you. I know that you do not have the love of God in your hearts.",
-            "42": "I have come in my Father\u2019s name, and you do not accept me; but if someone else comes in his own name, you will accept him.",
-            "43": "How can you believe since you accept glory from one another but do not seek the glory that comes from the only God?",
-            "44": "\u201cBut do not think I will accuse you before the Father. Your accuser is Moses, on whom your hopes are set.",
-            "45": "If you believed Moses, you would believe me, for he wrote about me.",
-            "46": "But since you do not believe what he wrote, how are you going to believe what I say?\u201d"
+            "5": "One who was there had been an invalid for thirty-eight years.",
+            "6": "When Jesus saw him lying there and learned that he had been in this condition for a long time, he asked him, \u201cDo you want to get well?\u201d",
+            "7": "\u201cSir,\u201d the invalid replied, \u201cI have no one to help me into the pool when the water is stirred. While I am trying to get in, someone else goes down ahead of me.\u201d",
+            "8": "Then Jesus said to him, \u201cGet up! Pick up your mat and walk.\u201d",
+            "9": "At once the man was cured; he picked up his mat and walked. The day on which this took place was a Sabbath,",
+            "10": "and so the Jewish leaders said to the man who had been healed, \u201cIt is the Sabbath; the law forbids you to carry your mat.\u201d",
+            "11": "But he replied, \u201cThe man who made me well said to me, \u2018Pick up your mat and walk.\u2019 \u201d",
+            "12": "So they asked him, \u201cWho is this fellow who told you to pick it up and walk?\u201d",
+            "13": "The man who was healed had no idea who it was, for Jesus had slipped away into the crowd that was there.",
+            "14": "Later Jesus found him at the temple and said to him, \u201cSee, you are well again. Stop sinning or something worse may happen to you.\u201d",
+            "15": "The man went away and told the Jewish leaders that it was Jesus who had made him well.",
+            "16": "So, because Jesus was doing these things on the Sabbath, the Jewish leaders began to persecute him.",
+            "17": "In his defense Jesus said to them, \u201cMy Father is always at his work to this very day, and I too am working.\u201d",
+            "18": "For this reason they tried all the more to kill him; not only was he breaking the Sabbath, but he was even calling God his own Father, making himself equal with God.",
+            "19": "Jesus gave them this answer: \u201cVery truly I tell you, the Son can do nothing by himself; he can do only what he sees his Father doing, because whatever the Father does the Son also does.",
+            "20": "For the Father loves the Son and shows him all he does. Yes, and he will show him even greater works than these, so that you will be amazed.",
+            "21": "For just as the Father raises the dead and gives them life, even so the Son gives life to whom he is pleased to give it.",
+            "22": "Moreover, the Father judges no one, but has entrusted all judgment to the Son,",
+            "23": "that all may honor the Son just as they honor the Father. Whoever does not honor the Son does not honor the Father, who sent him.",
+            "24": "\u201cVery truly I tell you, whoever hears my word and believes him who sent me has eternal life and will not be judged but has crossed over from death to life.",
+            "25": "Very truly I tell you, a time is coming and has now come when the dead will hear the voice of the Son of God and those who hear will live.",
+            "26": "For as the Father has life in himself, so he has granted the Son also to have life in himself.",
+            "27": "And he has given him authority to judge because he is the Son of Man.",
+            "28": "\u201cDo not be amazed at this, for a time is coming when all who are in their graves will hear his voice",
+            "29": "and come out\u2014those who have done what is good will rise to live, and those who have done what is evil will rise to be condemned.",
+            "30": "By myself I can do nothing; I judge only as I hear, and my judgment is just, for I seek not to please myself but him who sent me.",
+            "31": "\u201cIf I testify about myself, my testimony is not true.",
+            "32": "There is another who testifies in my favor, and I know that his testimony about me is true.",
+            "33": "\u201cYou have sent to John and he has testified to the truth.",
+            "34": "Not that I accept human testimony; but I mention it that you may be saved.",
+            "35": "John was a lamp that burned and gave light, and you chose for a time to enjoy his light.",
+            "36": "\u201cI have testimony weightier than that of John. For the works that the Father has given me to finish\u2014the very works that I am doing\u2014testify that the Father has sent me.",
+            "37": "And the Father who sent me has himself testified concerning me. You have never heard his voice nor seen his form,",
+            "38": "nor does his word dwell in you, for you do not believe the one he sent.",
+            "39": "You study the Scriptures diligently because you think that in them you have eternal life. These are the very Scriptures that testify about me,",
+            "40": "yet you refuse to come to me to have life.",
+            "41": "\u201cI do not accept glory from human beings,",
+            "42": "but I know you. I know that you do not have the love of God in your hearts.",
+            "43": "I have come in my Father\u2019s name, and you do not accept me; but if someone else comes in his own name, you will accept him.",
+            "44": "How can you believe since you accept glory from one another but do not seek the glory that comes from the only God?",
+            "45": "\u201cBut do not think I will accuse you before the Father. Your accuser is Moses, on whom your hopes are set.",
+            "46": "If you believed Moses, you would believe me, for he wrote about me.",
+            "47": "But since you do not believe what he wrote, how are you going to believe what I say?\u201d"
         },
         "6": {
             "1": "Some time after this, Jesus crossed to the far shore of the Sea of Galilee (that is, the Sea of Tiberias),",
@@ -28423,61 +28461,68 @@
             "50": "Nicodemus, who had gone to Jesus earlier and who was one of their own number, asked,",
             "51": "\u201cDoes our law condemn a man without first hearing him to find out what he has been doing?\u201d",
             "52": "They replied, \u201cAre you from Galilee, too? Look into it, and you will find that a prophet does not come out of Galilee.\u201d",
-            "53": "[The earliest manuscripts and many other ancient witnesses do not have John 7:53\u20148:11. A few manuscripts include these verses, wholly or in part, after John 7:36, John 21:25, Luke 21:38 or Luke 24:53.] "
+            "53": "[The earliest manuscripts and many other ancient witnesses do not have John 7:53\u20148:11. A few manuscripts include these verses, wholly or in part, after John 7:36, John 21:25, Luke 21:38 or Luke 24:53.] Then they all went home,"
         },
         "8": {
-            "1": " ",
-            "2": "  ",
-            "3": " ",
-            "4": "  ",
-            "5": "When Jesus spoke again to the people, he said, \u201cI am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life.\u201d",
-            "6": "The Pharisees challenged him, \u201cHere you are, appearing as your own witness; your testimony is not valid.\u201d",
-            "7": "Jesus answered, \u201cEven if I testify on my own behalf, my testimony is valid, for I know where I came from and where I am going. But you have no idea where I come from or where I am going.",
-            "8": "You judge by human standards; I pass judgment on no one.",
-            "9": "But if I do judge, my decisions are true, because I am not alone. I stand with the Father, who sent me.",
-            "10": "In your own Law it is written that the testimony of two witnesses is true.",
-            "11": "I am one who testifies for myself; my other witness is the Father, who sent me.\u201d",
-            "12": "Then they asked him, \u201cWhere is your father?\u201d \u201cYou do not know me or my Father,\u201d Jesus replied. \u201cIf you knew me, you would know my Father also.\u201d",
-            "13": "He spoke these words while teaching in the temple courts near the place where the offerings were put. Yet no one seized him, because his hour had not yet come.",
-            "14": "Once more Jesus said to them, \u201cI am going away, and you will look for me, and you will die in your sin. Where I go, you cannot come.\u201d",
-            "15": "This made the Jews ask, \u201cWill he kill himself? Is that why he says, \u2018Where I go, you cannot come\u2019?\u201d",
-            "16": "But he continued, \u201cYou are from below; I am from above. You are of this world; I am not of this world.",
-            "17": "I told you that you would die in your sins; if you do not believe that I am he, you will indeed die in your sins.\u201d",
-            "18": "\u201cWho are you?\u201d they asked. \u201cJust what I have been telling you from the beginning,\u201d Jesus replied.",
-            "19": "\u201cI have much to say in judgment of you. But he who sent me is trustworthy, and what I have heard from him I tell the world.\u201d",
-            "20": "They did not understand that he was telling them about his Father.",
-            "21": "So Jesus said, \u201cWhen you have lifted up the Son of Man, then you will know that I am he and that I do nothing on my own but speak just what the Father has taught me.",
-            "22": "The one who sent me is with me; he has not left me alone, for I always do what pleases him.\u201d",
-            "23": "Even as he spoke, many believed in him.",
-            "24": "To the Jews who had believed him, Jesus said, \u201cIf you hold to my teaching, you are really my disciples.",
-            "25": "Then you will know the truth, and the truth will set you free.\u201d",
-            "26": "They answered him, \u201cWe are Abraham\u2019s descendants and have never been slaves of anyone. How can you say that we shall be set free?\u201d",
-            "27": "Jesus replied, \u201cVery truly I tell you, everyone who sins is a slave to sin.",
-            "28": "Now a slave has no permanent place in the family, but a son belongs to it forever.",
-            "29": "So if the Son sets you free, you will be free indeed.",
-            "30": "I know that you are Abraham\u2019s descendants. Yet you are looking for a way to kill me, because you have no room for my word.",
-            "31": "I am telling you what I have seen in the Father\u2019s presence, and you are doing what you have heard from your father.\u201d",
-            "32": "\u201cAbraham is our father,\u201d they answered. \u201cIf you were Abraham\u2019s children,\u201d said Jesus, \u201cthen you would do what Abraham did.",
-            "33": "As it is, you are looking for a way to kill me, a man who has told you the truth that I heard from God. Abraham did not do such things.",
-            "34": "You are doing the works of your own father.\u201d \u201cWe are not illegitimate children,\u201d they protested. \u201cThe only Father we have is God himself.\u201d",
-            "35": "Jesus said to them, \u201cIf God were your Father, you would love me, for I have come here from God. I have not come on my own; God sent me.",
-            "36": "Why is my language not clear to you? Because you are unable to hear what I say.",
-            "37": "You belong to your father, the devil, and you want to carry out your father\u2019s desires. He was a murderer from the beginning, not holding to the truth, for there is no truth in him. When he lies, he speaks his native language, for he is a liar and the father of lies.",
-            "38": "Yet because I tell the truth, you do not believe me!",
-            "39": "Can any of you prove me guilty of sin? If I am telling the truth, why don\u2019t you believe me?",
-            "40": "Whoever belongs to God hears what God says. The reason you do not hear is that you do not belong to God.\u201d",
-            "41": "The Jews answered him, \u201cAren\u2019t we right in saying that you are a Samaritan and demon-possessed?\u201d",
-            "42": "\u201cI am not possessed by a demon,\u201d said Jesus, \u201cbut I honor my Father and you dishonor me.",
-            "43": "I am not seeking glory for myself; but there is one who seeks it, and he is the judge.",
-            "44": "Very truly I tell you, whoever obeys my word will never see death.\u201d",
-            "45": "At this they exclaimed, \u201cNow we know that you are demon-possessed! Abraham died and so did the prophets, yet you say that whoever obeys your word will never taste death.",
-            "46": "Are you greater than our father Abraham? He died, and so did the prophets. Who do you think you are?\u201d",
-            "47": "Jesus replied, \u201cIf I glorify myself, my glory means nothing. My Father, whom you claim as your God, is the one who glorifies me.",
-            "48": "Though you do not know him, I know him. If I said I did not, I would be a liar like you, but I do know him and obey his word.",
-            "49": "Your father Abraham rejoiced at the thought of seeing my day; he saw it and was glad.\u201d",
-            "50": "\u201cYou are not yet fifty years old,\u201d they said to him, \u201cand you have seen Abraham!\u201d",
-            "51": "\u201cVery truly I tell you,\u201d Jesus answered, \u201cbefore Abraham was born, I am!\u201d",
-            "52": "At this, they picked up stones to stone him, but Jesus hid himself, slipping away from the temple grounds."
+            "1": "but Jesus went to the Mount of Olives.",
+            "2": "At dawn he appeared again in the temple courts, where all the people gathered around him, and he sat down to teach them.",
+            "3": "The teachers of the law and the Pharisees brought in a woman caught in adultery. They made her stand before the group",
+            "4": "and said to Jesus, \u201cTeacher, this woman was caught in the act of adultery.",
+            "5": "In the Law Moses commanded us to stone such women. Now what do you say?\u201d",
+            "6": "They were using this question as a trap, in order to have a basis for accusing him. But Jesus bent down and started to write on the ground with his finger.",
+            "7": "When they kept on questioning him, he straightened up and said to them, \u201cLet any one of you who is without sin be the first to throw a stone at her.\u201d",
+            "8": "Again he stooped down and wrote on the ground.",
+            "9": "At this, those who heard began to go away one at a time, the older ones first, until only Jesus was left, with the woman still standing there.",
+            "10": "Jesus straightened up and asked her, \u201cWoman, where are they? Has no one condemned you?\u201d",
+            "11": "\u201cNo one, sir,\u201d she said. \u201cThen neither do I condemn you,\u201d Jesus declared. \u201cGo now and leave your life of sin.\u201d",
+            "12": "When Jesus spoke again to the people, he said, \u201cI am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life.\u201d",
+            "13": "The Pharisees challenged him, \u201cHere you are, appearing as your own witness; your testimony is not valid.\u201d",
+            "14": "Jesus answered, \u201cEven if I testify on my own behalf, my testimony is valid, for I know where I came from and where I am going. But you have no idea where I come from or where I am going.",
+            "15": "You judge by human standards; I pass judgment on no one.",
+            "16": "But if I do judge, my decisions are true, because I am not alone. I stand with the Father, who sent me.",
+            "17": "In your own Law it is written that the testimony of two witnesses is true.",
+            "18": "I am one who testifies for myself; my other witness is the Father, who sent me.\u201d",
+            "19": "Then they asked him, \u201cWhere is your father?\u201d \u201cYou do not know me or my Father,\u201d Jesus replied. \u201cIf you knew me, you would know my Father also.\u201d",
+            "20": "He spoke these words while teaching in the temple courts near the place where the offerings were put. Yet no one seized him, because his hour had not yet come.",
+            "21": "Once more Jesus said to them, \u201cI am going away, and you will look for me, and you will die in your sin. Where I go, you cannot come.\u201d",
+            "22": "This made the Jews ask, \u201cWill he kill himself? Is that why he says, \u2018Where I go, you cannot come\u2019?\u201d",
+            "23": "But he continued, \u201cYou are from below; I am from above. You are of this world; I am not of this world.",
+            "24": "I told you that you would die in your sins; if you do not believe that I am he, you will indeed die in your sins.\u201d",
+            "25": "\u201cWho are you?\u201d they asked. \u201cJust what I have been telling you from the beginning,\u201d Jesus replied.",
+            "26": "\u201cI have much to say in judgment of you. But he who sent me is trustworthy, and what I have heard from him I tell the world.\u201d",
+            "27": "They did not understand that he was telling them about his Father.",
+            "28": "So Jesus said, \u201cWhen you have lifted up the Son of Man, then you will know that I am he and that I do nothing on my own but speak just what the Father has taught me.",
+            "29": "The one who sent me is with me; he has not left me alone, for I always do what pleases him.\u201d",
+            "30": "Even as he spoke, many believed in him.",
+            "31": "To the Jews who had believed him, Jesus said, \u201cIf you hold to my teaching, you are really my disciples.",
+            "32": "Then you will know the truth, and the truth will set you free.\u201d",
+            "33": "They answered him, \u201cWe are Abraham\u2019s descendants and have never been slaves of anyone. How can you say that we shall be set free?\u201d",
+            "34": "Jesus replied, \u201cVery truly I tell you, everyone who sins is a slave to sin.",
+            "35": "Now a slave has no permanent place in the family, but a son belongs to it forever.",
+            "36": "So if the Son sets you free, you will be free indeed.",
+            "37": "I know that you are Abraham\u2019s descendants. Yet you are looking for a way to kill me, because you have no room for my word.",
+            "38": "I am telling you what I have seen in the Father\u2019s presence, and you are doing what you have heard from your father.\u201d",
+            "39": "\u201cAbraham is our father,\u201d they answered. \u201cIf you were Abraham\u2019s children,\u201d said Jesus, \u201cthen you would do what Abraham did.",
+            "40": "As it is, you are looking for a way to kill me, a man who has told you the truth that I heard from God. Abraham did not do such things.",
+            "41": "You are doing the works of your own father.\u201d \u201cWe are not illegitimate children,\u201d they protested. \u201cThe only Father we have is God himself.\u201d",
+            "42": "Jesus said to them, \u201cIf God were your Father, you would love me, for I have come here from God. I have not come on my own; God sent me.",
+            "43": "Why is my language not clear to you? Because you are unable to hear what I say.",
+            "44": "You belong to your father, the devil, and you want to carry out your father\u2019s desires. He was a murderer from the beginning, not holding to the truth, for there is no truth in him. When he lies, he speaks his native language, for he is a liar and the father of lies.",
+            "45": "Yet because I tell the truth, you do not believe me!",
+            "46": "Can any of you prove me guilty of sin? If I am telling the truth, why don\u2019t you believe me?",
+            "47": "Whoever belongs to God hears what God says. The reason you do not hear is that you do not belong to God.\u201d",
+            "48": "The Jews answered him, \u201cAren\u2019t we right in saying that you are a Samaritan and demon-possessed?\u201d",
+            "49": "\u201cI am not possessed by a demon,\u201d said Jesus, \u201cbut I honor my Father and you dishonor me.",
+            "50": "I am not seeking glory for myself; but there is one who seeks it, and he is the judge.",
+            "51": "Very truly I tell you, whoever obeys my word will never see death.\u201d",
+            "52": "At this they exclaimed, \u201cNow we know that you are demon-possessed! Abraham died and so did the prophets, yet you say that whoever obeys your word will never taste death.",
+            "53": "Are you greater than our father Abraham? He died, and so did the prophets. Who do you think you are?\u201d",
+            "54": "Jesus replied, \u201cIf I glorify myself, my glory means nothing. My Father, whom you claim as your God, is the one who glorifies me.",
+            "55": "Though you do not know him, I know him. If I said I did not, I would be a liar like you, but I do know him and obey his word.",
+            "56": "Your father Abraham rejoiced at the thought of seeing my day; he saw it and was glad.\u201d",
+            "57": "\u201cYou are not yet fifty years old,\u201d they said to him, \u201cand you have seen Abraham!\u201d",
+            "58": "\u201cVery truly I tell you,\u201d Jesus answered, \u201cbefore Abraham was born, I am!\u201d",
+            "59": "At this, they picked up stones to stone him, but Jesus hid himself, slipping away from the temple grounds."
         },
         "9": {
             "1": "As he went along, he saw a man blind from birth.",
@@ -29294,9 +29339,9 @@
             "34": "The eunuch asked Philip, \u201cTell me, please, who is the prophet talking about, himself or someone else?\u201d",
             "35": "Then Philip began with that very passage of Scripture and told him the good news about Jesus.",
             "36": "As they traveled along the road, they came to some water and the eunuch said, \u201cLook, here is water. What can stand in the way of my being baptized?\u201d",
-            "37": "And he gave orders to stop the chariot. Then both Philip and the eunuch went down into the water and Philip baptized him.",
-            "38": "When they came up out of the water, the Spirit of the Lord suddenly took Philip away, and the eunuch did not see him again, but went on his way rejoicing.",
-            "39": "Philip, however, appeared at Azotus and traveled about, preaching the gospel in all the towns until he reached Caesarea."
+            "38": "And he gave orders to stop the chariot. Then both Philip and the eunuch went down into the water and Philip baptized him.",
+            "39": "When they came up out of the water, the Spirit of the Lord suddenly took Philip away, and the eunuch did not see him again, but went on his way rejoicing.",
+            "40": "Philip, however, appeared at Azotus and traveled about, preaching the gospel in all the towns until he reached Caesarea."
         },
         "9": {
             "1": "Meanwhile, Saul was still breathing out murderous threats against the Lord\u2019s disciples. He went to the high priest",
@@ -29570,13 +29615,13 @@
             "31": "The people read it and were glad for its encouraging message.",
             "32": "Judas and Silas, who themselves were prophets, said much to encourage and strengthen the believers.",
             "33": "After spending some time there, they were sent off by the believers with the blessing of peace to return to those who had sent them.",
-            "34": "But Paul and Barnabas remained in Antioch, where they and many others taught and preached the word of the Lord.",
-            "35": "Some time later Paul said to Barnabas, \u201cLet us go back and visit the believers in all the towns where we preached the word of the Lord and see how they are doing.\u201d",
-            "36": "Barnabas wanted to take John, also called Mark, with them,",
-            "37": "but Paul did not think it wise to take him, because he had deserted them in Pamphylia and had not continued with them in the work.",
-            "38": "They had such a sharp disagreement that they parted company. Barnabas took Mark and sailed for Cyprus,",
-            "39": "but Paul chose Silas and left, commended by the believers to the grace of the Lord.",
-            "40": "He went through Syria and Cilicia, strengthening the churches."
+            "35": "But Paul and Barnabas remained in Antioch, where they and many others taught and preached the word of the Lord.",
+            "36": "Some time later Paul said to Barnabas, \u201cLet us go back and visit the believers in all the towns where we preached the word of the Lord and see how they are doing.\u201d",
+            "37": "Barnabas wanted to take John, also called Mark, with them,",
+            "38": "but Paul did not think it wise to take him, because he had deserted them in Pamphylia and had not continued with them in the work.",
+            "39": "They had such a sharp disagreement that they parted company. Barnabas took Mark and sailed for Cyprus,",
+            "40": "but Paul chose Silas and left, commended by the believers to the grace of the Lord.",
+            "41": "He went through Syria and Cilicia, strengthening the churches."
         },
         "16": {
             "1": "Paul came to Derbe and then to Lystra, where a disciple named Timothy lived, whose mother was Jewish and a believer but whose father was a Greek.",
@@ -29887,26 +29932,26 @@
             "4": "But in order not to weary you further, I would request that you be kind enough to hear us briefly.",
             "5": "\u201cWe have found this man to be a troublemaker, stirring up riots among the Jews all over the world. He is a ringleader of the Nazarene sect",
             "6": "and even tried to desecrate the temple; so we seized him.",
-            "7": "By examining him yourself you will be able to learn the truth about all these charges we are bringing against him.\u201d",
-            "8": "The other Jews joined in the accusation, asserting that these things were true.",
-            "9": "When the governor motioned for him to speak, Paul replied: \u201cI know that for a number of years you have been a judge over this nation; so I gladly make my defense.",
-            "10": "You can easily verify that no more than twelve days ago I went up to Jerusalem to worship.",
-            "11": "My accusers did not find me arguing with anyone at the temple, or stirring up a crowd in the synagogues or anywhere else in the city.",
-            "12": "And they cannot prove to you the charges they are now making against me.",
-            "13": "However, I admit that I worship the God of our ancestors as a follower of the Way, which they call a sect. I believe everything that is in accordance with the Law and that is written in the Prophets,",
-            "14": "and I have the same hope in God as these men themselves have, that there will be a resurrection of both the righteous and the wicked.",
-            "15": "So I strive always to keep my conscience clear before God and man.",
-            "16": "\u201cAfter an absence of several years, I came to Jerusalem to bring my people gifts for the poor and to present offerings.",
-            "17": "I was ceremonially clean when they found me in the temple courts doing this. There was no crowd with me, nor was I involved in any disturbance.",
-            "18": "But there are some Jews from the province of Asia, who ought to be here before you and bring charges if they have anything against me.",
-            "19": "Or these who are here should state what crime they found in me when I stood before the Sanhedrin\u2014",
-            "20": "unless it was this one thing I shouted as I stood in their presence: \u2018It is concerning the resurrection of the dead that I am on trial before you today.\u2019\u201d",
-            "21": "Then Felix, who was well acquainted with the Way, adjourned the proceedings. \u201cWhen Lysias the commander comes,\u201d he said, \u201cI will decide your case.\u201d",
-            "22": "He ordered the centurion to keep Paul under guard but to give him some freedom and permit his friends to take care of his needs.",
-            "23": "Several days later Felix came with his wife Drusilla, who was Jewish. He sent for Paul and listened to him as he spoke about faith in Christ Jesus.",
-            "24": "As Paul talked about righteousness, self-control and the judgment to come, Felix was afraid and said, \u201cThat\u2019s enough for now! You may leave. When I find it convenient, I will send for you.\u201d",
-            "25": "At the same time he was hoping that Paul would offer him a bribe, so he sent for him frequently and talked with him.",
-            "26": "When two years had passed, Felix was succeeded by Porcius Festus, but because Felix wanted to grant a favor to the Jews, he left Paul in prison."
+            "8": "By examining him yourself you will be able to learn the truth about all these charges we are bringing against him.\u201d",
+            "9": "The other Jews joined in the accusation, asserting that these things were true.",
+            "10": "When the governor motioned for him to speak, Paul replied: \u201cI know that for a number of years you have been a judge over this nation; so I gladly make my defense.",
+            "11": "You can easily verify that no more than twelve days ago I went up to Jerusalem to worship.",
+            "12": "My accusers did not find me arguing with anyone at the temple, or stirring up a crowd in the synagogues or anywhere else in the city.",
+            "13": "And they cannot prove to you the charges they are now making against me.",
+            "14": "However, I admit that I worship the God of our ancestors as a follower of the Way, which they call a sect. I believe everything that is in accordance with the Law and that is written in the Prophets,",
+            "15": "and I have the same hope in God as these men themselves have, that there will be a resurrection of both the righteous and the wicked.",
+            "16": "So I strive always to keep my conscience clear before God and man.",
+            "17": "\u201cAfter an absence of several years, I came to Jerusalem to bring my people gifts for the poor and to present offerings.",
+            "18": "I was ceremonially clean when they found me in the temple courts doing this. There was no crowd with me, nor was I involved in any disturbance.",
+            "19": "But there are some Jews from the province of Asia, who ought to be here before you and bring charges if they have anything against me.",
+            "20": "Or these who are here should state what crime they found in me when I stood before the Sanhedrin\u2014",
+            "21": "unless it was this one thing I shouted as I stood in their presence: \u2018It is concerning the resurrection of the dead that I am on trial before you today.\u2019\u201d",
+            "22": "Then Felix, who was well acquainted with the Way, adjourned the proceedings. \u201cWhen Lysias the commander comes,\u201d he said, \u201cI will decide your case.\u201d",
+            "23": "He ordered the centurion to keep Paul under guard but to give him some freedom and permit his friends to take care of his needs.",
+            "24": "Several days later Felix came with his wife Drusilla, who was Jewish. He sent for Paul and listened to him as he spoke about faith in Christ Jesus.",
+            "25": "As Paul talked about righteousness, self-control and the judgment to come, Felix was afraid and said, \u201cThat\u2019s enough for now! You may leave. When I find it convenient, I will send for you.\u201d",
+            "26": "At the same time he was hoping that Paul would offer him a bribe, so he sent for him frequently and talked with him.",
+            "27": "When two years had passed, Felix was succeeded by Porcius Festus, but because Felix wanted to grant a favor to the Jews, he left Paul in prison."
         },
         "25": {
             "1": "Three days after arriving in the province, Festus went up from Caesarea to Jerusalem,",
@@ -30046,8 +30091,8 @@
             "26": "\u201c\u2018Go to this people and say, \u201cYou will be ever hearing but never understanding; you will be ever seeing but never perceiving.\u201d",
             "27": "For this people\u2019s heart has become calloused; they hardly hear with their ears, and they have closed their eyes. Otherwise they might see with their eyes, hear with their ears, understand with their hearts and turn, and I would heal them.\u2019",
             "28": "\u201cTherefore I want you to know that God\u2019s salvation has been sent to the Gentiles, and they will listen!\u201d",
-            "29": "For two whole years Paul stayed there in his own rented house and welcomed all who came to see him.",
-            "30": "He proclaimed the kingdom of God and taught about the Lord Jesus Christ\u2014with all boldness and without hindrance!"
+            "30": "For two whole years Paul stayed there in his own rented house and welcomed all who came to see him.",
+            "31": "He proclaimed the kingdom of God and taught about the Lord Jesus Christ\u2014with all boldness and without hindrance!"
         }
     },
     "Romans": {
@@ -30266,7 +30311,7 @@
             "12": "Therefore, brothers and sisters, we have an obligation\u2014but it is not to the flesh, to live according to it.",
             "13": "For if you live according to the flesh, you will die; but if by the Spirit you put to death the misdeeds of the body, you will live.",
             "14": "For those who are led by the Spirit of God are the children of God.",
-            "15": "The Spirit you received does not make you slaves, so that you live in fear again; rather, the Spirit you received brought about your adoption to sonship. And by him we cry,  Father.\u201d",
+            "15": "The Spirit you received does not make you slaves, so that you live in fear again; rather, the Spirit you received brought about your adoption to sonship. And by him we cry, \u201cAbba, Father.\u201d",
             "16": "The Spirit himself testifies with our spirit that we are God\u2019s children.",
             "17": "Now if we are children, then we are heirs\u2014heirs of God and co-heirs with Christ, if indeed we share in his sufferings in order that we may also share in his glory.",
             "18": "I consider that our present sufferings are not worth comparing with the glory that will be revealed in us.",
@@ -30511,9 +30556,9 @@
             "21": "Timothy, my co-worker, sends his greetings to you, as do Lucius, Jason and Sosipater, my fellow Jews.",
             "22": "I, Tertius, who wrote down this letter, greet you in the Lord.",
             "23": "Gaius, whose hospitality I and the whole church here enjoy, sends you his greetings. Erastus, who is the city\u2019s director of public works, and our brother Quartus send you their greetings.",
-            "24": "Now to him who is able to establish you in accordance with my gospel, the message I proclaim about Jesus Christ, in keeping with the revelation of the mystery hidden for long ages past,",
-            "25": "but now revealed and made known through the prophetic writings by the command of the eternal God, so that all the Gentiles might come to the obedience that comes from faith\u2014",
-            "26": "to the only wise God be glory forever through Jesus Christ! Amen."
+            "25": "Now to him who is able to establish you in accordance with my gospel, the message I proclaim about Jesus Christ, in keeping with the revelation of the mystery hidden for long ages past,",
+            "26": "but now revealed and made known through the prophetic writings by the command of the eternal God, so that all the Gentiles might come to the obedience that comes from faith\u2014",
+            "27": "to the only wise God be glory forever through Jesus Christ! Amen."
         }
     },
     "1 Corinthians": {
@@ -31359,7 +31404,7 @@
             "3": "So also, when we were underage, we were in slavery under the elemental spiritual forces of the world.",
             "4": "But when the set time had fully come, God sent his Son, born of a woman, born under the law,",
             "5": "to redeem those under the law, that we might receive adoption to sonship.",
-            "6": "Because you are his sons, God sent the Spirit of his Son into our hearts, the Spirit who calls out, , Father.\u201d",
+            "6": "Because you are his sons, God sent the Spirit of his Son into our hearts, the Spirit who calls out, \u201cAbba, Father.\u201d",
             "7": "So you are no longer a slave, but God\u2019s child; and since you are his child, God has made you also an heir.",
             "8": "Formerly, when you did not know God, you were slaves to those who by nature are not gods.",
             "9": "But now that you know God\u2014or rather are known by God\u2014how is it that you are turning back to those weak and miserable forces? Do you wish to be enslaved by them all over again?",
@@ -32280,78 +32325,6 @@
             "23": "Epaphras, my fellow prisoner in Christ Jesus, sends you greetings.",
             "24": "And so do Mark, Aristarchus, Demas and Luke, my fellow workers.",
             "25": "The grace of the Lord Jesus Christ be with your spirit."
-        },
-        "2": {
-            "1": "also to Apphia our sister and Archippus our fellow soldier\u2014and to the church that meets in your home:"
-        },
-        "3": {
-            "1": "Grace and peace to you from God our Father and the Lord Jesus Christ."
-        },
-        "4": {
-            "1": "I always thank my God as I remember you in my prayers,"
-        },
-        "5": {
-            "1": "because I hear about your love for all his holy people and your faith in the Lord Jesus."
-        },
-        "6": {
-            "1": "I pray that your partnership with us in the faith may be effective in deepening your understanding of every good thing we share for the sake of Christ."
-        },
-        "7": {
-            "1": "Your love has given me great joy and encouragement, because you, brother, have refreshed the hearts of the Lord\u2019s people."
-        },
-        "8": {
-            "1": "Therefore, although in Christ I could be bold and order you to do what you ought to do,"
-        },
-        "9": {
-            "1": "yet I prefer to appeal to you on the basis of love. It is as none other than Paul\u2014an old man and now also a prisoner of Christ Jesus\u2014"
-        },
-        "10": {
-            "1": "that I appeal to you for my son Onesimus, who became my son while I was in chains."
-        },
-        "11": {
-            "1": "Formerly he was useless to you, but now he has become useful both to you and to me."
-        },
-        "12": {
-            "1": "I am sending him\u2014who is my very heart\u2014back to you."
-        },
-        "13": {
-            "1": "I would have liked to keep him with me so that he could take your place in helping me while I am in chains for the gospel."
-        },
-        "14": {
-            "1": "But I did not want to do anything without your consent, so that any favor you do would not seem forced but would be voluntary."
-        },
-        "15": {
-            "1": "Perhaps the reason he was separated from you for a little while was that you might have him back forever\u2014"
-        },
-        "16": {
-            "1": "no longer as a slave, but better than a slave, as a dear brother. He is very dear to me but even dearer to you, both as a fellow man and as a brother in the Lord."
-        },
-        "17": {
-            "1": "So if you consider me a partner, welcome him as you would welcome me."
-        },
-        "18": {
-            "1": "If he has done you any wrong or owes you anything, charge it to me."
-        },
-        "19": {
-            "1": "I, Paul, am writing this with my own hand. I will pay it back\u2014not to mention that you owe me your very self."
-        },
-        "20": {
-            "1": "I do wish, brother, that I may have some benefit from you in the Lord; refresh my heart in Christ."
-        },
-        "21": {
-            "1": "Confident of your obedience, I write to you, knowing that you will do even more than I ask."
-        },
-        "22": {
-            "1": "And one thing more: Prepare a guest room for me, because I hope to be restored to you in answer to your prayers."
-        },
-        "23": {
-            "1": "Epaphras, my fellow prisoner in Christ Jesus, sends you greetings."
-        },
-        "24": {
-            "1": "And so do Mark, Aristarchus, Demas and Luke, my fellow workers."
-        },
-        "25": {
-            "1": "The grace of the Lord Jesus Christ be with your spirit."
         }
     },
     "Hebrews": {
@@ -33123,42 +33096,6 @@
             "11": "Anyone who welcomes them shares in their wicked work.",
             "12": "I have much to write to you, but I do not want to use paper and ink. Instead, I hope to visit you and talk with you face to face, so that our joy may be complete.",
             "13": "The children of your sister, who is chosen by God, send their greetings."
-        },
-        "2": {
-            "1": "because of the truth, which lives in us and will be with us forever:"
-        },
-        "3": {
-            "1": "Grace, mercy and peace from God the Father and from Jesus Christ, the Father\u2019s Son, will be with us in truth and love."
-        },
-        "4": {
-            "1": "It has given me great joy to find some of your children walking in the truth, just as the Father commanded us."
-        },
-        "5": {
-            "1": "And now, dear lady, I am not writing you a new command but one we have had from the beginning. I ask that we love one another."
-        },
-        "6": {
-            "1": "And this is love: that we walk in obedience to his commands. As you have heard from the beginning, his command is that you walk in love."
-        },
-        "7": {
-            "1": "I say this because many deceivers, who do not acknowledge Jesus Christ as coming in the flesh, have gone out into the world. Any such person is the deceiver and the antichrist."
-        },
-        "8": {
-            "1": "Watch out that you do not lose what we have worked for, but that you may be rewarded fully."
-        },
-        "9": {
-            "1": "Anyone who runs ahead and does not continue in the teaching of Christ does not have God; whoever continues in the teaching has both the Father and the Son."
-        },
-        "10": {
-            "1": "If anyone comes to you and does not bring this teaching, do not take them into your house or welcome them."
-        },
-        "11": {
-            "1": "Anyone who welcomes them shares in their wicked work."
-        },
-        "12": {
-            "1": "I have much to write to you, but I do not want to use paper and ink. Instead, I hope to visit you and talk with you face to face, so that our joy may be complete."
-        },
-        "13": {
-            "1": "The children of your sister, who is chosen by God, send their greetings."
         }
     },
     "3 John": {
@@ -33178,48 +33115,6 @@
             "13": "I have much to write you, but I do not want to do so with pen and ink.",
             "14": "I hope to see you soon, and we will talk face to face.",
             "15": "Peace to you. The friends here send their greetings. Greet the friends there by name."
-        },
-        "2": {
-            "1": "Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well."
-        },
-        "3": {
-            "1": "It gave me great joy when some believers came and testified about your faithfulness to the truth, telling how you continue to walk in it."
-        },
-        "4": {
-            "1": "I have no greater joy than to hear that my children are walking in the truth."
-        },
-        "5": {
-            "1": "Dear friend, you are faithful in what you are doing for the brothers and sisters, even though they are strangers to you."
-        },
-        "6": {
-            "1": "They have told the church about your love. Please send them on their way in a manner that honors God."
-        },
-        "7": {
-            "1": "It was for the sake of the Name that they went out, receiving no help from the pagans."
-        },
-        "8": {
-            "1": "We ought therefore to show hospitality to such people so that we may work together for the truth."
-        },
-        "9": {
-            "1": "I wrote to the church, but Diotrephes, who loves to be first, will not welcome us."
-        },
-        "10": {
-            "1": "So when I come, I will call attention to what he is doing, spreading malicious nonsense about us. Not satisfied with that, he even refuses to welcome other believers. He also stops those who want to do so and puts them out of the church."
-        },
-        "11": {
-            "1": "Dear friend, do not imitate what is evil but what is good. Anyone who does what is good is from God. Anyone who does what is evil has not seen God."
-        },
-        "12": {
-            "1": "Demetrius is well spoken of by everyone\u2014and even by the truth itself. We also speak well of him, and you know that our testimony is true."
-        },
-        "13": {
-            "1": "I have much to write you, but I do not want to do so with pen and ink."
-        },
-        "14": {
-            "1": "I hope to see you soon, and we will talk face to face."
-        },
-        "15": {
-            "1": "Peace to you. The friends here send their greetings. Greet the friends there by name."
         }
     },
     "Jude": {
@@ -33249,78 +33144,6 @@
             "23": "save others by snatching them from the fire; to others show mercy, mixed with fear\u2014hating even the clothing stained by corrupted flesh.",
             "24": "To him who is able to keep you from stumbling and to present you before his glorious presence without fault and with great joy\u2014",
             "25": "to the only God our Savior be glory, majesty, power and authority, through Jesus Christ our Lord, before all ages, now and forevermore! Amen."
-        },
-        "2": {
-            "1": "Mercy, peace and love be yours in abundance."
-        },
-        "3": {
-            "1": "Dear friends, although I was very eager to write to you about the salvation we share, I felt compelled to write and urge you to contend for the faith that was once for all entrusted to God\u2019s holy people."
-        },
-        "4": {
-            "1": "For certain individuals whose condemnation was written about long ago have secretly slipped in among you. They are ungodly people, who pervert the grace of our God into a license for immorality and deny Jesus Christ our only Sovereign and Lord."
-        },
-        "5": {
-            "1": "Though you already know all this, I want to remind you that the Lord at one time delivered his people out of Egypt, but later destroyed those who did not believe."
-        },
-        "6": {
-            "1": "And the angels who did not keep their positions of authority but abandoned their proper dwelling\u2014these he has kept in darkness, bound with everlasting chains for judgment on the great Day."
-        },
-        "7": {
-            "1": "In a similar way, Sodom and Gomorrah and the surrounding towns gave themselves up to sexual immorality and perversion. They serve as an example of those who suffer the punishment of eternal fire."
-        },
-        "8": {
-            "1": "In the very same way, on the strength of their dreams these ungodly people pollute their own bodies, reject authority and heap abuse on celestial beings."
-        },
-        "9": {
-            "1": "But even the archangel Michael, when he was disputing with the devil about the body of Moses, did not himself dare to condemn him for slander but said, \u201cThe Lord rebuke you!\u201d"
-        },
-        "10": {
-            "1": "Yet these people slander whatever they do not understand, and the very things they do understand by instinct\u2014as irrational animals do\u2014will destroy them."
-        },
-        "11": {
-            "1": "Woe to them! They have taken the way of Cain; they have rushed for profit into Balaam\u2019s error; they have been destroyed in Korah\u2019s rebellion."
-        },
-        "12": {
-            "1": "These people are blemishes at your love feasts, eating with you without the slightest qualm\u2014shepherds who feed only themselves. They are clouds without rain, blown along by the wind; autumn trees, without fruit and uprooted\u2014twice dead."
-        },
-        "13": {
-            "1": "They are wild waves of the sea, foaming up their shame; wandering stars, for whom blackest darkness has been reserved forever."
-        },
-        "14": {
-            "1": "Enoch, the seventh from Adam, prophesied about them: \u201cSee, the Lord is coming with thousands upon thousands of his holy ones"
-        },
-        "15": {
-            "1": "to judge everyone, and to convict all of them of all the ungodly acts they have committed in their ungodliness, and of all the defiant words ungodly sinners have spoken against him.\u201d"
-        },
-        "16": {
-            "1": "These people are grumblers and faultfinders; they follow their own evil desires; they boast about themselves and flatter others for their own advantage."
-        },
-        "17": {
-            "1": "But, dear friends, remember what the apostles of our Lord Jesus Christ foretold."
-        },
-        "18": {
-            "1": "They said to you, \u201cIn the last times there will be scoffers who will follow their own ungodly desires.\u201d"
-        },
-        "19": {
-            "1": "These are the people who divide you, who follow mere natural instincts and do not have the Spirit."
-        },
-        "20": {
-            "1": "But you, dear friends, by building yourselves up in your most holy faith and praying in the Holy Spirit,"
-        },
-        "21": {
-            "1": "keep yourselves in God\u2019s love as you wait for the mercy of our Lord Jesus Christ to bring you to eternal life."
-        },
-        "22": {
-            "1": "Be merciful to those who doubt;"
-        },
-        "23": {
-            "1": "save others by snatching them from the fire; to others show mercy, mixed with fear\u2014hating even the clothing stained by corrupted flesh."
-        },
-        "24": {
-            "1": "To him who is able to keep you from stumbling and to present you before his glorious presence without fault and with great joy\u2014"
-        },
-        "25": {
-            "1": "to the only God our Savior be glory, majesty, power and authority, through Jesus Christ our Lord, before all ages, now and forevermore! Amen."
         }
     },
     "Revelation": {

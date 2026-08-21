@@ -5,7 +5,7 @@
       "src": "./api.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["json/verses/**", "json/pericope/**", "index.html"]
+        "includeFiles": ["json/verses/**", "json/pericope/**", "scripts/source_coverage.json", "index.html"]
       }
     }
   ],
