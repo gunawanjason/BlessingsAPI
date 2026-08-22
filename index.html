@@ -4,42 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blessings API Documentation</title>
+  <meta name="description" content="REST API documentation for Bible verses, passage ranges, headings, and keyword search across eleven translations." />
   <link rel="icon" href="/assets/favicon.ico" sizes="any" />
   <link rel="icon" href="/assets/icon-192x192.webp" type="image/webp" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180x180.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        const theme = savedTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      } catch {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
   <style>
     :root {
-      /* Paper Theme */
-      --bg-primary: oklch(98% 0.005 80);
-      --bg-secondary: oklch(96% 0.005 80);
-      --bg-tertiary: oklch(94% 0.005 80);
-      
-      --text-primary: oklch(25% 0.01 260);
-      --text-secondary: oklch(45% 0.01 260);
-      --text-muted: oklch(65% 0.01 260);
-      
-      --border: oklch(88% 0.01 80);
-      --border-strong: oklch(75% 0.01 80);
-      
-      --accent-crimson: oklch(45% 0.15 25);
-      --accent-crimson-bg: oklch(95% 0.03 25);
-      
-      --method-get: oklch(35% 0.05 150);
-      --method-get-bg: oklch(95% 0.02 150);
-
-      --code-bg: oklch(20% 0.01 260);
-      --code-text: oklch(90% 0.01 80);
-      
-      --font-serif: 'Newsreader', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      
-      --radius: 0px;
-      --radius-sm: 0px;
-      
+      color-scheme: light;
+      --top-nav-height: 72px;
+      --bg-primary: oklch(98.5% 0.006 82);
+      --bg-secondary: oklch(96.5% 0.008 82);
+      --bg-tertiary: oklch(93.5% 0.01 82);
+      --text-primary: oklch(24% 0.018 55);
+      --text-secondary: oklch(40% 0.016 55);
+      --text-muted: oklch(49% 0.014 55);
+      --border: oklch(85% 0.014 78);
+      --border-strong: oklch(66% 0.02 72);
+      --accent-crimson: oklch(43% 0.12 28);
+      --accent-crimson-hover: oklch(36% 0.12 28);
+      --accent-crimson-bg: oklch(95% 0.025 28);
+      --focus-ring: oklch(58% 0.16 35);
+      --method-get: oklch(38% 0.08 153);
+      --method-get-bg: oklch(94% 0.025 153);
+      --code-bg: oklch(20% 0.012 260);
+      --code-surface: oklch(24% 0.014 260);
+      --code-border: oklch(38% 0.014 260);
+      --code-text: oklch(91% 0.008 82);
+      --code-muted: oklch(75% 0.01 82);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       --space-xs: clamp(0.5rem, 1vw, 0.75rem);
       --space-sm: clamp(1rem, 2vw, 1.5rem);
       --space-md: clamp(2rem, 4vw, 3rem);
@@ -48,25 +52,26 @@
     }
 
     [data-theme="dark"] {
-      --bg-primary: oklch(20% 0.01 260);
-      --bg-secondary: oklch(23% 0.01 260);
-      --bg-tertiary: oklch(26% 0.01 260);
-      
-      --text-primary: oklch(95% 0.01 80);
-      --text-secondary: oklch(80% 0.01 80);
-      --text-muted: oklch(60% 0.01 80);
-      
-      --border: oklch(35% 0.01 260);
-      --border-strong: oklch(45% 0.01 260);
-      
-      --accent-crimson: oklch(75% 0.15 25);
-      --accent-crimson-bg: oklch(30% 0.05 25);
-      
-      --method-get: oklch(80% 0.1 150);
-      --method-get-bg: oklch(30% 0.05 150);
-
-      --code-bg: oklch(15% 0.01 260);
-      --code-text: oklch(85% 0.01 80);
+      color-scheme: dark;
+      --bg-primary: oklch(17% 0.012 260);
+      --bg-secondary: oklch(20% 0.014 260);
+      --bg-tertiary: oklch(24% 0.016 260);
+      --text-primary: oklch(94% 0.008 82);
+      --text-secondary: oklch(78% 0.01 82);
+      --text-muted: oklch(70% 0.012 82);
+      --border: oklch(34% 0.015 260);
+      --border-strong: oklch(50% 0.018 260);
+      --accent-crimson: oklch(75% 0.12 28);
+      --accent-crimson-hover: oklch(82% 0.1 28);
+      --accent-crimson-bg: oklch(25% 0.04 28);
+      --focus-ring: oklch(78% 0.14 70);
+      --method-get: oklch(79% 0.09 153);
+      --method-get-bg: oklch(25% 0.035 153);
+      --code-bg: oklch(13% 0.01 260);
+      --code-surface: oklch(18% 0.012 260);
+      --code-border: oklch(32% 0.014 260);
+      --code-text: oklch(91% 0.008 82);
+      --code-muted: oklch(75% 0.01 82);
     }
 
     *, *::before, *::after {
@@ -77,10 +82,10 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: calc(120px + var(--space-md));
+      scroll-padding-top: calc(var(--top-nav-height) + 64px);
       background-color: var(--bg-primary);
       color: var(--text-primary);
-      font-family: var(--font-serif);
+      font-family: var(--font-sans);
       font-size: 100%;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -91,7 +96,49 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      transition: background-color 0.4s ease, color 0.4s ease;
+      background: var(--bg-primary);
+      transition: background-color 180ms ease-out, color 180ms ease-out;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    [tabindex="0"]:focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 1000;
+      padding: 0.75rem 1rem;
+      background: var(--text-primary);
+      color: var(--bg-primary);
+      font-weight: 700;
+      text-decoration: none;
+      transform: translateY(-160%);
+      transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     /* Layout */
@@ -118,46 +165,51 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: var(--space-sm) var(--space-md);
+      min-height: var(--top-nav-height);
+      padding: 0 clamp(1rem, 4vw, 2rem);
+      gap: 1rem;
       background: var(--bg-primary);
       border-bottom: 1px solid var(--border);
     }
 
     .brand {
-      font-family: var(--font-serif);
-      font-size: clamp(1.25rem, 2vw, 1.5rem);
-      font-weight: 500;
+      min-width: 0;
+      font-size: 1.0625rem;
+      font-weight: 700;
       color: var(--text-primary);
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      white-space: nowrap;
     }
 
     .brand-icon {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       object-fit: contain;
       border-radius: 4px;
+      flex: 0 0 auto;
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: var(--space-sm);
+      gap: 0.625rem;
+      flex: 0 0 auto;
     }
 
     .icon-btn {
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text-primary);
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: background-color 180ms ease-out, border-color 180ms ease-out, color 180ms ease-out;
       font-family: var(--font-sans);
     }
 
@@ -169,47 +221,43 @@
     .btn-link {
       font-family: var(--font-sans);
       font-size: 0.875rem;
-      font-weight: 500;
+      font-weight: 650;
       text-decoration: none;
       color: var(--bg-primary);
       background: var(--text-primary);
-      padding: 0.5rem 1.25rem;
+      min-height: 44px;
+      padding: 0.625rem 1rem;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      transition: all 0.2s ease;
+      transition: background-color 180ms ease-out, color 180ms ease-out;
     }
 
     .btn-link:hover {
       background: var(--accent-crimson);
-      color: #fff;
+      color: var(--bg-primary);
     }
 
     /* Sidebar */
     .sidebar {
       position: sticky;
-      top: 65px;
+      top: var(--top-nav-height);
       z-index: 90;
       background: var(--bg-primary);
       border-bottom: 1px solid var(--border);
-      padding: var(--space-xs) var(--space-md);
+      padding: 0 1rem;
       display: flex;
-      gap: var(--space-md);
+      gap: 1.5rem;
       overflow-x: auto;
       white-space: nowrap;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    
-    .sidebar::-webkit-scrollbar {
-      display: none;
     }
 
     @media (min-width: 1024px) {
       .sidebar {
         display: block;
-        top: 80px;
-        height: calc(100vh - 80px);
+        top: var(--top-nav-height);
+        height: calc(100vh - var(--top-nav-height));
         padding: var(--space-md);
         border-right: 1px solid var(--border);
         border-bottom: none;
@@ -252,7 +300,7 @@
     .nav-list {
       list-style: none;
       display: flex;
-      gap: var(--space-sm);
+      gap: 0.25rem;
       align-items: center;
     }
 
@@ -263,21 +311,28 @@
     }
 
     .nav-item a {
-      display: block;
-      padding: 0.25rem 0;
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 0.625rem;
       font-family: var(--font-sans);
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-secondary);
       text-decoration: none;
-      transition: color 0.2s ease;
+      border-bottom: 2px solid transparent;
+      transition: color 180ms ease-out, border-color 180ms ease-out, background-color 180ms ease-out;
     }
 
     @media (min-width: 1024px) {
       .nav-item a {
-        padding: 0.35rem 0;
+        display: flex;
+        min-height: 44px;
+        padding: 0.35rem 0.5rem;
         font-size: 0.9rem;
-        font-weight: 400;
+        font-weight: 500;
+        border-bottom: 0;
+        border-radius: 4px;
       }
     }
 
@@ -285,73 +340,83 @@
       color: var(--accent-crimson);
     }
 
+    .nav-item a[aria-current="location"] {
+      color: var(--accent-crimson);
+      border-bottom-color: var(--accent-crimson);
+    }
+
+    @media (min-width: 1024px) {
+      .nav-item a:hover,
+      .nav-item a[aria-current="location"] {
+        background: var(--bg-secondary);
+      }
+    }
+
     .nav-item.nested {
       padding-left: 0;
-      border-left: none;
       margin-left: 0;
     }
 
     @media (min-width: 1024px) {
       .nav-item.nested {
         padding-left: 1rem;
-        border-left: 1px solid var(--border);
         margin-left: 0.25rem;
       }
     }
 
     /* Main Content */
     .main {
-      padding: var(--space-md);
+      padding: 2.5rem clamp(1.25rem, 5vw, 3rem);
       padding-bottom: var(--space-xl);
-      max-width: 900px;
+      max-width: 960px;
       min-width: 0;
       width: 100%;
     }
 
     /* Typography Elements */
     h1, h2, h3, h4, h5 {
-      font-weight: 500;
+      font-weight: 700;
       color: var(--text-primary);
       word-wrap: break-word;
     }
 
     .hero-title {
-      font-size: clamp(3rem, 6vw, 5rem);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-sm);
-      font-weight: 400;
+      max-width: 16ch;
+      font-size: 3rem;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 1rem;
+      font-weight: 750;
     }
 
     .hero-subtitle {
-      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-size: 1.125rem;
       color: var(--text-secondary);
-      font-style: italic;
-      margin-bottom: var(--space-lg);
-      max-width: 35ch;
-      line-height: 1.4;
+      margin-bottom: 2.5rem;
+      max-width: 58ch;
+      line-height: 1.6;
     }
 
     .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-top: var(--space-xl);
-      margin-bottom: var(--space-sm);
+      font-size: 2rem;
+      margin-top: 5rem;
+      margin-bottom: 1.25rem;
       padding-bottom: var(--space-xs);
       border-bottom: 1px solid var(--border);
-      letter-spacing: -0.01em;
+      letter-spacing: -0.025em;
     }
 
     .sub-title {
-      font-size: clamp(1.5rem, 2vw, 2rem);
+      font-size: 1.375rem;
       margin-top: var(--space-md);
       margin-bottom: var(--space-xs);
     }
 
     p {
-      font-size: 1.125rem;
+      font-size: 1rem;
       margin-bottom: var(--space-sm);
       color: var(--text-secondary);
-      max-width: 65ch;
+      max-width: 70ch;
     }
 
     a {
@@ -359,27 +424,51 @@
       text-decoration: underline;
       text-underline-offset: 4px;
       text-decoration-thickness: 1px;
-      transition: opacity 0.2s;
+      transition: color 180ms ease-out;
     }
 
     a:hover {
-      opacity: 0.8;
+      color: var(--accent-crimson-hover);
     }
 
     strong {
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-primary);
+    }
+
+    section {
+      scroll-margin-top: calc(var(--top-nav-height) + 64px);
+    }
+
+    @media (max-width: 640px) {
+      .main {
+        padding-top: 2rem;
+      }
+
+      .hero-title {
+        font-size: 2.25rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+        margin-top: 4rem;
+      }
     }
 
     /* Base URL Display */
     .base-url-container {
-      display: flex;
-      align-items: stretch;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
       margin-bottom: var(--space-md);
       border: 1px solid var(--border);
       background: var(--bg-secondary);
       max-width: 100%;
-      overflow-x: auto;
+      overflow: hidden;
     }
 
     .base-url-label {
@@ -405,24 +494,47 @@
       display: flex;
       align-items: center;
       white-space: nowrap;
+      overflow-x: auto;
+      min-width: 0;
     }
 
     .base-url-copy {
       background: transparent;
       border: none;
       border-left: 1px solid var(--border);
-      padding: 0 1rem;
+      min-height: 44px;
+      padding: 0.625rem 1rem;
       cursor: pointer;
-      color: var(--text-muted);
-      transition: all 0.2s;
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-weight: 650;
+      transition: background-color 180ms ease-out, color 180ms ease-out;
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
 
     .base-url-copy:hover {
       background: var(--bg-tertiary);
       color: var(--text-primary);
+    }
+
+    .base-url-copy.copied {
+      background: var(--method-get-bg);
+      color: var(--method-get);
+    }
+
+    @media (max-width: 480px) {
+      .base-url-container {
+        grid-template-columns: auto minmax(0, 1fr);
+      }
+
+      .base-url-copy {
+        grid-column: 1 / -1;
+        border-left: 0;
+        border-top: 1px solid var(--border);
+      }
     }
 
     /* Translation Grid */
@@ -433,6 +545,7 @@
       background: var(--border);
       border: 1px solid var(--border);
       margin: var(--space-md) 0;
+      list-style: none;
     }
 
     .translation-item {
@@ -462,7 +575,7 @@
 
     .endpoint-header {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: 1rem;
       margin-bottom: var(--space-sm);
       flex-wrap: wrap;
@@ -476,6 +589,7 @@
       background: var(--method-get-bg);
       color: var(--method-get);
       border: 1px solid var(--method-get);
+      line-height: 1.4;
     }
 
     .endpoint-path {
@@ -494,6 +608,10 @@
       -webkit-overflow-scrolling: touch;
     }
 
+    .table-container:focus-visible {
+      outline-offset: 2px;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -505,6 +623,7 @@
     th, td {
       padding: 0.75rem 1rem;
       border-bottom: 1px solid var(--border);
+      vertical-align: top;
     }
 
     th {
@@ -557,8 +676,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--code-surface);
+      border-bottom: 1px solid var(--code-border);
     }
 
     .code-lang {
@@ -566,29 +685,30 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: rgba(255, 255, 255, 0.5);
+      color: var(--code-muted);
     }
 
     .code-copy {
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--code-border);
+      color: var(--code-text);
       font-family: var(--font-sans);
       font-size: 0.75rem;
-      padding: 0.25rem 0.75rem;
+      min-height: 44px;
+      padding: 0.375rem 0.75rem;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: background-color 180ms ease-out, border-color 180ms ease-out, color 180ms ease-out;
     }
 
     .code-copy:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
+      background: var(--code-border);
+      color: var(--code-text);
     }
 
     .code-copy.copied {
       background: var(--method-get);
       border-color: var(--method-get);
-      color: #fff;
+      color: var(--code-bg);
     }
 
     pre {
@@ -601,11 +721,16 @@
       color: var(--code-text);
     }
 
+    pre code {
+      font: inherit;
+      color: inherit;
+    }
+
     /* Callouts */
     .callout {
       margin: var(--space-sm) 0;
       padding: 1.5rem;
-      border-left: 2px solid var(--accent-crimson);
+      border: 1px solid color-mix(in oklch, var(--accent-crimson) 40%, var(--border));
       background: var(--accent-crimson-bg);
     }
 
@@ -666,9 +791,8 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      font-weight: 500;
+      font-size: 1.0625rem;
+      font-weight: 700;
       color: var(--text-primary);
       text-decoration: none;
       margin-bottom: 0.5rem;
@@ -721,17 +845,55 @@
       color: var(--accent-crimson);
     }
 
+    @media (max-width: 380px) {
+      .top-nav {
+        gap: 0.625rem;
+      }
+
+      .brand {
+        font-size: 0.95rem;
+      }
+
+      .brand-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .nav-actions {
+        gap: 0.5rem;
+      }
+
+      .btn-link {
+        padding-inline: 0.75rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to API documentation</a>
+  <div id="copy-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
-  <nav class="top-nav">
+  <nav class="top-nav" aria-label="Primary navigation">
     <a href="#" class="brand">
-      <img src="/assets/icon-192x192.webp" alt="Blessings API" class="brand-icon" />
+      <img src="/assets/icon-192x192.webp" alt="" class="brand-icon" width="26" height="26" />
       Blessings API
     </a>
     <div class="nav-actions">
-      <button class="icon-btn" onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Theme">
+      <button class="icon-btn" type="button" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false" title="Switch to dark theme">
         <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -744,7 +906,7 @@
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
       </button>
-      <a href="https://github.com/gunawanjason/BlessingsAPI" target="_blank" rel="noopener" class="btn-link">
+      <a href="https://github.com/gunawanjason/BlessingsAPI" target="_blank" rel="noopener noreferrer" class="btn-link">
         GitHub
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
           <line x1="7" y1="17" x2="17" y2="7"></line>
@@ -755,7 +917,7 @@
   </nav>
 
   <div class="layout">
-    <aside class="sidebar">
+    <nav class="sidebar" aria-label="API documentation">
       <div class="nav-group">
         <div class="nav-label">Introduction</div>
         <ul class="nav-list">
@@ -780,24 +942,24 @@
           <li class="nav-item"><a href="#errors">Error Handling</a></li>
         </ul>
       </div>
-    </aside>
+    </nav>
 
-    <main class="main">
+    <main class="main" id="main-content" tabindex="-1">
       
       <header>
-        <h1 class="hero-title">Blessings API.</h1>
-        <p class="hero-subtitle">A meticulously crafted interface for accessing Biblical texts, supporting eleven translations with robust search and pericope retrieval.</p>
+        <h1 class="hero-title">Blessings API documentation</h1>
+        <p class="hero-subtitle">Scripture data for developers, with eleven translations, flexible verse lookup, structural headings, and keyword search.</p>
         
         <div class="base-url-container">
           <div class="base-url-label">Base URL</div>
-          <div class="base-url-value">http://api.blessings365.top</div>
-          <button class="base-url-copy" onclick="copyToClipboard('http://api.blessings365.top', this)">Copy</button>
+          <code class="base-url-value">https://api.blessings365.top</code>
+          <button class="base-url-copy" type="button" data-copy-text="https://api.blessings365.top" aria-label="Copy the production base URL">Copy</button>
         </div>
       </header>
 
       <section id="overview">
         <h2 class="section-title">Overview</h2>
-        <p>The Blessings API is designed to provide immediate, programmatic access to Scripture. It is structured around REST principles, delivering lightweight, predictable JSON responses. CORS is fully enabled, allowing direct consumption from frontend applications.</p>
+        <p>Blessings API provides programmatic access to Scripture through predictable REST endpoints and JSON responses. CORS is enabled for direct use in web applications.</p>
         
         <div class="callout">
           <div class="callout-title">Core Capabilities</div>
@@ -814,52 +976,52 @@
         <h2 class="section-title">Translations</h2>
         <p>Eleven distinct translations are currently indexed, spanning English, Chinese, and Indonesian lexicons.</p>
         
-        <div class="translations-grid">
-          <div class="translation-item">
+        <ul class="translations-grid" aria-label="Available Bible translations">
+          <li class="translation-item">
             <div class="translation-code">NIV</div>
             <div class="translation-desc">New International Version</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">ESV</div>
             <div class="translation-desc">English Standard Version</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">KJV</div>
             <div class="translation-desc">King James Version</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">NASB</div>
             <div class="translation-desc">New American Standard Bible</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">NLT</div>
             <div class="translation-desc">New Living Translation</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">TLB</div>
             <div class="translation-desc">The Living Bible</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">CNVS</div>
             <div class="translation-desc">Chinese New Version (Simplified)</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">CUNPSS-上帝</div>
             <div class="translation-desc">Chinese Union (God)</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">CUNPSS-神</div>
             <div class="translation-desc">Chinese Union (Shen)</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">CUV</div>
             <div class="translation-desc">Chinese Union (Traditional)</div>
-          </div>
-          <div class="translation-item">
+          </li>
+          <li class="translation-item">
             <div class="translation-code">TB</div>
             <div class="translation-desc">Terjemahan Baru</div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </section>
 
       <section id="single-verse">
@@ -872,14 +1034,15 @@
             <span class="endpoint-path">/{translation}/single</span>
           </div>
           
-          <div class="table-container">
+          <div class="table-container" role="region" aria-label="Single verse parameters" tabindex="0">
             <table>
+              <caption class="sr-only">Parameters for the single verse endpoint</caption>
               <thead>
                 <tr>
-                  <th>Parameter</th>
-                  <th>Type</th>
-                  <th>Requirement</th>
-                  <th>Description</th>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Requirement</th>
+                  <th scope="col">Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -914,14 +1077,14 @@
           <div class="code-block">
             <div class="code-header">
               <span class="code-lang">Response</span>
-              <button class="code-copy" onclick="copyCodeBlock(this)">Copy</button>
+              <button class="code-copy" type="button" data-copy-code aria-label="Copy the single verse response">Copy</button>
             </div>
-            <pre>{
+            <pre tabindex="0"><code>{
   "book": "Genesis",
   "chapter": 1,
   "verse": 1,
   "content": "In the beginning God created the heavens and the earth."
-}</pre>
+}</code></pre>
           </div>
         </div>
       </section>
@@ -936,14 +1099,15 @@
             <span class="endpoint-path">/{translation}/multiple</span>
           </div>
 
-          <div class="table-container">
+          <div class="table-container" role="region" aria-label="Multiple verse parameters" tabindex="0">
             <table>
+              <caption class="sr-only">Parameters for the multiple verses endpoint</caption>
               <thead>
                 <tr>
-                  <th>Parameter</th>
-                  <th>Type</th>
-                  <th>Requirement</th>
-                  <th>Description</th>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Requirement</th>
+                  <th scope="col">Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -976,14 +1140,15 @@
             <span class="endpoint-path">/{translation}/headings</span>
           </div>
 
-          <div class="table-container">
+          <div class="table-container" role="region" aria-label="Heading parameters" tabindex="0">
             <table>
+              <caption class="sr-only">Parameters for the headings endpoint</caption>
               <thead>
                 <tr>
-                  <th>Parameter</th>
-                  <th>Type</th>
-                  <th>Requirement</th>
-                  <th>Description</th>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Requirement</th>
+                  <th scope="col">Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -1015,14 +1180,15 @@
             <span class="endpoint-path">/{translation}/search</span>
           </div>
 
-          <div class="table-container">
+          <div class="table-container" role="region" aria-label="Keyword search parameters" tabindex="0">
             <table>
+              <caption class="sr-only">Parameters for the single-translation keyword search endpoint</caption>
               <thead>
                 <tr>
-                  <th>Parameter</th>
-                  <th>Type</th>
-                  <th>Requirement</th>
-                  <th>Description</th>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Requirement</th>
+                  <th scope="col">Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -1066,14 +1232,15 @@
             <span class="endpoint-path">/search</span>
           </div>
 
-          <div class="table-container">
+          <div class="table-container" role="region" aria-label="Multi-translation search parameters" tabindex="0">
             <table>
+              <caption class="sr-only">Parameters for the multi-translation search endpoint</caption>
               <thead>
                 <tr>
-                  <th>Parameter</th>
-                  <th>Type</th>
-                  <th>Requirement</th>
-                  <th>Description</th>
+                  <th scope="col">Parameter</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Requirement</th>
+                  <th scope="col">Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -1089,6 +1256,24 @@
                   <td><span class="param-req">Optional</span></td>
                   <td>Comma-separated list (e.g., <code>NIV,ESV,KJV</code>). Defaults to NIV.</td>
                 </tr>
+                <tr>
+                  <td><span class="param-name">limit</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req">Optional</span></td>
+                  <td>Maximum results per translation. Defaults to 50.</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">book</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req">Optional</span></td>
+                  <td>Restrict results to books matching this name.</td>
+                </tr>
+                <tr>
+                  <td><span class="param-name">testament</span></td>
+                  <td><span class="param-type">query</span></td>
+                  <td><span class="param-req">Optional</span></td>
+                  <td>Use <code>old</code> or <code>ot</code>, or <code>new</code> or <code>nt</code>.</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1102,30 +1287,30 @@
         <div class="code-block">
           <div class="code-header">
             <span class="code-lang">JS</span>
-            <button class="code-copy" onclick="copyCodeBlock(this)">Copy</button>
+            <button class="code-copy" type="button" data-copy-code aria-label="Copy the JavaScript example">Copy</button>
           </div>
-          <pre>const fetchVerse = async () => {
-  const res = await fetch('http://api.blessings365.top/ESV/single?book=Psalms&chapter=23&verse=1');
+          <pre tabindex="0"><code>const fetchVerse = async () => {
+  const res = await fetch('https://api.blessings365.top/ESV/single?book=Psalms&amp;chapter=23&amp;verse=1');
   const data = await res.json();
-  console.log(`${data.book} ${data.chapter}:${data.verse} — ${data.content}`);
+  console.log(`${data.book} ${data.chapter}:${data.verse}: ${data.content}`);
 };
 
-fetchVerse();</pre>
+fetchVerse();</code></pre>
         </div>
 
         <h3 class="sub-title">Python</h3>
         <div class="code-block">
           <div class="code-header">
             <span class="code-lang">Python</span>
-            <button class="code-copy" onclick="copyCodeBlock(this)">Copy</button>
+            <button class="code-copy" type="button" data-copy-code aria-label="Copy the Python example">Copy</button>
           </div>
-          <pre>import requests
+          <pre tabindex="0"><code>import requests
 
 response = requests.get(
-    'http://api.blessings365.top/search',
+    'https://api.blessings365.top/search',
     params={'keyword': 'grace', 'translations': 'NIV,ESV', 'limit': 5}
 )
-print(response.json())</pre>
+print(response.json())</code></pre>
         </div>
       </section>
 
@@ -1133,25 +1318,26 @@ print(response.json())</pre>
         <h2 class="section-title">Error Handling</h2>
         <p>The API returns standard HTTP status codes indicating success or failure of a request.</p>
 
-        <div class="table-container">
+        <div class="table-container" role="region" aria-label="HTTP error responses" tabindex="0">
           <table>
+            <caption class="sr-only">HTTP error responses and recommended resolutions</caption>
             <thead>
               <tr>
-                <th>Code</th>
-                <th>Meaning</th>
-                <th>Resolution</th>
+                <th scope="col">Code</th>
+                <th scope="col">Meaning</th>
+                <th scope="col">Resolution</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td><strong>400</strong></td>
                 <td>Bad Request</td>
-                <td>Required parameters (like `keyword` or `book`) are missing.</td>
+                <td>Required parameters such as <code>keyword</code>, <code>book</code>, or <code>verses</code> are missing.</td>
               </tr>
               <tr>
                 <td><strong>404</strong></td>
                 <td>Not Found</td>
-                <td>The specific verse, book, or translation does not exist in the index.</td>
+                <td>The requested verse does not exist, or headings are unavailable for that translation.</td>
               </tr>
               <tr>
                 <td><strong>500</strong></td>
@@ -1170,10 +1356,10 @@ print(response.json())</pre>
     <div class="footer-content">
       <div>
         <a href="#" class="footer-brand">
-          <img src="/assets/icon-192x192.webp" alt="Blessings API" />
+          <img src="/assets/icon-192x192.webp" alt="" width="24" height="24" />
           Blessings API
         </a>
-        <p class="footer-text">© 2024-<span id="year"></span> Blessings API.<br>Typeset for the digital realm.</p>
+        <p class="footer-text">© 2024-<span id="year"></span> Blessings API.<br>Open-source Scripture data for developers.</p>
       </div>
       <div class="footer-links">
         <div class="footer-link-col">
@@ -1183,31 +1369,26 @@ print(response.json())</pre>
         </div>
         <div class="footer-link-col">
           <div class="footer-link-title">Connect</div>
-          <a href="https://github.com/gunawanjason/BlessingsAPI" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/gunawanjason/BlessingsAPI" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Set Current Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme Toggle Logic
-    const toggleTheme = () => {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    };
-
-    const updateThemeIcon = (theme) => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const updateThemeControl = (theme) => {
       const svg = document.getElementById('theme-icon');
+      const isDark = theme === 'dark';
+      const label = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.title = label;
+
       if (theme === 'dark') {
-        // Moon to Sun icon path morph
         svg.innerHTML = `
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -1226,36 +1407,100 @@ print(response.json())</pre>
       }
     };
 
-    // Initialize Theme
-    const initTheme = () => {
-      const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
-      
-      document.documentElement.setAttribute('data-theme', theme);
-      updateThemeIcon(theme);
-    };
-    initTheme();
+    const setTheme = (theme, persist = false) => {
+      document.documentElement.dataset.theme = theme;
+      updateThemeControl(theme);
 
-    // Copy Utility
-    const copyToClipboard = (text, button) => {
-      navigator.clipboard.writeText(text).then(() => {
-        const originalText = button.textContent;
-        button.textContent = 'Copied';
-        button.classList.add('copied');
-        
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.classList.remove('copied');
-        }, 2000);
-      });
+      if (persist) {
+        try {
+          localStorage.setItem('theme', theme);
+        } catch {
+          // Theme still applies when storage is unavailable.
+        }
+      }
     };
 
-    const copyCodeBlock = (button) => {
-      const block = button.closest('.code-block');
-      const code = block.querySelector('pre').textContent;
-      copyToClipboard(code, button);
+    setTheme(document.documentElement.dataset.theme || 'light');
+
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme, true);
+    });
+
+    const colorScheme = matchMedia('(prefers-color-scheme: dark)');
+    colorScheme.addEventListener?.('change', (event) => {
+      try {
+        if (localStorage.getItem('theme')) return;
+      } catch {
+        // Follow the system theme when storage is unavailable.
+      }
+      setTheme(event.matches ? 'dark' : 'light');
+    });
+
+    const writeClipboard = async (text) => {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const input = document.createElement('textarea');
+      input.value = text;
+      input.setAttribute('readonly', '');
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+      input.select();
+      const copied = document.execCommand('copy');
+      input.remove();
+      if (!copied) throw new Error('Copy failed');
     };
+
+    const copyStatus = document.getElementById('copy-status');
+    const showCopyResult = (button, message, isSuccess) => {
+      const originalText = button.dataset.originalText || button.textContent;
+      button.dataset.originalText = originalText;
+      button.textContent = isSuccess ? 'Copied' : 'Try again';
+      button.classList.toggle('copied', isSuccess);
+      copyStatus.textContent = message;
+
+      window.setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('copied');
+      }, 2000);
+    };
+
+    document.addEventListener('click', async (event) => {
+      const button = event.target.closest('[data-copy-text], [data-copy-code]');
+      if (!button) return;
+
+      const text = button.hasAttribute('data-copy-code')
+        ? button.closest('.code-block').querySelector('code').textContent
+        : button.dataset.copyText;
+
+      try {
+        await writeClipboard(text);
+        showCopyResult(button, 'Copied to clipboard.', true);
+      } catch {
+        showCopyResult(button, 'Unable to copy automatically. Select and copy the text manually.', false);
+      }
+    });
+
+    const sectionLinks = [...document.querySelectorAll('.sidebar a[href^="#"]')];
+    const sectionMap = new Map(sectionLinks.map((link) => [link.hash.slice(1), link]));
+    const setCurrentSection = (id) => {
+      sectionLinks.forEach((link) => link.removeAttribute('aria-current'));
+      sectionMap.get(id)?.setAttribute('aria-current', 'location');
+    };
+
+    setCurrentSection('overview');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible[0]) setCurrentSection(visible[0].target.id);
+    }, { rootMargin: '-25% 0px -65% 0px' });
+
+    document.querySelectorAll('main section[id]').forEach((section) => sectionObserver.observe(section));
   </script>
 </body>
 </html>
